@@ -10,10 +10,11 @@ title: M-JO / A digital portfolio
 
     <section class="home posts">
       <h1>Latest Posts</h1>
-      {% for post in site.posts %}
-        <article><time>{{ post.date | date_to_string }}</time> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></article>
-      {% endfor %}
+        <article><a href="../blog/">Blog</a></article>
     </section>
 
     <section class="home about"></section>
 </div>
+
+{% include scripts.html %}
+{% include googleanalytics.html %}
