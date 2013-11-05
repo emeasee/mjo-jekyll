@@ -374,6 +374,28 @@ module.exports = function (grunt) {
     'csslint:check'
   ]);
 
+   buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:emeasee/mjo-jekyll.git',
+          branch: 'gh-pages'
+        }
+      },
+      local: {
+        options: {
+          remote: '../',
+          branch: 'build'
+        }
+      }
+    }
+  });
+
   grunt.registerTask('build', [
     'clean:dist',
     // Jekyll cleans files from the target directory, so must run first
