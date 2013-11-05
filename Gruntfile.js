@@ -14,6 +14,8 @@ module.exports = function (grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
 
+  grunt.loadNpmTasks('grunt-build-control');
+
   grunt.initConfig({
     // Configurable paths
     yeoman: {
@@ -340,7 +342,27 @@ module.exports = function (grunt) {
         'sass:dist',
         'copy:dist'
       ]
-    }
+    },
+    buildcontrol: {
+         options: {
+           dir: 'dist',
+           commit: true,
+           push: true,
+           message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+         },
+         pages: {
+           options: {
+             remote: 'git@github.com:emeasee/mjo-jekyll.git',
+             branch: 'gh-pages'
+           }
+         },
+         local: {
+           options: {
+             remote: '../',
+             branch: 'build'
+           }
+         }
+       }
   });
 
   // Define Tasks
@@ -373,28 +395,6 @@ module.exports = function (grunt) {
     'csscss:check',
     'csslint:check'
   ]);
-
-   buildcontrol: {
-      options: {
-        dir: 'dist',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-      },
-      pages: {
-        options: {
-          remote: 'git@github.com:emeasee/mjo-jekyll.git',
-          branch: 'gh-pages'
-        }
-      },
-      local: {
-        options: {
-          remote: '../',
-          branch: 'build'
-        }
-      }
-    }
-  });
 
   grunt.registerTask('build', [
     'clean:dist',
