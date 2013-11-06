@@ -37,10 +37,6 @@ future: true
 # _config.build.yml sets this to false on `grunt build`
 show_drafts: true
 
-# Split posts over multiple subdirectories called “page2”, “page3”, … “pageN”
-paginate: 5
-paginate_path: 'page:num'
-
 # Markdown library
 markdown: redcarpet
 # Markdown library options

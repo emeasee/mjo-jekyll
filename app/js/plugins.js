@@ -38,8 +38,8 @@ var ArticleAnimator = ArticleAnimator || {
   canScroll:          true,
   initialLoad:        true,
   animationDuration:  500,
-  postCount:          5,
-  currentPostIndex:   1,
+  postCount:          numPosts,
+  currentPostIndex:   numPosts,
   postCache:          {},
   pageTemplate:       null,
 };
@@ -92,7 +92,7 @@ ArticleAnimator.getPost = function(index, callback){
 } 
 
 ArticleAnimator.nextPostIndex = function(index){
-  return (index === this.postCount) ? 1 : index + 1 
+  return (index === 1) ? this.postCount : index - 1 
 }
 
 ArticleAnimator.createPost = function(opts, callback){

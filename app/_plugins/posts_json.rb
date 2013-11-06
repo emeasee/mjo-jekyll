@@ -27,7 +27,7 @@ module Jekyll
         jsonPost = post.id.split('/')[1] == 'help' ? render_help_json(site,post) : render_json(site,post)
         
        
-          filename = 'post_' + (index + 1).to_s() + '.json'
+          filename = 'post_' + (index+1).to_s() + '.json'
           filename.sub!(/^\//, '')
           dir = '/json'
         
