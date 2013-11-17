@@ -10,6 +10,8 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+@import "frameless";
+
 html,
 button,
 input,
@@ -150,17 +152,54 @@ a{
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     border:10px solid white;
-    height: 1000px;
+    //height: 100%;
     section{
-        max-width: 1140px;
+        @include frame(max-width,$frame:19);
         margin: 0 auto;
         text-align: center;
+          width: 100%;
+        article.proj{
+          height: 100%;
+          ul{
+            display: block;
+            height: 100%;
+            margin:0;
+            padding: 0;
+            overflow:auto;
+            li.col{
+              background:#f1f1f1;
+              display: block;
+              height:30em;
+              float: left;
+              margin-left: 1.7em;
+              margin-bottom: 1.7em;
+              list-style-type:none;
+            }
+          }
+        }
+        .col1{@include frame(width, $frame:1);}
+        .col2{@include frame(width, $frame:2);}
+        .col3{@include frame(width, $frame:3);}
+        .col4{@include frame(width, $frame:4);}
+        .col5{@include frame(width, $frame:5);}
+        .col6{@include frame(width, $frame:6);}
+        .col7{@include frame(width, $frame:7);}
+        .col8{@include frame(width, $frame:8);}
+        .col9{@include frame(width, $frame:9);}
+        .col10{@include frame(width, $frame:10);}
+        .col11{@include frame(width, $frame:11);}
+        .col12{@include frame(width, $frame:12);}
+        .col13{@include frame(width, $frame:13);}
+        .col14{@include frame(width, $frame:14);}
+        .col15{@include frame(width, $frame:15);}
+        .col16{@include frame(width, $frame:16);}
+        .col17{@include frame(width, $frame:17);}
     }
 
-    article{
+    /*article{
         @extend section;
         max-width: 900px;
-    }
+    }*/
 }
 
 
