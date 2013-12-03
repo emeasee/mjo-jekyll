@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Mac Oosthuizen -- Site Maker --  http://twitter.com/emeasee
+    <name> -- <role> -- <twitter>
 
 # THANKS
 
@@ -11,9 +11,5 @@
 
 # TECHNOLOGY COLOPHON
 
-    Jekyll static site generator
-    Sass 
-    HTML5 ★ Boilerplate 
-    Normalize.css 
-    jQuery, Modernizr 
-
+    HTML5, CSS3
+    Normalize.css, jQuery, Modernizr
