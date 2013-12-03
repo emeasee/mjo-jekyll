@@ -1,4 +1,4 @@
-// Generated on 2013-10-27 using generator-jekyllrb 0.4.0
+// Generated on 2013-12-03 using generator-jekyllrb 1.0.0
 'use strict';
 
 // Directory reference:
@@ -13,8 +13,6 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
-
-  grunt.loadNpmTasks('grunt-build-control');
 
   grunt.initConfig({
     // Configurable paths
@@ -35,7 +33,7 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/**/*.{html,yml,md,mkd,markdown}',
           '_config.yml',
-          '!<%= yeoman.app %>/_bower_components'
+          '!<%= yeoman.app %>/_bower_components/**/*'
         ],
         tasks: ['jekyll:server']
       },
@@ -255,14 +253,14 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '<%= yeoman.app %>',
           src: [
-            // Jekyll processes and moves HTML and text files
-            // Usemin moves CSS and javascript inside of Usemin blocks
-            // Copy moves asset files and directories
+            // Jekyll processes and moves HTML and text files.
+            // Usemin moves CSS and javascript inside of Usemin blocks.
+            // Copy moves asset files and directories.
             'img/**/*',
             'fonts/**/*',
-            // Like Jekyll, exclude files & folders prefixed with an underscore
+            // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
-            // Explicitly add any files your site needs for distribution here
+            // Explicitly add any files your site needs for distribution here.
             '_bower_components/jquery/jquery.js',
             'favicon.ico',
             'apple-touch*.png',
@@ -297,9 +295,20 @@ module.exports = function (grunt) {
         }
       }
     },
+    buildcontrol: {
+      dist: {
+        options: {
+          remote: '../',
+          branch: 'gh-pages',
+          commit: true,
+          push: true
+        }
+      }
+    },
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
       },
       all: [
         'Gruntfile.js',
@@ -343,31 +352,11 @@ module.exports = function (grunt) {
         'sass:dist',
         'copy:dist'
       ]
-    },
-    buildcontrol: {
-         options: {
-           dir: 'dist',
-           commit: true,
-           push: true,
-           message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-         },
-         pages: {
-           options: {
-             remote: 'git@github.com:emeasee/mjo-jekyll.git',
-             branch: 'gh-pages'
-           }
-         },
-         local: {
-           options: {
-             remote: '../',
-             branch: 'build'
-           }
-         }
-       }
+    }
   });
 
   // Define Tasks
-  grunt.registerTask('server', function (target) {
+  grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
@@ -379,6 +368,11 @@ module.exports = function (grunt) {
       'connect:livereload',
       'watch'
     ]);
+  });
+
+  grunt.registerTask('server', function () {
+    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+    grunt.task.run(['serve']);
   });
 
   // No real tests yet. Add your own.
@@ -412,6 +406,13 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin'
+    ]);
+
+  grunt.registerTask('deploy', [
+    'check',
+    'test',
+    'build',
+    'buildcontrol'
     ]);
 
   grunt.registerTask('default', [

@@ -36,6 +36,6 @@ Thumbs.db
 app/_bower_components
 dist
 node_modules
-CNAME
 .tmp
-_drafts
+CNAME
+app/_drafts
