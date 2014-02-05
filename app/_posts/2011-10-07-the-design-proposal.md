@@ -2,6 +2,7 @@
 title: The Design Proposal
 author: Mac
 layout: post
+category: urbbi
 date: 2011-10-07
 ---
 

@@ -2,6 +2,7 @@
 title: Prototyping Plan!
 author: Mac
 layout: post
+category: urbbi
 date: 2011-11-03
 ---
 

@@ -2,6 +2,7 @@
 title: Prototyping phase 2
 author: Mac
 layout: post
+category: urbbi
 date: 2011-11-20
 ---
 

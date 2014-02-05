@@ -2,6 +2,7 @@
 title: 'My thinking so far&#8230;'
 author: Mac
 layout: post
+category: urbbi
 date: 2011-10-04
 ---
 

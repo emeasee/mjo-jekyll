@@ -2,6 +2,7 @@
 title: I made a video.
 author: Mac
 layout: post
+category: urbbi
 date: 2011-11-28
 ---
 
