@@ -13,14 +13,17 @@ $(document).ready(function(){
 
     /* Some functions */
     function showLatestBlogTitles (num) {
-        var i = 0, j = 0, el = $('section.posts article');
+        var i = 0, j = 0, el = $('section.posts article'),con;
         //Change i for desired num of posts
-        for (i; i < 5; i++){
-            j++;var p = num - j, con;
-            $.getJSON('/json/post_'+ p +'.json', function(d){
+        function getData(post){
+            $.getJSON('/json/post_'+ post +'.json', function(d){
                 con = d.title;
             });
-            $('<a>').attr('href','/blog/#'+ p).text(con).appendTo(el);
+            return con;
+        }
+        for (i; i < 5; i++){
+            j++;var p = num - j;
+            $('<a>').attr('href','/blog/#'+ p).text(getData(p)).appendTo(el);
         }
     }
 

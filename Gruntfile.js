@@ -1,4 +1,4 @@
-// Generated on 2013-12-03 using generator-jekyllrb 1.0.0
+// Generated on 2014-02-05 using generator-jekyllrb 1.2.1
 'use strict';
 
 // Directory reference:
@@ -32,7 +32,6 @@ module.exports = function (grunt) {
       jekyll: {
         files: [
           '<%= yeoman.app %>/**/*.{html,yml,md,mkd,markdown}',
-          '_config.yml',
           '!<%= yeoman.app %>/_bower_components/**/*'
         ],
         tasks: ['jekyll:server']
@@ -90,7 +89,6 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '.tmp',
             '<%= yeoman.dist %>/*',
             // Running Jekyll also cleans the target directory.  Exclude any
             // non-standard `keep_files` here (e.g., the generated files
@@ -178,9 +176,6 @@ module.exports = function (grunt) {
         }
       }
     },
-    // UseminPrepare will only scan a single page for usemin blocks. If you
-    // use usemin blocks that aren't in index.html, create a usemin manifest
-    // page (hackery!) and point this task there.
     useminPrepare: {
       options: {
         dest: '<%= yeoman.dist %>'
@@ -189,8 +184,7 @@ module.exports = function (grunt) {
     },
     usemin: {
       options: {
-        basedir: '<%= yeoman.dist %>',
-        dirs: ['<%= yeoman.dist %>/**/*']
+        assetsDirs: '<%= yeoman.dist %>',
       },
       html: ['<%= yeoman.dist %>/**/*.html'],
       css: ['<%= yeoman.dist %>/css/**/*.css']
@@ -261,9 +255,9 @@ module.exports = function (grunt) {
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
-            '_bower_components/jquery/jquery.js',
-            'favicon.ico',
-            'apple-touch*.png',
+            //'_bower_components/jquery/jquery.js',
+            //'favicon.ico',
+            //'apple-touch*.png',
             'CNAME'
           ],
           dest: '<%= yeoman.dist %>'
@@ -280,19 +274,19 @@ module.exports = function (grunt) {
         }]
       }
     },
-    rev: {
+    filerev: {
       options: {
         length: 4
       },
       dist: {
-        files: {
+        files: [{
           src: [
             '<%= yeoman.dist %>/js/**/*.js',
             '<%= yeoman.dist %>/css/**/*.css',
             '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
             '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
-        }
+        }]
       }
     },
     buildcontrol: {
@@ -313,23 +307,8 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/js/**/*.js',
-        'test/spec/**/*.js',
-        '!<%= yeoman.app %>/js/vendor/**/*'
+        'test/spec/**/*.js'
       ]
-    },
-    csscss: {
-      options: {
-        bundleExec: true,
-        minMatch: 2,
-        ignoreSassMixins: false,
-        colorize: true,
-        shorthand: false,
-        verbose: true
-      },
-      check: {
-       src: ['<%= yeoman.app %>/css/**/*.css',
-             '<%= yeoman.app %>/_scss/**/*.scss']
-      }
     },
     csslint: {
       options: {
@@ -337,8 +316,8 @@ module.exports = function (grunt) {
       },
       check: {
         src: [
-          '<%= yeoman.app %>}/css/**/*.css',
-          '<%= yeoman.app %>}/_scss/**/*.scss'
+          '<%= yeoman.app %>/css/**/*.css',
+          '<%= yeoman.app %>/_scss/**/*.scss'
         ]
       }
     },
@@ -387,12 +366,11 @@ module.exports = function (grunt) {
     'jekyll:check',
     'sass:server',
     'jshint:all',
-    'csscss:check',
     'csslint:check'
   ]);
 
   grunt.registerTask('build', [
-    'clean:dist',
+    'clean',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'concurrent:dist',
@@ -403,7 +381,7 @@ module.exports = function (grunt) {
     'uglify',
     'imagemin',
     'svgmin',
-    'rev',
+    'filerev',
     'usemin',
     'htmlmin'
     ]);
