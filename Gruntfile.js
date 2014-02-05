@@ -292,11 +292,23 @@ module.exports = function (grunt) {
     buildcontrol: {
       dist: {
         options: {
-          remote: '../',
-          branch: 'gh-pages',
+          dir: 'dist',
           commit: true,
-          push: true
-        }
+          push: true,
+          message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        },
+        pages: {
+          options: {
+            remote: 'git@github.com:emeasee/mjo-jekyll.git',
+            branch: 'gh-pages'
+          }
+           },
+        local: {
+              options: {
+                remote: '../',
+                branch: 'build'
+              }
+            }
       }
     },
     jshint: {
