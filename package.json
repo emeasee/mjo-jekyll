@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
+    "jpegtran-bin": "0.2.0",
     "grunt-autoprefixer": "~0.6.4",
     "grunt-build-control": "~0.1.2",
     "grunt-concurrent": "~0.4.3",
