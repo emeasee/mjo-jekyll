@@ -45,12 +45,12 @@ $(document).ready(function(){
     $('#info').on('click', function(event) {
         event.preventDefault();
         /* Act on the event */
-        $(".cover").addClass('open');
+        $('.cover').addClass('open');
     });
 
     $(window).scroll(function(){
         var $top = $($window).scrollTop();
 
-        $('#slide .scroll').css("opacity", 1 - (($top - ($browser_height * .25)) / ($browser_height * .8)));
+        $('#slide .scroll').css('opacity', 1 - (($top - ($browser_height * 0.25)) / ($browser_height * 0.8)));
     });
 });
