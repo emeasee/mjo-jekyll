@@ -10,6 +10,7 @@ $(document).ready(function(){
     $body = $(document.body);
     $window = $(window);
     $html = $(document.documentElement);
+    $browser_height = $(window).height();
 
     /* Some functions */
     function showLatestBlogTitles (num) {
@@ -40,4 +41,16 @@ $(document).ready(function(){
     }
 
     showLatestBlogTitles(numPosts);
+
+    $('#info').on('click', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        $(".cover").addClass('open');
+    });
+
+    $(window).scroll(function(){
+        var $top = $($window).scrollTop();
+
+        $('#slide .scroll').css("opacity", 1 - (($top - ($browser_height * .25)) / ($browser_height * .8)));
+    });
 });

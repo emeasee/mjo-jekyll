@@ -11,9 +11,10 @@
    ========================================================================== */
 
 @import "frameless";
+@import "mixins";
 
 $font-size: 16;
-$family: 'Rosario', sans-serif;
+$family: 'Lato', sans-serif;
 
 html,
 button,
@@ -25,14 +26,14 @@ textarea {
 
 h1{
   margin:1.5em 0;
-  font-size: 6em;
-  color: #85efff;
+  font-size: 3em;
+  color: #999;
 }
 
 h2{
   font-weight:normal;
   width: 80%;
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1.2em;
 }
 
@@ -115,6 +116,7 @@ textarea {
    ========================================================================== */
 
 $grey: #f9f9f9;
+$yellow:#F5E286;
 $highlight: #444;
 
 html, body{
@@ -123,7 +125,7 @@ html, body{
 
 body{
     background-color:$grey;
-      color: #555;
+      color: #222;
       padding: 0;
       margin: 0;
       -webkit-backface-visibility: hidden;
@@ -141,17 +143,27 @@ a{
 .cover{
     width: 100%;
     margin:0 auto;
-    position:fixed;
-    z-index: 999;
-    padding-top:1em;
+    position:absolute;
+    z-index: 100;
+    background:white;
+    height: 200px;
+    top:-200px;
+    @include transition(top, 0.2s, ease-in-out);
     p{
-      margin:0 auto;
+      font-size: 1.2em;
+      letter-spacing: 1px;
+      line-height: normal;
+      max-width: 1500px;
+      @include frame(padding-left,$frame:1);
       a{
         text-decoration: none;
       }
-      a::before{
+      a::after{
         content:'\2014\00A0';
       }
+    }
+    &.open{
+      top:0;
     }
 }
 
@@ -161,26 +173,48 @@ a{
     position: relative;
     z-index: 99;
     .scroll{
-        //background-image: url(http://www.jamiewolfond.com/project-images/header/02.gif); background-position: 50% 0%; background-repeat: initial initial;        
-        background:#85efff;
         z-index: 9;
         position: fixed;
         width: 100%;
         height: 100%;
-        max-width: 1500px;
         max-height: 900px;
+        background: #FF7101;
+        @include frame(padding-left,$frame:1);
+        display: table;
         p{
           font-size: 10em;
-          color: #fff;
+          color: $highlight;
+          display: table-cell;
+          vertical-align: middle;
         }
+    }
+    a{
+      position: fixed;
+      z-index: 99;
+      color:$highlight;
+      text-decoration: none;
+      padding: 0 0.5em;
+      //background: $grey;
+      &#info{
+        @include frame(top,$frame:1);
+        @include frame(left,$frame:1);
+      }
+      &#blog{
+          @include frame(top,$frame:1);
+          @include frame(right,$frame:1);
+      }
+      &#work{
+        @include frame(bottom,$frame:1);
+        @include frame(left,$frame:1);
+      }
     }
 }
 
 .middle{
     width: 100%;
     position:relative;
-    z-index: 100;
-    background:#f9f9f9;
+    z-index: 98;
+    //background:#f9f9f9;
     padding-top: 1em;
     padding-bottom: 1em;
     section{
@@ -200,7 +234,6 @@ a{
               background:#f1f1f1;
               display: inline;
               margin:5%;
-              //min-width: 90%;
               float: left;
               list-style-type:none;
               img{
@@ -238,7 +271,6 @@ a{
 article{
   h1{
     display: block;
-    height: 100px;
     margin:0;
     padding:80px 0;
     z-index: -1;
@@ -489,7 +521,7 @@ article{
       font-size: ($font-size - 2)/16*1em;
             .cover{
               p{
-                @include frame(width,$frame:23);
+                @include frame(width,$frame:9);
               }
             }
             .middle{
