@@ -50,7 +50,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 1.4.0)
+  jekyll
   mr_poole
   redcarpet
-  sass (>= 3.2)
+  sass
