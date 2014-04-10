@@ -1,0 +1,29 @@
+  article.timeline{
+    .imgs{
+      a{
+        img{
+          transition: all .125s ease-in-out;
+        }
+      }
+      a.full{
+        clear: both;
+        display: block;
+        img{
+        }
+      }
+      a.half{
+        float: left;
+        img{
+        }
+      }
+      a.third{
+        float: left;
+        img{
+        }
+      }
+    }
+  }
+
+  article.final{
+    clear: both;
+  }

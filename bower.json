@@ -2,10 +2,10 @@
   "name": "web",
   "version": "0.1",
   "dependencies": {
-    "fluidbox" :"~1.2.2",
-    "jquery" :"~1.10.2",
-    "jquery-pin" :"~1.0.3",
-    "modernizr":"~2.7.2",
-    "normalize-css":"~3.0.0"
+    "fluidbox": "~1.2.2",
+    "jquery": "~1.10.2",
+    "jquery-pin": "~1.0.3",
+    "modernizr": "~2.7.2",
+    "normalize-css": "~3.0.0"
   }
 }

@@ -116,7 +116,7 @@ module.exports = function (grunt) {
           src: '**/*.{scss,sass}',
           dest: '.tmp/css',
           ext: '.css'
-        }]
+        }],
       },
       server: {
         options: {

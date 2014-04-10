@@ -28,7 +28,9 @@ $(document).ready(function(){
         }
     }
 
-    /* Time for the show! */
+
+
+/************ Time for the show! ***********/
     if($('.imgs').length){
         $('.imgs a').fluidbox();
     }
@@ -50,7 +52,6 @@ $(document).ready(function(){
 
     $(window).scroll(function(){
         var $top = $($window).scrollTop();
-
         $('#slide .scroll').css('opacity', 1 - (($top - ($browser_height * 0.25)) / ($browser_height * 0.8)));
     });
 });

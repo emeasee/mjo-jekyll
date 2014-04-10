@@ -1,0 +1,18 @@
+.posts{
+  h1{
+    display: block;
+    height: 100px;
+    margin: 0;
+    padding: 80px 0;
+    z-index: -1;
+  }
+  a{
+    display: block;
+    width: 100%;
+    font-size: 2em;
+    padding:1em 0;
+    background: white;
+    margin-top: 10px;
+    opacity:.9;
+  }
+}
