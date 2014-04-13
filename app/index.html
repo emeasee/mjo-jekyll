@@ -3,27 +3,32 @@ layout: default
 title: M-JO.CO / A Digital Portfolio
 ---
 
+<div class="dark"></div>
+
 <header class="cover">
     <p>Digital portfolio of Mac Oosthuizen. <br/>Interaction designer living in Paris</p>
     <p>hello@m-jo.co<br/>+33 6 51 34 45 77</p>
 </header>
 
+<div class="blog-btn"></div>
+
 <div id="slide">
-    <a id="info" href="">info</a>
-    <a id="blog" href="../blog">blog</a>
-    <a id="work" href="">work</a>
     <div class="scroll"><p>M-JO.CO</p></div>
 </div>
 
 <div id="middle">
+    <a href="#" id="info">INFO</a>
+    <a href="#" id="blog">BLOG</a>
     <section class="home work">
         <article id ="ajoto" class="proj">
             <h1>Project 1</h1>
             <ul>
-                <li class="col col12"><img src="http://placehold.it/710x600" alt=""></li>
-                <li class="col col10"><img src="http://placehold.it/420x360" alt=""></li>
+                <li class="row">
+                    <div class="col-6"><img src="http://placehold.it/710x600" alt=""></div>
+                    <div class="col-6"><img src="http://placehold.it/420x360" alt=""></div>
+                </li>
             </ul>
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            <h2 class="col-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -33,12 +38,21 @@ title: M-JO.CO / A Digital Portfolio
         <article id="fieldlogs" class="proj">
             <h1>Project 2</h1>
             <ul>
-                <li class="col col10"><img src="http://placehold.it/500x600" alt=""></li>
-                <li class="col col12"><img src="http://placehold.it/710x600" alt=""></li>
-                <li class="col col8"><img src="http://placehold.it/320x420" alt=""></li>
-                <li class="col col16"><img src="http://placehold.it/850x600" alt=""></li>
+                <li class="row">
+                    <div class="col-2"><img src="http://placehold.it/710x600" alt=""></div>
+                    <div class="col-10"><img src="http://placehold.it/420x360" alt=""></div>
+                </li>
+                <li class="row">
+                    <div class="col-3"><img src="http://placehold.it/420x360" alt=""></div>
+                    <div class="col-9"><img src="http://placehold.it/710x600" alt=""></div>
+                </li>
             </ul>
-            <h2>Project descriptions to go here</h2>
+            <h2 class="col-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
         </article>
     </section>
 
@@ -50,6 +64,20 @@ title: M-JO.CO / A Digital Portfolio
     <section class="home about">
         <h1>About & Contact</h1>
     </section>
+</div>
+
+<div class="blog">
+    <article class='page hidden'>
+        <div class='big-image'></div>
+        <div class='content'>
+            <h3 class='byline'>
+                      Published <time></time> by <span class='author'></span>
+                    </h3>
+                  <h1 class='title'></h1>
+                  <h2 class='description'></h2>
+                  <div class='text'></div>
+        </div>
+    </article>
 </div>
 
 {% include scripts.html %}

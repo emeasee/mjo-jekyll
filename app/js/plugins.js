@@ -52,8 +52,12 @@ ArticleAnimator.load = function(){
   this.currentPostIndex = getURLIndex();
   this.makeSelections();
 
-  $body.append( this.$current );
-  $body.append( this.$next );
+  $body.css({
+    overflow: 'hidden'
+  }).find(".dark").fadeIn('fast');
+
+  $body.find(".blog").addClass('open').append( this.$current );
+  $body.find(".blog").append( this.$next );
 
   var self = this;
   this.createPost({ type: 'current' }, function(){
@@ -63,7 +67,7 @@ ArticleAnimator.load = function(){
       self.refreshCurrentAndNextSelection();
 
       /* Push initial on to stack */
-      history.pushState(pageState(), '', '#' + self.currentPostIndex);
+      //history.pushState(pageState(), '', '#' + self.currentPostIndex);
 
       /* Bind to some events. */
       self.bindGotoNextClick();
@@ -105,7 +109,7 @@ ArticleAnimator.createPost = function(opts, callback){
   var type  = opts['type'] || 'next';
 
   if ( opts['fromTemplate'] ){
-    $body.append( this.nextElementClone() );
+    $body.find(".blog").append( this.nextElementClone() );
     this['$' + type] = $('.' + type);
   }
 
@@ -216,7 +220,7 @@ function elementToTemplate($element){
 }
 
 function scrollTop(){
-  $body.add($html).scrollTop(0);
+  $body.find(".blog").add($html).scrollTop(0);
 }
 
 function pageState(){

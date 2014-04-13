@@ -37,9 +37,9 @@ $(document).ready(function(){
     if($('article.proj').length){
         $('article.proj').each(function(index){
             var d = $(this);
-            d.find('h1').pin({containerSelector: d});
+            d.find('h1').pin({containerSelector: d,minWidth: 860});
         });
-        $('section.posts h1').pin({containerSelector: 'section.posts'});
+        $('section.posts h1').pin({containerSelector: 'section.posts', minWidth: 860});
     }
 
     showLatestBlogTitles(numPosts);
@@ -48,10 +48,27 @@ $(document).ready(function(){
         event.preventDefault();
         /* Act on the event */
         $('.cover').addClass('open');
+        $('#middle').addClass('info-open')
     });
 
     $(window).scroll(function(){
         var $top = $($window).scrollTop();
         $('#slide .scroll').css('opacity', 1 - (($top - ($browser_height * 0.25)) / ($browser_height * 0.8)));
+    });
+
+    $('#blog').on('click', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        ArticleAnimator.load();
+    });
+
+    $(".dark").on('click', function(event) {
+        event.preventDefault();
+        $body.css({
+            overflow: 'auto'
+        });
+        $("div.blog").removeClass('open');
+        $("div.dark").fadeOut('fast');
+        $(".page.current, .page.next").remove();
     });
 });

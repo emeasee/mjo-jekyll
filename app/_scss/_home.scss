@@ -1,0 +1,59 @@
+#middle{
+    width: 100%;
+    position:relative;
+    z-index: 99;
+    padding: $base-line-height * 2;
+    padding-left: 100px;
+    @include transition (padding-left 0.2s ease-in-out);
+    section{
+        text-align: left;
+        margin: 0 auto;
+        article{
+          height: 100%;
+          padding-bottom: 2.5em;
+          ul{
+            display: block;
+            height: 100%;
+            margin:0;
+            padding: 0;
+            overflow:auto;
+            clear:both;
+          }
+        }  
+    }
+    #info{
+      position: fixed;
+      left: 10px;
+      top: 10px;
+      z-index: 10; 
+    }
+    #blog{
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      z-index: 10; 
+    }
+    &.info-open{
+      padding-left: 300px;
+    }
+}
+
+.project{
+  z-index: auto;
+}
+
+.blog{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 800px;
+  height: 100%;
+  z-index: 999;
+  background: white;
+  overflow: scroll;
+  right: -$large-screen;
+  @include transition (right 0.2s ease-in-out);
+  &.open{
+    right: 0;
+  }
+}
