@@ -54,10 +54,10 @@ ArticleAnimator.load = function(){
 
   $body.css({
     overflow: 'hidden'
-  }).find(".dark").fadeIn('fast');
+  }).find('.dark').fadeIn('fast');
 
-  $body.find(".blog").addClass('open').append( this.$current );
-  $body.find(".blog").append( this.$next );
+  $body.find('.blog').addClass('open').append( this.$current );
+  $body.find('.blog').append( this.$next );
 
   var self = this;
   this.createPost({ type: 'current' }, function(){
@@ -109,7 +109,7 @@ ArticleAnimator.createPost = function(opts, callback){
   var type  = opts['type'] || 'next';
 
   if ( opts['fromTemplate'] ){
-    $body.find(".blog").append( this.nextElementClone() );
+    $body.find('.blog').append( this.nextElementClone() );
     this['$' + type] = $('.' + type);
   }
 
@@ -220,7 +220,7 @@ function elementToTemplate($element){
 }
 
 function scrollTop(){
-  $body.find(".blog").add($html).scrollTop(0);
+  $body.find('.blog').add($html).scrollTop(0);
 }
 
 function pageState(){

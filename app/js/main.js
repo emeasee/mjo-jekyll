@@ -48,7 +48,7 @@ $(document).ready(function(){
         event.preventDefault();
         /* Act on the event */
         $('.cover').addClass('open');
-        $('#middle').addClass('info-open')
+        $('#middle').addClass('info-open');
     });
 
     $(window).scroll(function(){
@@ -62,13 +62,13 @@ $(document).ready(function(){
         ArticleAnimator.load();
     });
 
-    $(".dark").on('click', function(event) {
+    $('.dark').on('click', function(event) {
         event.preventDefault();
         $body.css({
             overflow: 'auto'
         });
-        $("div.blog").removeClass('open');
-        $("div.dark").fadeOut('fast');
-        $(".page.current, .page.next").remove();
+        $('div.blog').removeClass('open');
+        $('div.dark').fadeOut('fast');
+        $('.page.current, .page.next').remove();
     });
 });
