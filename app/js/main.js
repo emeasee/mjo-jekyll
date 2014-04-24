@@ -34,13 +34,6 @@ $(document).ready(function(){
     if($('.imgs').length){
         $('.imgs a').fluidbox();
     }
-    if($('article.proj').length){
-        $('article.proj').each(function(index){
-            var d = $(this);
-            d.find('h1').pin({containerSelector: d,minWidth: 640});
-        });
-        $('section.posts h1').pin({containerSelector: 'section.posts', minWidth: 640});
-    }
 
     showLatestBlogTitles(numPosts);
 
