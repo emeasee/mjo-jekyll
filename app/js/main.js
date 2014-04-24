@@ -35,6 +35,29 @@ $(document).ready(function(){
         $('.imgs a').fluidbox();
     }
 
+    $('.slider').royalSlider({
+        addActiveClass: true,
+            arrowsNav: false,
+            controlNavigation: 'none',
+            autoScaleSlider: true, 
+            autoScaleSliderWidth: 960,     
+            autoScaleSliderHeight: 640,
+            loop: true,
+            fadeinLoadedSlide: false,
+            globalCaption: false,
+            keyboardNavEnabled: false,
+            globalCaptionInside: false,
+
+            visibleNearby: {
+              enabled: true,
+              centerArea: 0.65,
+              center: true,
+              breakpoint: 650,
+              breakpointCenterArea: 0.8,
+              navigateByCenterClick: true
+            }
+    });
+
     showLatestBlogTitles(numPosts);
 
     $('#info').on('click', function(event) {
