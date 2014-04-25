@@ -50,7 +50,7 @@ $(document).ready(function(){
 
             visibleNearby: {
               enabled: true,
-              centerArea: 0.65,
+              centerArea: 0.5,
               center: true,
               breakpoint: 650,
               breakpointCenterArea: 0.8,
@@ -69,7 +69,7 @@ $(document).ready(function(){
 
     $(window).scroll(function(){
         var $top = $($window).scrollTop();
-        $('#slide .scroll').css('opacity', 1 - (($top - ($browser_height * 0.25)) / ($browser_height * 0.8)));
+        $('#slide .scroll').css('opacity', 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8)));
     });
 
     $('#blog').on('click', function(event) {

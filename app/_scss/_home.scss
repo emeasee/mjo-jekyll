@@ -2,7 +2,7 @@
     width: 100%;
     position:relative;
     z-index: 99;
-    padding: $base-line-height * 2 0;
+    margin: $base-line-height * 10 0 $base-line-height * 2 0;
     @include transition (padding-left 0.2s ease-in-out);
     section{
         text-align: left;
@@ -15,7 +15,6 @@
             height: 600px;
             .slide{
               max-width: 600px;
-              //height: 600px;
               margin: 0 auto;
             }
           }
