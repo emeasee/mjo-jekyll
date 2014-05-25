@@ -16,7 +16,31 @@
             .slide{
               max-width: 600px;
               margin: 0 auto;
+              @include vertical-align;
             }
+            .label{
+              height: 600px;
+              p{
+                @include vertical-align;
+                padding: 0 $base-line-height * 2;
+                font-size: 1.3em;
+                line-height: auto;
+                text-align: center;
+              }
+            }
+          }
+          .rsArrow{
+            height: 100%;
+            width: 25%;
+            position: absolute;
+          }
+          .rsArrowRight{
+            right: 0px;
+            cursor: e-resize;
+          }
+          .rsArrowLeft{
+            left: 0px;
+            cursor: w-resize;
           }
         }  
     }

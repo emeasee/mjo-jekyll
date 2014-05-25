@@ -36,8 +36,11 @@ $(document).ready(function(){
     }
 
     $('.slider').royalSlider({
-        addActiveClass: true,
-            arrowsNav: false,
+            addActiveClass: true,
+            arrowsNav: true,
+            arrowsNavAutoHide:false,
+            navigateByClick: false,
+            sliderDrag: false,
             controlNavigation: 'none',
             autoScaleSlider: true,
             autoScaleSliderWidth: 960,
