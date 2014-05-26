@@ -20,12 +20,26 @@
             }
             .label{
               height: 600px;
+              border: 5px solid $light-gray;
               p{
                 @include vertical-align;
                 padding: 0 $base-line-height * 2;
                 font-size: 1.3em;
                 line-height: auto;
                 text-align: center;
+                span{
+                  display: block;
+                  font-weight: 700;
+                  width: 100%;
+                  margin-bottom: $base-line-height;
+                }
+                a.button{
+                  @extend %button;
+                  display: block;
+                  width: 40%;
+                  margin: 0 auto;
+                  margin-top: $base-line-height;
+                }
               }
             }
           }
@@ -68,12 +82,12 @@
 .blog{
   position: fixed;
   top: 0;
-  width: 80%;
+  width: 50%;
   height: 100%;
   z-index: 999;
   background: white;
   overflow: scroll;
-  right: -80%;
+  right: -50%;
   @include transition (right 0.2s ease-in-out);
   &.open{
     right: 0;

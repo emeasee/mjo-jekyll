@@ -4,4 +4,8 @@
   font-size: $base-font-size;
   font-weight: bold;
   line-height: 1em;
+  border: 0;
+  box-shadow: none;
+  background: $base-accent-color;
+  text-shadow:none;
 }
