@@ -78,7 +78,7 @@ $(document).ready(function(){
         $('section.about').addClass('open');
     });
 
-    $(".close,section").on('click', function(event) {
+    $('.close,section').on('click', function(event) {
         event.preventDefault();
         $(this).parent().removeClass('open');
     });
