@@ -4,6 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-10
+image: 
 ---
 
 Never in my life have I had hot glue burns and brown fingers from soil until this project!

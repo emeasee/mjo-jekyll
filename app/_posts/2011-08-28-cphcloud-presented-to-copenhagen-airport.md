@@ -3,6 +3,7 @@ title: CPHCloud presented to Copenhagen Airport
 author: Mac
 layout: post
 date: 2011-08-28
+image: 
 ---
 
 Just a quick update to say that the Service Design course at CIID has officially drawn to close with the whole class presenting their work over the past month back to the airport. A bit congratulations to everyone involved! It went down really well!

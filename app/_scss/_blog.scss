@@ -1,3 +1,14 @@
+h3.logo{
+  position: absolute;
+  top:0;
+  color: $yellow;
+  margin-left: $base-line-height * 3;
+  margin-top: $base-line-height * 4;
+  display: block;
+  font-size: $base-font-size * 1.5;
+  border-bottom: 3px solid $yellow;
+}
+
 article.page{
     -webkit-transform-origin:bottom center;
     font-size: 1.3em;
@@ -7,6 +18,12 @@ article.page{
     &.next{
       .big-image { cursor:pointer; } 
       .big-image .inner { opacity: 1; } 
+    }
+
+    &.current{
+      .big-image{
+        display: none;        
+      }
     }
 
     &.content-hidden{
@@ -33,9 +50,16 @@ article.page{
 
     /* The content. */ 
     .content{ 
-      padding: 0 3em;
+      padding: $base-line-height * 3;
       margin:0 auto;
       max-width: 1140px;
+      margin-left: $base-line-height * 2;
+      .title{
+        font-size: $base-font-size * 3;
+      }
+      .text{
+
+      }
     }
 
   }

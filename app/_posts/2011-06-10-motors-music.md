@@ -3,6 +3,7 @@ title: 'Motors &#038; Music'
 author: Mac
 layout: post
 date: 2011-06-10
+image: 
 ---
 
 We have been lucky enough to have [Bill Verplank][1] teaching us for the past week or so. Its been great to talk to him although he&#8217;s one of those people that you just listen too I think!

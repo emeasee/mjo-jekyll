@@ -3,6 +3,7 @@ title: People-Centered Design
 author: Mac
 layout: post
 date: 2011-03-09
+image: 
 ---
 Some images from mid-week work on the People-Centered Design Module at [CIID][1]
 

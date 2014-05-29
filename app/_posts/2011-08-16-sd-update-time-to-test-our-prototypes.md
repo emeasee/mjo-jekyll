@@ -3,6 +3,7 @@ title: 'SD Update: Time to test our prototypes'
 author: Mac
 layout: post
 date: 2011-08-16
+image: 
 ---
 
 *Here&#8217;s another update from the field.  

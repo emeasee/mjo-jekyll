@@ -18,13 +18,14 @@ module Jekyll
   end
 
   class JSONIndexGenerator < Generator
+    include Jekyll::Filters
     safe true
     priority :lowest
     
     def generate(site)
     
       site.posts.each_with_index do |post, index|
-        jsonPost = post.id.split('/')[1] == 'help' ? render_help_json(site,post) : render_json(site,post)
+        jsonPost = render_json(site,post)
         
        
           filename = 'post_' + (index+1).to_s() + '.json'
@@ -39,22 +40,12 @@ module Jekyll
     def render_json(site, post)
       post.render( {}, site.site_payload)
       output = post.to_liquid
-      hash = JSON.parse(output.to_json)
-      hash.delete('next')
-      hash.delete('previous')
-      return hash.to_json
-    end
-
-    def render_help_json(site, post)
-      post.render( {}, site.site_payload)
-      output = post.to_liquid
       hash = {
-        "id"    => output['id'].split('/')[2],
         "title" => output['title'],
-        "lang"  => output['lang'] || 'ca',
-        "bite"  => output['bite'] || '',
-        "snack" => output['snack'] || '',
-        "meal"  => output['content']
+        "excerpt"  => output['excerpt'] || '',
+        "date" => date_to_long_string(output['date'])[0..-6],
+        #"img" => output['page']['image'] || '',
+        "content"  => output['content']
       }
       return hash.to_json
     end

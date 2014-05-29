@@ -3,6 +3,7 @@ title: Out into the Country
 author: Mac
 layout: post
 date: 2011-09-29
+image: 
 ---
 
 After yesterday&#8217;s visit to the allotments I was jumped at the opportunity to visit the Main Farm/Offices of food-box delivery service, [Aarstriderne][1]. The company has made a name for itself in Denmark through it&#8217;s effective delivery of fresh, organic, locally grown produce to the citizens of Copenhagen. From this, and two much larger farms outside of city, the business delivers to approx. 40,000 households throughout Denmark. 

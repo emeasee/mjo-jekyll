@@ -4,6 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-28
+image: 
 ---
 
 Here&#8217;s a short video I shot and edited in a day to describe the vision behind my design direction currently. 

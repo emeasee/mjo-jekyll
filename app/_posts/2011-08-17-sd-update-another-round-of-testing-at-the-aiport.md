@@ -3,6 +3,7 @@ title: 'SD Update: Another round of testing at the aiport'
 author: Mac
 layout: post
 date: 2011-08-17
+image: 
 ---
 
 *Update from the second day of Experience Prototyping at the Airport.*

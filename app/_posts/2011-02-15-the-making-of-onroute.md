@@ -3,6 +3,7 @@ title: The Making of OnRoute
 author: Mac
 layout: post
 date: 2011-02-15
+image: 
 ---
 The Making of OnRoute is a short movie showing the process of making the animated story [OnRoute][1] which was developed in the Video Prototyping Class at [CIID][2] in response to a service design project brief. 
 

@@ -1,45 +1,97 @@
+.home{
+  .last{
+    margin: 0 auto;
+    width: 100%;
+    overflow: auto;
+    article{
+      width: 33.333%;
+      padding: 4%;
+      float: left;
+      min-height: 550px;
+      text-align: left;
+      span{
+        display: block;
+        font-size: $base-font-size * 1.5;
+        width: 120px;
+        border-bottom: 3px solid $dark-gray;
+        padding-bottom: $base-line-height * 0.7;
+      }
+      a{
+        font-size: $base-font-size * 1.3;
+        margin: $base-line-height 0;
+        display: block;
+      }
+      p{
+        font-size: $base-font-size * 0.95;
+        margin: $base-line-height 0;
+        a{
+          margin:0;
+          font-size: inherit;
+        }
+      }
+      p.large{
+        font-size: $base-font-size*1.5;
+        line-height: normal;
+      }
+    }
+  }
+}
+
 #middle{
     width: 100%;
     position:relative;
     z-index: 99;
-    margin: $base-line-height * 10 0 $base-line-height * 2 0;
+    margin: $base-line-height * 10 0 $base-line-height * 3 0;
     @include transition (padding-left 0.2s ease-in-out);
     section{
         text-align: left;
         margin: 0 auto;
         article{
           height: 100%;
-          padding-bottom: 2.5em;
           .slider{
             width: 100%;
             height: 600px;
-            .slide{
-              max-width: 600px;
-              margin: 0 auto;
-              @include vertical-align;
-            }
-            .label{
-              height: 600px;
-              border: 5px solid $light-gray;
-              p{
+            .rsSlide{
+              .slide{
+                max-width: 600px;
+                margin: 0 auto;
                 @include vertical-align;
-                padding: 0 $base-line-height * 2;
-                font-size: 1.3em;
-                line-height: auto;
-                text-align: center;
-                span{
-                  display: block;
-                  font-weight: 700;
-                  width: 100%;
-                  margin-bottom: $base-line-height;
+              }
+              .label{
+                height: 600px;
+                border: 1px solid $light-gray;
+                @include transition (background-color, 0.5s, ease-in-out);
+                p{
+                  @include vertical-align;
+                  padding: 0 $base-line-height * 2;
+                  font-size: $base-font-size * 1.3;
+                  line-height: auto;
+                  text-align: center;
+                  span{
+                    display: block;
+                    font-weight: 700;
+                    width: 100%;
+                    margin-bottom: $base-line-height;
+                  }
+                  a.button{
+                    @extend %button;
+                    display: block;
+                    width: 40%;
+                    margin: 0 auto;
+                    margin-top: $base-line-height;
+                    background: white;
+                  }
                 }
-                a.button{
-                  @extend %button;
-                  display: block;
-                  width: 40%;
-                  margin: 0 auto;
-                  margin-top: $base-line-height;
-                }
+              }
+            }
+          }
+          .rsActiveSlide{
+            .label{
+              background-color: $yellow;
+              border: 0!important;
+              &.update{
+                background-color: $blue;
+                color: white;
               }
             }
           }
@@ -58,36 +110,109 @@
           }
         }  
     }
-    #info{
-      position: fixed;
-      left: 10px;
-      top: 10px;
-      z-index: 10; 
-    }
-    #blog{
-      position: fixed;
-      right: 10px;
-      top: 10px;
-      z-index: 10; 
-    }
-    &.info-open{
-      padding-left: 22%;
-    }
 }
 
-.project{
+nav{
+  position: fixed;
+  width:100%;
+  z-index: 100;
+  .inner{
+    margin: 0 auto;
+    p{
+      margin: 0 auto;
+      width: 100%;
+      white-space: nowrap;
+      text-align: center;
+      span{
+        color: $dark-gray;
+        cursor: pointer;
+        font-size: $base-font-size * 1.1;
+        font-weight: 700;
+        border-bottom: 3px solid $dark-gray;
+        padding-bottom: $base-line-height * 0.2;
+        margin: 0 $base-line-height / 3;
+        display: inline-block;
+        vertical-align: middle;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+    #index{
+  
+    }
+    #about{
+
+    }
+    #contact{
+
+    }
+    #blog{
+
+    }
+  }
+  &.main{
+    top:20px;
+  }
+  &.bottom{
+    bottom:20px;
+  }
+}
+
+.work{
   z-index: auto;
+}
+
+.about{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 200;
+  background: $blue;
+  visibility: hidden;
+  opacity:0;
+  text-align: center;
+  padding-top: $base-line-height * 0.85;
+  color: $base-accent-color;
+  @include transition (opacity 0.2s ease-in-out, visibility 0.2s ease-in-out);
+  &.open{
+    opacity:1;
+    visibility: visible;
+  }
+  .close{
+    color: $yellow;
+    font-size: $base-font-size * 1.1;
+    font-weight: 700;
+    border-bottom: 3px solid $yellow;
+    padding-bottom: $base-line-height * 0.2;
+    margin: 0 $base-line-height / 3;
+    cursor: pointer;
+  }
+  h1{
+    width: 50%;
+    margin: 0 auto;
+    padding: $base-line-height * 0.6;
+  }
+  article{
+    color: $base-accent-color!important;
+    span{
+      border-bottom: 3px solid $base-accent-color!important;
+    }
+  }
 }
 
 .blog{
   position: fixed;
   top: 0;
-  width: 50%;
+  width: 75%;
   height: 100%;
   z-index: 999;
-  background: white;
+  background: $blue;
+  color: white;
   overflow: scroll;
-  right: -50%;
+  right: -75%;
   @include transition (right 0.2s ease-in-out);
   &.open{
     right: 0;

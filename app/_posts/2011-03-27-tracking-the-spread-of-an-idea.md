@@ -3,6 +3,7 @@ title: Tracking the Spread of an Idea
 author: Mac
 layout: post
 date: 2011-03-27
+image: 
 ---
 [<img src="/attach/1.jpeg" alt="" title="1" width="600" height="313" class="alignnone size-full wp-image-1914" />][1] 
 As part of a module at CIID we focused specifically on data visualisation as a means to learn the skills used for data gathering, analysis and distillation. We were challenged to find veritable, relevant data sets that we could use as a medium for not only building software skills but also to tell a story. A story that doesn&#8217;t need spreadsheet software or database management tools to access nor understand.

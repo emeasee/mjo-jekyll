@@ -1,22 +1,16 @@
-.cover{
+.index{
     margin:0 auto;
     position:fixed;
     z-index: 100;
     background:white;
     height: 100%;
-    left:-300px;
-    width: 300px;
+    left:-25%;
+    width: 25%;
     @include transition(left 0.2s ease-in-out);
-    p{
-      font-size: 1.2em;
-      letter-spacing: 1px;
-      line-height: normal;
-      max-width: 1500px;
-      a{
-        text-decoration: none;
-      }
-      a::after{
-        content:'\2014\00A0';
+    ul{
+      padding: $base-line-height * 3.5;
+      li{
+        font-size: $base-font-size * 2;
       }
     }
     &.open{
@@ -33,14 +27,18 @@
         position: fixed;
         width: 100%;
         height: 100%;
-        background: #FF7101;
+        background: $base-accent-color;
         display: table;
         p{
-          font-size: 10em;
+          font-size: 3em;
+          line-height: normal;
           color: $dark-gray;
           display: table-cell;
           vertical-align: middle;
           text-align: center;
+          span{
+            font-size: 0.5em;
+          }
         }
     }
 }

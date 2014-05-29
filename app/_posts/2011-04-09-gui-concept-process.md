@@ -3,6 +3,7 @@ title: GUI Concept Process
 author: Mac
 layout: post
 date: 2011-04-09
+image: 
 ---
 So we are half-way through the GUI module here at CIID and reached a milestone in development of the concept we will be developing for the next week. 
 

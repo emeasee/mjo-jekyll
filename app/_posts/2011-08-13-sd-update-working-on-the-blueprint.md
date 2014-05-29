@@ -3,6 +3,7 @@ title: 'SD Update: Working on the Blueprint'
 author: Mac
 layout: post
 date: 2011-08-13
+image: 
 ---
 
 *Update from the studio.  

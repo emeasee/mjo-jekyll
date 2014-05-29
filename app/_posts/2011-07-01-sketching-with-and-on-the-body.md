@@ -3,6 +3,7 @@ title: Sketching with (and on) the body
 author: Mac
 layout: post
 date: 2011-07-01
+image: 
 ---
 
 Some ongoing development of our project for the Performance design course at CIID.  

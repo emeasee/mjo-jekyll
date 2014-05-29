@@ -3,6 +3,7 @@ title: TUI User Validation
 author: Mac
 layout: post
 date: 2011-05-21
+image: 
 ---
 [<img src="/attach/photo12.jpeg" alt="" title="photo12" width="600" height="400" class="alignnone size-full wp-image-1968" />][1] 
 As part of the TUI process we developed quick prototypes whose main purpose was to serve as communication tools for user validation. These quick sessions were held throughout the course of the idea development phase of the project and were closely tied to our initial user research phase by going back to the same people we had interviewed originally.

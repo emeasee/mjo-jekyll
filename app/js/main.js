@@ -14,17 +14,22 @@ $(document).ready(function(){
 
     /* Some functions */
     function showLatestBlogTitles (num) {
-        var i = 0, j = 0, el = $('section.posts article'),con;
+        var i = 0, j = 0, el = $('section.posts .last'),con;
         //Change i for desired num of posts
         function getData(post){
             $.getJSON('/json/post_'+ post +'.json', function(d){
-                con = d.title;
+                con = d;
             });
             return con;
         }
-        for (i; i < 5; i++){
-            j++;var p = num - j;
-            $('<a>').attr('href','/blog/#'+ p).text(getData(p)).appendTo(el);
+        for (i; i < 3; i++){
+            j++;var p = num - j;var post,title,date,excerpt;
+            post = $('<article>').attr('id',p);
+            title = $('<a>').text(getData(p).title);
+            date = $('<span>').attr('class','date').text(getData(p).date);
+            excerpt = getData(p).excerpt;
+            post.append(date,title,excerpt).appendTo(el);
+            console.log(getData(p));
         }
     }
 
@@ -63,11 +68,19 @@ $(document).ready(function(){
 
     showLatestBlogTitles(numPosts);
 
-    $('#info').on('click', function(event) {
+    /*$('#index').on('click', function(event) {
         event.preventDefault();
-        /* Act on the event */
-        $('.cover').addClass('open');
-        $('#middle').addClass('info-open');
+        $('.index').addClass('open');
+    });*/
+
+    $('#about').on('click', function(event) {
+        event.preventDefault();
+        $('section.about').addClass('open');
+    });
+
+    $(".close,section").on('click', function(event) {
+        event.preventDefault();
+        $(this).parent().removeClass('open');
     });
 
     $(window).scroll(function(){

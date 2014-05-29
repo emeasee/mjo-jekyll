@@ -3,6 +3,7 @@ title: 'SD Update: Coming up with the idea&#8230;'
 author: Mac
 layout: post
 date: 2011-08-10
+image: 
 ---
 
 *Here&#8217;s a quick update from the front.  

@@ -3,6 +3,7 @@ title: What if a fruit bowl could follow you?
 author: Mac
 layout: post
 date: 2011-05-24
+image: 
 ---
 
 As part of our idea development phase on the Tangible User Interface module at CIID it became increasingly necessary to express our concepts on a medium that could talk more about the interaction and response of the ideas we were only capturing on paper. Sketching is great but when your trying to describe the idea of a fruit bowl that follows you around your kitchen, things get a bit more tricky. 

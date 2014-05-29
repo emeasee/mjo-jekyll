@@ -4,6 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-28
+image: 
 ---
 
 <img alt="" src="/attach/IMG_8175.jpeg" class="alignleft" width="600" height="400" /> 

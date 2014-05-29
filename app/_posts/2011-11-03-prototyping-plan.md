@@ -4,6 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-03
+image: 
 ---
 
 Just finished the prototyping plan for this week and next. Six prototypes planned in all, each one slightly different from another but all using the service I&#8217;ve mentioned before as a core. The box will (hopefully) focus the prototypes a bit and help me get them done in such a such a short space of time so as to not get stuck in trying to design the perfect box! 

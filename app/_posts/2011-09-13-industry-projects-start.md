@@ -3,6 +3,7 @@ title: Industry Projects start!
 author: Mac
 layout: post
 date: 2011-09-13
+image: 
 ---
 
 The Industry Projects have started here at CIID. First up are CIID sponsors Velux and Novo Nordisk in which the class is split to work on either one they wish. 
