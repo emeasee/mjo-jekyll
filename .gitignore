@@ -38,3 +38,4 @@ dist
 node_modules
 .tmp
 app/_drafts
+vendor
