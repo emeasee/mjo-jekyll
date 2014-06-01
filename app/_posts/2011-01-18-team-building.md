@@ -3,7 +3,7 @@ title: Team Building
 author: Mac
 layout: post
 date: 2011-01-18
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 <p>Team Building Week at CIID was less of the sitting around the campfire and sharing stories than it was getting down to some real mentally (and physically) engaging design madness. Simon from the KaosPilots didn&#8217;t hold back. We were immediately given the responsibility of a Live project in which we were asked to deliver a final design concept/opportunity based around one word, Horizontality. It wouldn&#8217;t be fair of me to reveal too much of the weeks activities but it would suffice to say that it was one of the best collaborative creative weeks of my short life so far. </p>
 <a href="/attach/IMG_0937.jpg"><img src="/attach/IMG_0937.jpg" /></a>

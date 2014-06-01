@@ -3,7 +3,7 @@ title: New video. New series?
 author: Mac
 layout: post
 date: 2011-09-04
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 Finally finished cutting together a new short video about the activities around [CIID][1]. This one from the GUI course about four months ago. Time flies indeed!

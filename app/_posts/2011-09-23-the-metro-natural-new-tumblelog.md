@@ -3,7 +3,7 @@ title: 'The Metro Natural: New tumblelog'
 author: Mac
 layout: post
 date: 2011-09-23
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 Just a quick note. In the process of conducting my initial desk/literary research I have set up a tumblelog to capture a bit of a visual focus for the area that I&#8217;m looking at for my thesis. 

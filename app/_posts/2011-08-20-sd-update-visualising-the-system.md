@@ -3,7 +3,7 @@ title: 'SD Update: Visualising the system'
 author: Mac
 layout: post
 date: 2011-08-20
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 Our concept is shaping up quite nicely now thanks to the effort put in from all the passengers we engaged in experience prototyping. Firstly a big thanks to them and all the staff again at CPH for all their invaluable help in accommodating us the past week. My colleagues are busy preparing for the presentation we will be giving this coming Friday and I&#8217;ve been busy preparing the supplementary information that we will be providing in support of our presentation.

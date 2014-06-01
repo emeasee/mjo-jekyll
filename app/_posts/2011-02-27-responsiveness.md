@@ -3,7 +3,7 @@ title: Responsiveness
 author: Mac
 layout: post
 date: 2011-02-27
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 The responsiveness of a computer system is bound by rules and conventions. Conventions to reflect our best interests in using the computer system for semi-abstract task. But what if they could reflect our behaviour and interaction with digital media and workspace akin to a conversation between you and a friend?
 

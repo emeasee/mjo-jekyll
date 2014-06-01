@@ -3,7 +3,7 @@ title: Abstraction
 author: Mac
 layout: post
 date: 2011-05-25
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 As part of our development process on the Tangible User Interface course at [CIID][1] we, as a group, decided to video prototype a lot of our concept ideas instead of sketching, as implemented traditional in disciplines such as Industrial Design, because we needed to be able to quickly make design decisions through an iterative storytelling process. This process quickly highlighted many pitfalls including one important, overlooked issue. The balance of abstraction. Below are the three films produced to explain three different concepts, each dealing with a different design opportunity identified in our user research.

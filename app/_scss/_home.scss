@@ -69,15 +69,15 @@
               }
 
               .label{
-                height: 600px;
                 border: 1px solid $light-gray;
-                @include transition (background-color, 0.5s, ease-in-out);
+                height: 600px;
+                @include transition (background-color, .5s, ease-in-out);
 
                 p{
                   @include vertical-align;
-                  padding: 0 $base-line-height * 2;
                   font-size: $base-font-size * 1.3;
                   line-height: auto;
+                  padding: 0 $base-line-height * 2;
                   text-align: center;
 
                   span{
@@ -231,26 +231,5 @@ nav{
     span{
       border-bottom: 3px solid $base-accent-color!important;
     }
-  }
-}
-
-.blog{
-  background: $blue;
-  color: #fff;
-  height: 100%;
-  overflow-y: scroll;
-  position: fixed;
-  right: -100%;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  @include transition (right .2s ease-in-out);
-  &.open{
-    right: 0;
-  }
-
-  @include media($large-screen){
-    width: 75%;
-    right: -75%;
   }
 }

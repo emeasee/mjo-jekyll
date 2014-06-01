@@ -3,7 +3,7 @@ title: Service Design for the Airport!
 author: Mac
 layout: post
 date: 2011-08-06
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 A major new module in the CIID education just started an our focus for it is designing services in partnership with Copenhagen Airport. The class are expected to integrate into the complex system of the airport having been graciously given security clearance to conduct research both air-side and land-side. This amazing opportunity gives us the chance to conduct rich user research and grants us access to both passengers and staff for co-creation sessions and user testing of service touchpoint prototypes. 

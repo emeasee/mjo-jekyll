@@ -3,7 +3,7 @@ title: 'reMove &#8211; 1 day city layers exploration'
 author: Mac
 layout: post
 date: 2011-07-10
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 As part of the Systems and Layers Course here at CIID we were asked to explore the nature of an existing information output in the city and think about an intervention that would add value on a city scale for its citizens.

@@ -4,7 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-28
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 <img alt="" src="/attach/IMG_8175.jpeg" class="alignleft" width="600" height="400" /> 

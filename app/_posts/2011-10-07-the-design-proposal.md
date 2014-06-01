@@ -4,7 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-10-07
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 The latter part of this week was spent mostly pulling together my research, initial ideas and concepts from multiple brainstorming sessions and the final result is my design proposal below. It&#8217;s not deep by any means but I feel it is a good enough point to start exploring with prototypes proceeding week four (I&#8217;m currently finalising plans for prototyping in Paris!). 

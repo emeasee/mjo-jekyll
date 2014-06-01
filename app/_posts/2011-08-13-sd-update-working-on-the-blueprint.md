@@ -3,7 +3,7 @@ title: 'SD Update: Working on the Blueprint'
 author: Mac
 layout: post
 date: 2011-08-13
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 *Update from the studio.  

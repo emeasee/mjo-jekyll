@@ -3,7 +3,7 @@ title: People-Centered Design
 author: Mac
 layout: post
 date: 2011-03-09
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 Some images from mid-week work on the People-Centered Design Module at [CIID][1]
 

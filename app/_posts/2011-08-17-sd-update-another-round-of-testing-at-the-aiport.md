@@ -3,7 +3,7 @@ title: 'SD Update: Another round of testing at the aiport'
 author: Mac
 layout: post
 date: 2011-08-17
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 *Update from the second day of Experience Prototyping at the Airport.*

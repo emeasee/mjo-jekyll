@@ -4,7 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-10
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 Never in my life have I had hot glue burns and brown fingers from soil until this project!

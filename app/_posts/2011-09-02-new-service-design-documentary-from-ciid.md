@@ -3,7 +3,7 @@ title: New Service Design Documentary from CIID
 author: Mac
 layout: post
 date: 2011-09-02
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 &#8220;As part of the Interaction Design Programme CIID ran a 4 week service design course in Collaboration with Copenhagen Airport (CPH). The idea was to envision new experiences for the different kinds of people who use the airport.

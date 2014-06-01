@@ -3,7 +3,7 @@ title: Sketching with (and on) the body
 author: Mac
 layout: post
 date: 2011-07-01
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 Some ongoing development of our project for the Performance design course at CIID.  

@@ -3,7 +3,7 @@ title: Urban Sensor ISO Presentation
 author: Mac
 layout: post
 date: 2011-07-17
-image: 
+image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---
 
 Here&#8217;s the presentation we prepared for the Systems & Layers course at CIID to present the work we (me and Josh Noble) have been doing the past week. Hopefully the presentation is self explanatory!

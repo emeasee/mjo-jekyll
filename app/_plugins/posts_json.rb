@@ -21,22 +21,22 @@ module Jekyll
     include Jekyll::Filters
     safe true
     priority :lowest
-    
+
     def generate(site)
-    
+
       site.posts.each_with_index do |post, index|
         jsonPost = render_json(site,post)
-        
-       
+
+
           filename = 'post_' + (index+1).to_s() + '.json'
           filename.sub!(/^\//, '')
           dir = '/json'
-        
+
 
         site.pages << JSONIndex.new(site, site.source, dir, filename, jsonPost)
       end
     end
-    
+
     def render_json(site, post)
       post.render( {}, site.site_payload)
       output = post.to_liquid
@@ -44,7 +44,7 @@ module Jekyll
         "title" => output['title'],
         "excerpt"  => output['excerpt'] || '',
         "date" => date_to_long_string(output['date'])[0..-6],
-        #"img" => output['page']['image'] || '',
+        "image" => output['image'] || '',
         "content"  => output['content']
       }
       return hash.to_json
