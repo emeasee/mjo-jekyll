@@ -6,12 +6,12 @@ article{
   overflow: auto;
   h1{
     display: block;
-    margin:0;
-    padding:80px 0;
+    margin: 0;
+    padding: 80px 0;
     z-index: -1;
   }
   h2{
-    padding-bottom:5em;
+    padding-bottom: 5em;
   }
 }
 
@@ -29,12 +29,12 @@ article{
 
 .dark{
   position: fixed;
-  top:0;
-  bottom:0;
-  right:0;
-  left:0;
-  background: white;
-  opacity:0.8;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #fff;
+  opacity: .8;
   z-index: 100;
   display: none;
 }

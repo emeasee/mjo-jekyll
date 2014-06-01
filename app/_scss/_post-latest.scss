@@ -1,33 +1,41 @@
 .posts{
   overflow: auto;
+  
   h1{
     display: block;
     margin: 0;
     padding: 0 0 60px 0;
     text-align: center;
   }
+
   .last{
     border: 1px solid $light-gray;
     cursor: pointer;
+
     article{
       border-right: 1px solid $light-gray;
       cursor: pointer;
+
       span{
         width: 80px;
       }
+
       a{
         color: $dark-gray;
         text-decoration: none!important;
       }
+
       &:last-child{
         border: 0;
       }
       &:hover{
         background: $light-gray;
+
         a{
           font-weight: 700;
           color: $blue;
         }
+
         p{
           color: $dark-gray;
         }
