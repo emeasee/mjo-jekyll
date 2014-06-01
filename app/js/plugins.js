@@ -124,7 +124,7 @@ ArticleAnimator.createPost = function(opts, callback){
 ArticleAnimator.contentizeElement = function($el, d){
   $el.find('.big-image').css({ backgroundImage: 'url(' + d.image + ')' });
   $el.find('h1.title').html(d.title);
-  //$el.find('h2.description').html(d.title_secondary);
+  $el.find('h2.description').html(d.excerpt);
   $el.find('.content .text').html(d.content);
   //$el.find('h3.byline time').html(d.date);
 };
@@ -136,6 +136,8 @@ ArticleAnimator.animatePage = function(callback){
 
   this.$current.addClass('fade-up-out');
 
+  $body.find('.blog h3.logo').removeClass('down');
+
   this.$next.removeClass('content-hidden next')
        .addClass('easing-upward')
        .css({ 'transform': 'translate3d(0, -'+ (translationValue+300) +'px, 0)' });
@@ -143,6 +145,7 @@ ArticleAnimator.animatePage = function(callback){
   setTimeout(function(){
       scrollTop();
       self.$next.removeClass('easing-upward');
+      $body.find('.blog h3.logo').addClass('down');
       self.$current.remove();
 
       self.$next.css({ 'transform': '' });

@@ -26,7 +26,7 @@ linters:
   Indentation:
     enabled: false
   LeadingZero:
-    enabled: true
+    enabled: false
   MergeableSelector:
     enabled: true
   NameFormat:
