@@ -67,7 +67,7 @@ ArticleAnimator.load = function(){
       self.refreshCurrentAndNextSelection();
 
       /* Push initial on to stack */
-      //history.pushState(pageState(), '', '#' + self.currentPostIndex);
+      history.pushState(pageState(), '', '#' + self.currentPostIndex);
 
       /* Bind to some events. */
       self.bindGotoNextClick();

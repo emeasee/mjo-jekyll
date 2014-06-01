@@ -29,7 +29,7 @@ $(document).ready(function(){
             date = $('<span>').attr('class','date').text(getData(p).date);
             excerpt = getData(p).excerpt;
             post.append(date,title,excerpt).appendTo(el);
-            console.log(getData(p));
+            //console.log(getData(p));
         }
     }
 
@@ -72,6 +72,11 @@ $(document).ready(function(){
         event.preventDefault();
         $('.index').addClass('open');
     });*/
+
+    //TODO: Change to read URL simply. This does not work
+    if(history.state !== null){
+        $body.find('.blog').addClass('open');
+    }
 
     $('#about').on('click', function(event) {
         event.preventDefault();
