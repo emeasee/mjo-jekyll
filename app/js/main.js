@@ -11,6 +11,7 @@ $(document).ready(function(){
     $window = $(window);
     $html = $(document.documentElement);
     $browser_height = $(window).height();
+    $scrolled = false;
 
     /* Some functions */
     function showLatestBlogTitles (num) {
@@ -33,6 +34,11 @@ $(document).ready(function(){
         }
     }
 
+    function scrollToPlace($el){
+        $('html, body').animate({
+            scrollTop: $('#' + $el).offset().top
+        }, 400);
+    }
 
 
 /************ Time for the show! ***********/
@@ -97,9 +103,14 @@ $(document).ready(function(){
     });
 
     $(window).scroll(function(){
-        var $top = $($window).scrollTop();
+        var $top = $($window).scrollTop(), $scrolledPast = ($top > 2000 ? true : false);
         var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
         $('#slide .scroll p').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
+        if ($scrolledPast === false){
+            $('#scroll','nav.bottom').unbind('click').text('Work').on('click', function(){scrollToPlace('middle')});
+        } else if ($scrolledPast === true ){
+            $('#scroll','nav.bottom').unbind('click').text('Top').on('click', function(){scrollToPlace('slide')});
+        }
     });
 
     $('#blog').on('click', function(event) {

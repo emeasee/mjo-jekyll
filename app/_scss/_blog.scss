@@ -97,12 +97,15 @@ article.page{
         height: 100%;
         text-align: center;
         opacity: 0;
+        border: 40px solid $blue;
         @include transition(all 0.6s ease);
 
         .fader{
-          background: rgba($blue, 0.6);
+          background: rgba($blue, 0.9);
           height: 100%;
           width: 100%;
+          //border: 3px solid #fff;
+          @include transition(all 0.6s ease);
 
           .text{
             position: absolute;
@@ -130,9 +133,18 @@ article.page{
               font-weight: normal;
               padding: 0;
               font-size: $base-font-size / 1.2;
+              width: 400px;
+              margin: 0 auto;
             }
 
           }
+        }
+        &:hover{
+            border: 0px solid $blue;
+            .fader{
+                border: 0;
+                background: rgba($blue, 0.6);
+            }
         }
       }
     }
