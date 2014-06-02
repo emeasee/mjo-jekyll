@@ -26,6 +26,7 @@ h3.logo{
 }
 
 .blog{
+  -webkit-overflow-scrolling: touch;    
   background: $blue;
   color: #fff;
   height: 100%;
