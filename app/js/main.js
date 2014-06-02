@@ -41,9 +41,9 @@ $(document).ready(function(){
     }
 
     function lockScrollDesktop(){
-        if ($html.hasClass('desktop')){
+        //if ($html.hasClass('desktop')){
           $body.css({ overflow: 'hidden' }).find('.dark').fadeIn('fast');
-        }
+        //}
     }
 
 
@@ -86,7 +86,7 @@ $(document).ready(function(){
     });*/
 
     if(window.location.hash){
-        //lockScrollDesktop();
+        lockScrollDesktop();
         ArticleAnimator.load();
         $body.find('.blog').addClass('open');
     }
@@ -105,7 +105,7 @@ $(document).ready(function(){
         var $target = $(this);
         var $id = $target.attr('id');
         history.pushState( '', '', '#' + $id);
-        //lockScrollDesktop();
+        lockScrollDesktop();
         ArticleAnimator.load();
     });
 
@@ -122,7 +122,7 @@ $(document).ready(function(){
 
     $('#blog').on('click', function(event) {
         event.preventDefault();
-        //lockScrollDesktop();
+        lockScrollDesktop();
         ArticleAnimator.load();
     });
 
