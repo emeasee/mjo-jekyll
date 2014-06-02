@@ -107,9 +107,9 @@ $(document).ready(function(){
         var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
         $('#slide .scroll p').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
         if ($scrolledPast === false){
-            $('#scroll','nav.bottom').unbind('click').text('Work').on('click', function(){scrollToPlace('middle')});
+            $('#scroll','nav.bottom').unbind('click').text('Work').on('click', function(){scrollToPlace('middle');});
         } else if ($scrolledPast === true ){
-            $('#scroll','nav.bottom').unbind('click').text('Top').on('click', function(){scrollToPlace('slide')});
+            $('#scroll','nav.bottom').unbind('click').text('Top').on('click', function(){scrollToPlace('slide');});
         }
     });
 
