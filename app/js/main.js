@@ -40,6 +40,12 @@ $(document).ready(function(){
         }, 400);
     }
 
+    function lockScrollDesktop(){
+        if ($html.hasClass('desktop')){
+          $body.css({ overflow: 'hidden' }).find('.dark').fadeIn('fast');
+        }
+    }
+
 
 /************ Time for the show! ***********/
     if($('.imgs').length){
@@ -79,8 +85,8 @@ $(document).ready(function(){
         $('.index').addClass('open');
     });*/
 
-    //TODO: Change to read URL simply. This does not work
     if(window.location.hash){
+        lockScrollDesktop();
         ArticleAnimator.load();
         $body.find('.blog').addClass('open');
     }
@@ -99,6 +105,7 @@ $(document).ready(function(){
         var $target = $(this);
         var $id = $target.attr('id');
         history.pushState( '', '', '#' + $id);
+        lockScrollDesktop();
         ArticleAnimator.load();
     });
 
@@ -115,7 +122,7 @@ $(document).ready(function(){
 
     $('#blog').on('click', function(event) {
         event.preventDefault();
-        /* Act on the event */
+        lockScrollDesktop();
         ArticleAnimator.load();
     });
 

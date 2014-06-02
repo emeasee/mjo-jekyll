@@ -1,6 +1,6 @@
 .posts{
   overflow: auto;
-  
+
   h1{
     display: block;
     margin: 0;
@@ -30,11 +30,6 @@
       }
       &:hover{
         background: $light-gray;
-
-        a{
-          font-weight: 700;
-          color: $blue;
-        }
 
         p{
           color: $dark-gray;
