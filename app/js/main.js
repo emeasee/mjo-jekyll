@@ -74,7 +74,8 @@ $(document).ready(function(){
     });*/
 
     //TODO: Change to read URL simply. This does not work
-    if(history.state !== null){
+    if(window.location.hash){
+        ArticleAnimator.load();
         $body.find('.blog').addClass('open');
     }
 
@@ -88,9 +89,17 @@ $(document).ready(function(){
         $(this).parent().removeClass('open');
     });
 
+    $('section.posts .last article').on('click', function(event){
+        var $target = $(this);
+        var $id = $target.attr('id');
+        history.pushState( '', '', '#' + $id);
+        ArticleAnimator.load();
+    });
+
     $(window).scroll(function(){
         var $top = $($window).scrollTop();
-        $('#slide .scroll').css('opacity', 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8)));
+        var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
+        $('#slide .scroll p').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
     });
 
     $('#blog').on('click', function(event) {
@@ -107,5 +116,6 @@ $(document).ready(function(){
         $('div.blog').removeClass('open');
         $('div.dark').fadeOut('fast');
         $('.page.current, .page.next').remove();
+        history.pushState( '', '', ' ');
     });
 });

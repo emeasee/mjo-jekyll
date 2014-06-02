@@ -45,6 +45,7 @@
 
 #middle{
     @include transition (padding-left .2s ease-in-out);
+    background: #fff;
     margin: $base-line-height * 10 0 $base-line-height * 3;
     position: relative;
     width: 100%;
@@ -191,32 +192,33 @@ nav{
 }
 
 .about{
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  background: $blue;
-  visibility: hidden;
-  opacity: 0;
-  text-align: center;
-  padding-top: $base-line-height * .85;
-  color: $base-accent-color;
   @include transition (opacity .2s ease-in-out, visibility .2s ease-in-out);
+  background: $blue;
+  bottom: 0;
+  color: $base-accent-color;
+  left: 0;
+  opacity: 0;
+  padding-top: $base-line-height * .85;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  visibility: hidden;
+  z-index: 200;
+
   &.open{
     opacity: 1;
     visibility: visible;
   }
 
   .close{
+    border-bottom: 3px solid $yellow;
     color: $yellow;
+    cursor: pointer;
     font-size: $base-font-size * 1.1;
     font-weight: 700;
-    border-bottom: 3px solid $yellow;
-    padding-bottom: $base-line-height * .2;
     margin: 0 $base-line-height / 3;
-    cursor: pointer;
+    padding-bottom: $base-line-height * .2;
   }
 
   h1{
