@@ -46,8 +46,16 @@ $(document).ready(function(){
         //}
     }
 
+    function initCover(){
+        Background();
+    }
+
 
 /************ Time for the show! ***********/
+    if($('#canvas').length){
+        initCover();
+    }
+
     if($('.imgs').length){
         $('.imgs a').fluidbox();
     }
@@ -112,7 +120,7 @@ $(document).ready(function(){
     $(window).scroll(function(){
         var $top = $($window).scrollTop(), $scrolledPast = ($top > 2000 ? true : false);
         var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
-        $('#slide .scroll p').css({'opacity': $num, 'transform': 'scale(' + $num + ') translateY(-50%)'});
+        $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
         if ($scrolledPast === false){
             $('#scroll','nav.bottom').unbind('click').text('Work').on('click', function(){scrollToPlace('middle');});
         } else if ($scrolledPast === true ){
