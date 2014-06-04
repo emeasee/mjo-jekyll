@@ -1,4 +1,4 @@
-// THREE
+/*jshint ignore:start*/
 var Background = function() {
 
   ///////////////////////////////////////
@@ -272,3 +272,4 @@ var Background = function() {
 
   constructor();
 };
+/*jshint ignore:end*/
