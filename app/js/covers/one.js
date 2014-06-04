@@ -1,5 +1,5 @@
 /*jshint ignore:start*/
-var Background = function() {
+var background = function() {
 
   ///////////////////////////////////////
 

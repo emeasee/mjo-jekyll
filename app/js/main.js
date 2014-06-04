@@ -47,7 +47,7 @@ $(document).ready(function(){
     }
 
     function initCover(){
-        Background();
+        background();
     }
 
 
