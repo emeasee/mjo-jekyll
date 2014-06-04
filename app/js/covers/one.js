@@ -1,4 +1,4 @@
-//This is where to code the three.js cover
+// THREE
 var Background = function() {
 
   ///////////////////////////////////////
@@ -9,28 +9,48 @@ var Background = function() {
   var renderer, scene, camera, canvas, ctx;
   var container = '#canvas';
 
-  var cUpdateID;
-  var rotAry = [];
+  var t = 0;
+  var bt = 0;
+  var lt = 0;
+
+  var tx = 0;
+  var ty = 0;
+  var mx = 0; // mouse x
+  var my = 0; // mouse y
+
+  var config = {
+      color: [ 0, 128, 255 ],
+      speed1: 0.06,
+      level:  0.02,
+      var1: 0.35,
+      var2: 0.01,
+      speed2: 0.02,
+      random: function(){
+          config.color[0] = Math.random() * 255;
+          config.color[1] = Math.random() * 255;
+          config.color[2] = Math.random() * 255;
+          config.level = Math.random();
+          config.var1 = Math.random();
+          config.var2 = Math.random();
+          config.speed1 = Math.random() * 0.2;
+          config.speed2 = Math.random() * 0.2;
+      }
+  };
+
+  var ball;
+  var ballGeometry;
+  var light;
+  var ballVertices;
+  var ballMaterial;
+
+  var light;
+
   var values = [],
     	total = 0;
   var mousePos = {
     x: 0,
     y: 0
   };
-  var cameraPos = {
-    x: 0,
-    y: 0,
-    z: 0,
-    dx: 0,
-    dy: 0,
-    dz: 0
-  };
-  var particle;
-  var pGeometry, pMaterial;
-  var pcount = 5000;
-  var dDistance = 600,
-	    dRotX = 0,
-	    dRotY = 0;
   var cameraMode = true;
   var debugMode = false;
   var defaultCamera = 'manual';
@@ -51,7 +71,7 @@ var Background = function() {
     $(container).css({visibility: 'hidden'});
 
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1500);
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.5, 15000);
     //camera.up = { x:0, y:0, z:1 };
     camera.lookAt(scene.position);
 
@@ -74,7 +94,7 @@ var Background = function() {
     canvas = $(container + ' > canvas');
     ctx = (canvas[0].getContext) ? canvas[0].getContext('2d') : 'undefined';
 
-    setupPerticle();
+    setupBeater();
     renderStart();
 };
 
@@ -83,7 +103,7 @@ var Background = function() {
     $(window).bind('resize', function(e) {
       resize(e);
     });
-  }
+};
 
   var resize = function(e) {
     ww = $(window).width();
@@ -94,83 +114,43 @@ var Background = function() {
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
-  }
+};
 
-  var setupPerticle = function() {
-    // cube
-    var g = new THREE.Geometry();
-    g.before = [];
-    g.verticesNeedUpdate = true;
+  var setupBeater = function() {
+    ballGeometry = new THREE.SphereGeometry(100, 40, 40);
+    ballMaterial = new THREE.MeshPhongMaterial({ambient: 0xffffff, color: 0xffffff})
+    ball = new THREE.Mesh(ballGeometry, ballMaterial);
 
-    for (var i = 0; i < pcount; i++) {
-			var v = new THREE.Vector3();
-      g.before[i] = [];
-
-			/*
-			v.x = Math.random() * 1000 - 500;
-			v.y = Math.random() * 1000 - 500;
-			v.z = Math.random() * 1000 - 500;
-			*/
-
-      var rand1 = Math.random();
-      var rand2 = Math.random();
-
-      var theta1 = 360 * rand1 * Math.PI / 180;
-      var theta2 = ( 180 * rand2 - 90 ) * Math.PI / 180;
-      var radius = 380;
-
-      v.x = radius * Math.cos(theta2) * Math.sin(theta1);
-      v.y = radius * Math.sin(theta2);
-      v.z = radius * Math.cos(theta2) * Math.cos(theta1);
-
-      g.before[i].t1 = rand1;
-      g.before[i].t2 = rand2;
-  		g.vertices.push(v);
+    ball.castShadow = true;
+    ball.receiveShadow = true;
+    ballVertices = ball.geometry.vertices;
+    var vertex;
+    for(var i = 0, len = ballVertices.length; i < len; i++) {
+        vertex = ballVertices[i];
+        vertex.ox = vertex.x;
+        vertex.oy = vertex.y;
+        vertex.oz = vertex.z;
     }
 
-    /*
-    // write circle
-    var mapCanvas = document.createElement( 'canvas' );
-    mapCanvas.width = 100;
-    mapCanvas.height = 100;
+    var ambient = new THREE.AmbientLight(0xffffff);
 
-    var context = mapCanvas.getContext( '2d' );
-    context.fillStyle = 'black';
-    context.fillRect( 0, 0, 100, 100 );
-    context.fillStyle = 'white';
-    context.beginPath();
-    context.arc( 50, 50, 50, 0, 2 * Math.PI, false );
-    context.stroke();
-    context.closePath();
-    context.fill();
+    light = new THREE.DirectionalLight( 0x999999 );
+    light.castShadow = true;
+    light.shadowMapWidth = 2048;
+    light.shadowMapHeight = 2048;
+    light.shadowCameraLeft = -500;
+    light.shadowCameraRight = 500;
+    light.shadowCameraTop = 500;
+    light.shadowCameraBottom = -500;
+    light.shadowCameraFar = 3500;
 
-    debug( context );
-    debug( canvas );
+    scene.add(ball);
+    scene.add(ambient);
+    scene.add( light );
+    //scene.fog = new THREE.FogExp2( 0xff0000, 0.003);
 
-    var map = new THREE.Texture( mapCanvas );
-    map.needsUpdate = true;
-    */
-
-    var map = THREE.ImageUtils.loadTexture('/img/particle.png');
-
-    var m = new THREE.ParticleSystemMaterial({
-      color: 0x000000,
-      size: 2.5,
-      map: map,
-      //blending: THREE.AdditiveBlending,
-      depthTest: false,
-      transparent: true
-    });
-
-    var p = new THREE.ParticleSystem(g, m);
-    scene.add(p);
-
-    pGeometry = g;
-    pMaterial = m;
-    particle = p;
-
-    debug( g );
-    debug( p.geometry.verticesNeedUpdate );
+    camera.position.y = 100;
+    camera.position.z = 300;
   }
 
   var setupKeydown = function() {
@@ -220,95 +200,59 @@ var Background = function() {
     // render
     cameraMode = defaultCamera;
     render();
-    cameraAutoUpdate();
 
     setTimeout( function(){
       $(container + ' > canvas').css({visibility: 'visible'});
       $(container).css({visibility: 'visible', display: 'none'});
       $(container).fadeIn(3000);
     }, 2000 );
-  }
+};
 
   var mousemove = function(e) {
-    mousePos.x = e.clientX / ww * 2 - 1;
-    mousePos.y = e.clientY / wh * 2 - 1;
-  }
-
-  var cameraAutoUpdate = function() {
-    var pam = Math.round(Math.random() * 1) - 1;
-    if (!pam) pam += 1;
-
-    camera.dx = Math.random() * pam * 0.3;
-    camera.dy = Math.random() * pam * 0.3;
-    camera.dz = Math.random() * pam * 0.3;
-    cameraPos.x = Math.random() * range - range / 2;
-    cameraPos.y = Math.random() * range - range / 2;
-    cameraPos.z = Math.random() * range - range / 2;
-
-    cUpdateID = setTimeout(function() {
-      cameraAutoUpdate();
-    }, 7000);
-  }
+    tx = e.clientX / ww * 2 - 1;
+    ty = e.clientY / wh * 2 - 1;
+};
 
   var render = function() {
 
-    var g = pGeometry;
-    var vLength = g.vertices.length;
-
-    //debug( g.vertices[100].x );
-    //debug( g.before[100].t1 );
-
-    for( i = 0; i < vLength; i++ ){
-      var v = g.vertices[i];
-      var b = g.before[i];
-
-      var pos1 = b.t1 + Math.random() * 0.001 - 0.0005;
-      var pos2 = b.t2 + Math.random() * 0.001 - 0.0005;
-
-      if( pos1 > 1 ) pos1 = 0;
-      if( pos2 > 1 ) pos2 = 0;
-
-      var theta1 = 360 * pos1 * Math.PI / 180;
-      var theta2 = ( 180 * pos2 - 90 ) * Math.PI / 180;
-      var radius = 380;
-
-      v.x = radius * Math.cos(theta2) * Math.sin(theta1);
-      v.y = radius * Math.sin(theta2);
-      v.z = radius * Math.cos(theta2) * Math.cos(theta1);
-
-      b.t1 = pos1;
-      b.t2 = pos2;
-    }
-
-    g.verticesNeedUpdate = true;
-
-    if (cameraMode == 'auto') {
-      cameraPos.x += camera.dx;
-      cameraPos.y += camera.dy;
-      cameraPos.z += camera.dz;
-      camera.position.x = cameraPos.x;
-      camera.position.y = cameraPos.y;
-      camera.position.z = cameraPos.z;
-    } else if (cameraMode == 'manual') {
-      // manual camera
-      rotX = mousePos.x * 180;
-      rotY = mousePos.y * 90;
-      dRotX += (rotX - dRotX) * 0.05;
-      dRotY += (rotY - dRotY) * 0.05;
-
-      // camera update
-      camera.position.x = dDistance * Math.sin(dRotX * Math.PI / 180);
-      camera.position.y = dDistance * Math.sin(dRotY * Math.PI / 180);
-      camera.position.z = dDistance * Math.cos(dRotX * Math.PI / 180);
-    }
-
-    camera.lookAt(scene.position);
-
-    //debug( camera.position.x+', '+camera.position.y+', '+camera.position.z );
-
-    renderer.render(scene, camera);
     requestAnimationFrame(render);
-  }
+
+    mx += (tx - mx) * .05;
+    my += (ty - my) * .05;
+
+    t += config.speed1;
+    bt += config.speed2;
+    lt += 0.02;
+    var vertex;
+    var scale;
+    var level = config.level / mx;
+    var multiplyRatio = config.multiplyRatio;
+    var var1 = config.var1;
+    var var2 = config.var2;
+
+    for(var i = 0, len = ballVertices.length; i < len; i++) {
+        vertex = ballVertices[i];
+        scale = Math.sin(t + i * ((1 + i)/(1 + i * var2)) * var1/40) * Math.sin(bt + i/ len) * level;
+        vertex.x = vertex.ox + vertex.ox * scale;
+        vertex.y = vertex.oy + vertex.oy * scale;
+        vertex.z = vertex.oz + vertex.oz * scale;
+    }
+
+    ball.geometry.verticesNeedUpdate = true;
+    ball.geometry.normalsNeedUpdate = true;
+
+    light.position.set( Math.cos(lt) * 200, Math.sin(lt) * 200, 50 );
+
+    ballMaterial.ambient.r = ballMaterial.color.r = config.color[0] / 255;
+    ballMaterial.ambient.g = ballMaterial.color.g = config.color[1] / 255;
+    ballMaterial.ambient.b = ballMaterial.color.b = config.color[2] / 255;
+
+    camera.position.x = mx * 300;
+    camera.position.y = my * 200;
+
+    camera.lookAt(ball.position);
+    renderer.render(scene, camera);
+};
 
   ///////////////////////////////////////
   // getter
