@@ -256,17 +256,17 @@ var background = function() {
 
   ///////////////////////////////////////
   // getter
-  Background.prototype.get = function() {
+  background.prototype.get = function() {
     return _;
   };
 
   ///////////////////////////////////////
   // setter
-  Background.prototype.setTotalFFT = function(val) {
+  background.prototype.setTotalFFT = function(val) {
     total = val;
   };
 
-  Background.prototype.setFFT = function(val) {
+  background.prototype.setFFT = function(val) {
     values = val;
   };
 
