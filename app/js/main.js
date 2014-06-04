@@ -112,7 +112,7 @@ $(document).ready(function(){
     $(window).scroll(function(){
         var $top = $($window).scrollTop(), $scrolledPast = ($top > 2000 ? true : false);
         var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
-        $('#slide .scroll p').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
+        $('#slide .scroll p').css({'opacity': $num, 'transform': 'scale(' + $num + ') translateY(-50%)'});
         if ($scrolledPast === false){
             $('#scroll','nav.bottom').unbind('click').text('Work').on('click', function(){scrollToPlace('middle');});
         } else if ($scrolledPast === true ){

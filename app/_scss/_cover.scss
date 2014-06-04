@@ -27,24 +27,37 @@
     z-index: 98;
 
     .scroll{
-        background: $base-accent-color;
-        display: table;
+        background: $light-gray;
         height: 100%;
         position: fixed;
         transform-origin: center;
         width: 100%;
         z-index: 9;
 
+        .canvas{
+            width:100%;
+            height:100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
         p{
           color: $dark-gray;
-          display: table-cell;
-          font-size: 3em;
+          font-size: 7em;
           line-height: normal;
-          text-align: center;
-          vertical-align: middle;
+          text-align: left;
+          width: 300px;
+          margin: 0 auto;
+          transform-origin: center top;
+          @include vertical-align;
 
           span{
-            font-size: .5em;
+            font-size: .25em;
+            line-height:normal;
+            display: block;
           }
         }
     }
