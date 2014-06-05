@@ -10,8 +10,11 @@ $(document).ready(function(){
     $body = $(document.body);
     $window = $(window);
     $html = $(document.documentElement);
+    $cover = $(document).find('#canvas');
     $browser_height = $(window).height();
     $scrolled = false;
+
+    var coverShowing = false;
 
     /* Some functions */
     function showLatestBlogTitles (num) {
@@ -47,13 +50,29 @@ $(document).ready(function(){
     }
 
     function initCover(){
-        background();
+        if(!coverShowing){
+            background();
+            coverShowing = true;
+        } else {
+            return;
+        }
+    }
+
+    function initMobile(){
+        $body.find('#slide .scroll p').css({
+            background: '#333',
+            textAlign: 'center',
+            height: '300px',
+            borderRadius: '50%'
+        });
     }
 
 
 /************ Time for the show! ***********/
-    if($('#canvas').length){
+    if($cover.length && $html.hasClass('desktop')){
         initCover();
+    } else {
+        initMobile();
     }
 
     if($('.imgs').length){
@@ -123,8 +142,13 @@ $(document).ready(function(){
         $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
         if ($scrolledPast === false){
             $('#scroll','nav.bottom').unbind('click').text('Work').on('click', function(){scrollToPlace('middle');});
+            initCover();
         } else if ($scrolledPast === true ){
             $('#scroll','nav.bottom').unbind('click').text('Top').on('click', function(){scrollToPlace('slide');});
+            if(coverShowing){
+                $cover.find('canvas').remove();
+                coverShowing = false;
+            }
         }
     });
 

@@ -80,16 +80,19 @@ var background = function() {
     // WebGL
     if (window.WebGLRenderingContext && getBrowser() != 'safari') {
       renderer = new THREE.WebGLRenderer();
+      ballGeometry = new THREE.SphereGeometry(100, 40, 40);
     }
     // CANVAS
     else {
       renderer = new THREE.CanvasRenderer();
-      if (isSmartDevice()) {}
+      ballGeometry = new THREE.SphereGeometry(100, 14, 7);
+
+      //if (isSmartDevice()) {}
     }
 
     // setup
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColorHex(0xf9f9f9, 1.0);
+    renderer.setClearColor(0xf9f9f9, 1.0);
     $(container)[0].appendChild(renderer.domElement);
     canvas = $(container + ' > canvas');
     ctx = (canvas[0].getContext) ? canvas[0].getContext('2d') : 'undefined';
@@ -117,7 +120,6 @@ var background = function() {
 };
 
   var setupBeater = function() {
-    ballGeometry = new THREE.SphereGeometry(100, 40, 40);
     ballMaterial = new THREE.MeshPhongMaterial({ambient: 0xffffff, color: 0xffffff})
     ball = new THREE.Mesh(ballGeometry, ballMaterial);
 
@@ -147,7 +149,7 @@ var background = function() {
     scene.add(ball);
     scene.add(ambient);
     scene.add( light );
-    //scene.fog = new THREE.FogExp2( 0xff0000, 0.003);
+    scene.fog = new THREE.FogExp2( 0xff0000, 0.003);
 
     camera.position.y = 100;
     camera.position.z = 300;
@@ -225,7 +227,7 @@ var background = function() {
     lt += 0.02;
     var vertex;
     var scale;
-    var level = config.level / mx;
+    var level = (config.level / mx) / 2;
     var multiplyRatio = config.multiplyRatio;
     var var1 = config.var1;
     var var2 = config.var2;
