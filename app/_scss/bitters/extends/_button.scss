@@ -11,6 +11,6 @@
   &:hover{
     background-image: none!important;
     box-shadow: none!important;
-    background: lighten($yellow,20%)!important;
+    background: darken($blue,10%)!important;
   }
 }

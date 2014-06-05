@@ -45,6 +45,7 @@ module Jekyll
         "excerpt"  => output['excerpt'] || '',
         "date" => date_to_long_string(output['date'])[0..-6],
         "image" => output['image'] || '',
+        "project" => output['category'] || '',
         "content"  => output['content']
       }
       return hash.to_json

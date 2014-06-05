@@ -95,6 +95,12 @@ $(document).ready(function(){
             keyboardNavEnabled: false,
             globalCaptionInside: false,
 
+             video: {
+                 autoHideArrows:true,
+                 autoHideControlNav:false,
+                 autoHideBlocks: true
+             },
+
             visibleNearby: {
               enabled: true,
               centerArea: 0.5,
@@ -137,7 +143,7 @@ $(document).ready(function(){
     });
 
     $(window).scroll(function(){
-        var $top = $($window).scrollTop(), $scrolledPast = ($top > 2000 ? true : false);
+        var $top = $($window).scrollTop(), $scrolledPast = ($top > 450 ? true : false);
         var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
         $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
         if ($scrolledPast === false){

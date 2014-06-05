@@ -256,6 +256,19 @@ var background = function() {
     renderer.render(scene, camera);
 };
 
+  var removeScene = function() {
+      var obj, i;
+      for ( i = scene.children.length - 1; i >= 0 ; i -- ) {
+          obj = scene.children[ i ];
+          if ( obj !== plane && obj !== camera) {
+              scene.remove(obj);
+              ball.deallocate();
+              ballMaterial.deallocate();
+              ballGeometry.deallocate();
+          }
+      }
+  };
+
   ///////////////////////////////////////
   // getter
   background.prototype.get = function() {
@@ -274,4 +287,5 @@ var background = function() {
 
   constructor();
 };
+
 /*jshint ignore:end*/
