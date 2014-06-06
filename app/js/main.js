@@ -15,6 +15,7 @@ $(document).ready(function(){
     $scrolled = false;
 
     var coverShowing = false;
+    var $scrollLimit = 600;
 
     /* Some functions */
     function showLatestBlogTitles (num) {
@@ -143,14 +144,18 @@ $(document).ready(function(){
     });
 
     $(window).scroll(function(){
-        var $top = $($window).scrollTop(), $scrolledPast = ($top > 450 ? true : false);
+        var $top = $($window).scrollTop(), $scrolledPast = ($top > $scrollLimit ? true : false);
         var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
         $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
         if ($scrolledPast === false){
             $('#scroll','nav.bottom').unbind('click').text('Work').on('click', function(){scrollToPlace('middle');});
-            initCover();
+            $('#slide p').html('M-JO<br><span>Mac Oosthuizen<br/>Interaction Designer</span>');
+            if($cover.length && $html.hasClass('desktop')){
+                initCover();
+            }
         } else if ($scrolledPast === true ){
             $('#scroll','nav.bottom').unbind('click').text('Top').on('click', function(){scrollToPlace('slide');});
+            $('#slide p').html('<<<<span>Swipe the images to view the slideshow</span>');
             if(coverShowing){
                 $cover.find('canvas').remove();
                 coverShowing = false;
