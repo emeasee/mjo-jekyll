@@ -12,7 +12,7 @@
       margin: 0 5%;
 
       span{
-        border-bottom: 3px solid $dark-gray;
+        border-bottom: 3px solid $base-font-color;
         display: block;
         font-size: $base-font-size * 1.5;
         padding-bottom: $base-line-height * .7;
@@ -80,21 +80,28 @@
 
               h1{
                   position: absolute!important;
-                  width: 100%;
+                  width: 80%;
+                  margin-left: 10%;
                   z-index: 99;
                   text-align: center;
                   font-size: 6em;
+                  color: $base-font-color;
+                  padding: 20px 0;
                   @include vertical-align;
+                  background-color: #fff;
+                  opacity: 0.9;
+                  border: 6px solid $base-font-color;
+
               }
 
               .label{
                 height: 350px;
                 max-width: 600px;
-                border: 3px solid $dark-gray;
-                color: $dark-gray;
+                border: 1px solid $base-border-color;
+                color: $base-font-color;
 
                 &.update{
-                    border: 3px solid $dark-gray;
+                    border: 1px solid $base-border-color;
                 }
 
                 p{
@@ -115,7 +122,7 @@
                     display: block;
                     width: 80%;
                     margin-top: $base-line-height;
-                    background: $blue;
+                    background: $base-font-color;
                     text-align: center;
                   }
                 }
@@ -146,12 +153,12 @@
           }
 
           .rsArrowRight{
-            cursor: e-resize;
+            cursor: url('/img/arrow_r.png'), auto;
             right: 0;
           }
 
           .rsArrowLeft{
-            cursor: w-resize;
+            cursor: url('/img/arrow_l.png'), auto;
             left: 0;
           }
         }
@@ -173,8 +180,8 @@ nav{
       width: 100%;
 
       span{
-        border-bottom: 3px solid $dark-gray;
-        color: $dark-gray;
+        border-bottom: 3px solid $base-font-color;
+        color: $base-font-color;
         cursor: pointer;
         display: inline-block;
         font-size: $base-font-size * 1.1;
@@ -215,6 +222,9 @@ nav{
         &.hide{
             margin-bottom: -90px;
         }
+        &.two{
+            display: none;
+        }
     }
   }
 }
@@ -246,8 +256,8 @@ nav{
   }
 
   .close{
-    border-bottom: 3px solid $blue;
-    color: $blue;
+    border-bottom: 3px solid $base-accent-color;
+    color: $base-accent-color;
     cursor: pointer;
     font-size: $base-font-size * 1.1;
     font-weight: 700;

@@ -1,6 +1,6 @@
 h3.logo{
-  border-bottom: 3px solid $blue;
-  color: $blue;
+  border-bottom: 3px solid $base-accent-color;
+  color: $base-accent-color;
   display: block;
   font-size: $base-font-size * 1.5;
   margin-left: $base-line-height;
@@ -55,7 +55,7 @@ article.page{
 
     &.next{
       .big-image {
-          cursor: pointer;
+          cursor: url('/img/arrow_d.png'), auto;
           opacity: 1;
 
       }
@@ -150,7 +150,7 @@ article.page{
             border: 0px solid $light-gray;
             .fader{
                 border: 0;
-                background: rgba($blue, 0.3);
+                background: rgba($base-accent-color, 0.3);
             }
         }
       }

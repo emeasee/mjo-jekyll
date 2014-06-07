@@ -6,14 +6,15 @@
     margin: 0;
     padding: 0 0 60px 0;
     text-align: center;
+    color: $base-font-color;
   }
 
   .last{
-    border: 1px solid $light-gray;
+    border: 1px solid $base-border-color;
     cursor: pointer;
 
     article{
-      border-right: 1px solid $light-gray;
+      border-right: 1px solid $base-border-color;
       cursor: pointer;
 
       span{
@@ -21,8 +22,8 @@
       }
 
       a{
-        color: $dark-gray;
         text-decoration: none!important;
+        color: $base-font-color; 
       }
 
       &:last-child{

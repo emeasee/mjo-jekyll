@@ -57,11 +57,10 @@ $(document).ready(function(){
         el.removeAttr('class')
           .addClass('hide')
           .unbind('click')
-          .text(text)
           .on('click', function(){scrollToPlace(scrollPoint);})
           .delay(500)
           .queue(function(){
-              $(this).addClass(c).removeClass('hide').dequeue();
+              $(this).addClass(c).text(text).removeClass('hide').dequeue();
               $($window).scroll(scrollEvent).dequeue();
               if ($scrolledPast === true){
                   if(coverShowing){
