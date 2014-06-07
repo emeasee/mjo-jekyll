@@ -3,7 +3,7 @@ h3.logo{
   color: $blue;
   display: block;
   font-size: $base-font-size * 1.5;
-  margin-left: $base-line-height * 2;
+  margin-left: $base-line-height;
   margin-top: $base-line-height - $base-line-height*2;
   position: absolute;
   top: 0;
@@ -100,7 +100,7 @@ article.page{
         height: 100%;
         text-align: center;
         opacity: 0;
-        border: 40px solid $light-gray;
+        border: 10px solid $light-gray;
         @include transition(all 0.6s ease);
 
         .fader{
@@ -113,7 +113,9 @@ article.page{
           .text{
             position: absolute;
             top: 50%; left: 50%;
-            width: 80%;
+            text-align: left;
+            width: 300px;
+            padding-left: 1.2em;
             @include transform( translateX(-50%) translateY(-50%) );
 
             a, h1, h2{ color: $dark-gray; }
@@ -136,10 +138,12 @@ article.page{
               font-weight: normal;
               padding: 0;
               font-size: $base-font-size / 1.2;
-              width: 400px;
               margin: 0 auto;
             }
-
+            @include media($large-screen){
+                width: 80%;
+                padding-left: 3em;
+            }
           }
         }
         &:hover{
@@ -154,12 +158,12 @@ article.page{
 
     .content{
       margin: 0 auto;
-      margin-left: $base-line-height;
+      margin: 0 $base-line-height/2;
       max-width: 1140px;
-      padding: $base-line-height * 1;
+      padding: $base-line-height /2;
 
       .title{
-        font-size: $base-font-size * 3;
+        font-size: $base-font-size * 2;
       }
 
       .text{
@@ -169,6 +173,9 @@ article.page{
       @include media($large-screen){
         padding: $base-line-height * 3;
         margin-left: $base-line-height * 2;
+        title{
+            font-size: $base-font-size * 3;
+        }
       }
     }
 

@@ -16,6 +16,8 @@ $(document).ready(function(){
 
     var coverShowing = false;
     var $scrollLimit = 600;
+    var $scrolledPast = false;
+    var buttonChanged = false;
 
     /* Some functions */
     function showLatestBlogTitles (num) {
@@ -48,6 +50,56 @@ $(document).ready(function(){
         //if ($html.hasClass('desktop')){
           $body.css({ overflow: 'hidden' }).find('.dark').fadeIn('fast');
         //}
+    }
+
+    function changeBottomButton(el, text, scrollPoint, c){
+        el.removeAttr('class')
+          .addClass('hide')
+          .unbind('click')
+          .text(text)
+          .on('click', function(){scrollToPlace(scrollPoint);})
+          .delay(1000)
+          .queue(function(){
+              $(this).addClass(c).removeClass('hide').dequeue();
+              $($window).scroll(scrollEvent).dequeue();
+          });
+        if ($scrolledPast === true){
+            if(coverShowing){
+                $cover.find('canvas').remove();
+                coverShowing = false;
+            }
+        } else {
+            if($cover.length && $html.hasClass('desktop')){
+                initCover();
+            }
+        }
+    }
+
+    function scrollEvent(){
+        var $top = $($window).scrollTop();
+        var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
+        var t = $('#scroll','nav.bottom');
+
+        $scrolledPast = ($top > $scrollLimit ? true : false);
+
+        $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
+
+        if ( $top < $scrollLimit && t.hasClass('one')
+            || $top > $scrollLimit && $top < 2000 && t.hasClass('two')
+            || $top > 2000 && t.hasClass('three') )
+        return;
+
+        $($window).unbind('scroll');
+
+        if ( $top < $scrollLimit ){
+           changeBottomButton(t, 'Work', 'middle', 'one');
+       } else {
+           if ($top > 2000){
+               changeBottomButton(t, 'Top', 'slide', 'three');
+           } else {
+               changeBottomButton(t, 'Swipe to navigate projects >>>', 'slide', 'two');
+           }
+       }
     }
 
     function initCover(){
@@ -143,25 +195,7 @@ $(document).ready(function(){
         ArticleAnimator.load();
     });
 
-    $(window).scroll(function(){
-        var $top = $($window).scrollTop(), $scrolledPast = ($top > $scrollLimit ? true : false);
-        var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
-        $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
-        if ($scrolledPast === false){
-            $('#scroll','nav.bottom').unbind('click').text('Work').on('click', function(){scrollToPlace('middle');});
-            $('#slide p').html('M-JO<br><span>Mac Oosthuizen<br/>Interaction Designer</span>');
-            if($cover.length && $html.hasClass('desktop')){
-                initCover();
-            }
-        } else if ($scrolledPast === true ){
-            $('#scroll','nav.bottom').unbind('click').text('Top').on('click', function(){scrollToPlace('slide');});
-            $('#slide p').html('<<<<span>Swipe the images to view the slideshow</span>');
-            if(coverShowing){
-                $cover.find('canvas').remove();
-                coverShowing = false;
-            }
-        }
-    });
+    $($window).scroll(scrollEvent);
 
     $('#blog').on('click', function(event) {
         event.preventDefault();
