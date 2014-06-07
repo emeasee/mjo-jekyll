@@ -1,5 +1,5 @@
 /*jshint ignore:start*/
-var background = function() {
+var Background = function() {
 
   ///////////////////////////////////////
 
@@ -255,35 +255,31 @@ var background = function() {
     camera.lookAt(ball.position);
     renderer.render(scene, camera);
 };
-
-  var removeScene = function() {
-      var obj, i;
-      for ( i = scene.children.length - 1; i >= 0 ; i -- ) {
-          obj = scene.children[ i ];
-          if ( obj !== plane && obj !== camera) {
-              scene.remove(obj);
-              ball.deallocate();
-              ballMaterial.deallocate();
-              ballGeometry.deallocate();
-          }
-      }
-  };
-
   ///////////////////////////////////////
   // getter
-  background.prototype.get = function() {
+ Background.prototype.get = function() {
     return _;
   };
 
   ///////////////////////////////////////
   // setter
-  background.prototype.setTotalFFT = function(val) {
+ Background.prototype.setTotalFFT = function(val) {
     total = val;
   };
 
-  background.prototype.setFFT = function(val) {
+ Background.prototype.setFFT = function(val) {
     values = val;
   };
+
+  Background.prototype.removeScene = function(obj) {
+     var obj, i;
+     for ( i = scene.children.length - 1; i >= 0 ; i -- ) {
+         obj = scene.children[ i ];
+         if ( obj !== camera) {
+             scene.remove(obj);
+         }
+     }
+  }
 
   constructor();
 };

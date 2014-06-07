@@ -78,6 +78,15 @@
                 @include vertical-align;
               }
 
+              h1{
+                  position: absolute!important;
+                  width: 100%;
+                  z-index: 99;
+                  text-align: center;
+                  font-size: 6em;
+                  @include vertical-align;
+              }
+
               .label{
                 height: 350px;
                 max-width: 600px;

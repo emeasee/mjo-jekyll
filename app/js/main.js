@@ -41,9 +41,10 @@ $(document).ready(function(){
     }
 
     function scrollToPlace($el){
+        $($window).unbind('scroll');
         $('html, body').animate({
             scrollTop: $('#' + $el).offset().top
-        }, 400);
+        }, 200, function(){ $($window).scroll(scrollEvent);scrollEvent(); });
     }
 
     function lockScrollDesktop(){
@@ -58,40 +59,44 @@ $(document).ready(function(){
           .unbind('click')
           .text(text)
           .on('click', function(){scrollToPlace(scrollPoint);})
-          .delay(1000)
+          .delay(500)
           .queue(function(){
               $(this).addClass(c).removeClass('hide').dequeue();
               $($window).scroll(scrollEvent).dequeue();
+              if ($scrolledPast === true){
+                  if(coverShowing){
+                      $cover.find('canvas').remove();
+                      Background.prototype.removeScene();
+                      coverShowing = false;
+                  }
+              } else {
+                  if($cover.length && $html.hasClass('desktop')){
+                      initCover();
+                      console.log('yes');
+
+                  }
+              }
           });
-        if ($scrolledPast === true){
-            if(coverShowing){
-                $cover.find('canvas').remove();
-                coverShowing = false;
-            }
-        } else {
-            if($cover.length && $html.hasClass('desktop')){
-                initCover();
-            }
-        }
+
     }
 
     function scrollEvent(){
         var $top = $($window).scrollTop();
         var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
         var t = $('#scroll','nav.bottom');
-
         $scrolledPast = ($top > $scrollLimit ? true : false);
 
         $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
 
-        if ( $top < $scrollLimit && t.hasClass('one') || $top > $scrollLimit && $top < 2000 && t.hasClass('two') || $top > 2000 && t.hasClass('three') ) return;
+        if ( $top < $scrollLimit && t.hasClass('one') || $top > $scrollLimit && $top < 3000 && t.hasClass('two') || $top > 3000 && t.hasClass('three') ) return;
 
         $($window).unbind('scroll');
+        t.stop(true,true);
 
         if ( $top < $scrollLimit ){
            changeBottomButton(t, 'Work', 'middle', 'one');
        } else {
-           if ($top > 2000){
+           if ($top > 3000){
                changeBottomButton(t, 'Top', 'slide', 'three');
            } else {
                changeBottomButton(t, 'Swipe to navigate projects >>>', 'slide', 'two');
@@ -101,7 +106,7 @@ $(document).ready(function(){
 
     function initCover(){
         if(!coverShowing){
-            background();
+            var beat = new Background();
             coverShowing = true;
         } else {
             return;
