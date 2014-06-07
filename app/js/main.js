@@ -84,10 +84,7 @@ $(document).ready(function(){
 
         $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
 
-        if ( $top < $scrollLimit && t.hasClass('one')
-            || $top > $scrollLimit && $top < 2000 && t.hasClass('two')
-            || $top > 2000 && t.hasClass('three') )
-        return;
+        if ( $top < $scrollLimit && t.hasClass('one') || $top > $scrollLimit && $top < 2000 && t.hasClass('two') || $top > 2000 && t.hasClass('three') ) return;
 
         $($window).unbind('scroll');
 
