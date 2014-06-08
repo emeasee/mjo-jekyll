@@ -94,6 +94,14 @@
 
               }
 
+              .shadow{
+                border-top-color: $base-border-color;
+                border-right-color: #A8A8A8;
+                border-bottom-color: #A8A8A8;
+                border-left-color: $base-border-color;
+                box-shadow: 4px 5px 1px #A8A8A8;
+              }
+
               .label{
                 height: 350px;
                 max-width: 600px;
