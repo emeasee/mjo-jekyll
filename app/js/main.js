@@ -18,6 +18,8 @@ $(document).ready(function(){
     var $scrollLimit = 600;
     var $scrolledPast = false;
     var buttonChanged = false;
+    var sliders = [];
+    var prevVideo;
 
     /* Some functions */
     function showLatestBlogTitles (num) {
@@ -133,7 +135,8 @@ $(document).ready(function(){
         $('.imgs a').fluidbox();
     }
 
-    $('.slider').royalSlider({
+    $('.royalSlider').each(function(i){
+        sliders[i] = $(this).royalSlider({
             addActiveClass: true,
             arrowsNav: true,
             arrowsNavAutoHide:false,
@@ -149,12 +152,6 @@ $(document).ready(function(){
             keyboardNavEnabled: false,
             globalCaptionInside: false,
 
-             video: {
-                 autoHideArrows:true,
-                 autoHideControlNav:false,
-                 autoHideBlocks: true
-             },
-
             visibleNearby: {
               enabled: true,
               centerArea: 0.5,
@@ -163,6 +160,26 @@ $(document).ready(function(){
               breakpointCenterArea: 0.8,
               navigateByCenterClick: true
             }
+        });
+      });
+
+    $.each(sliders, function(){
+        $(this).data('royalSlider').ev.on('rsAfterSlideChange', function(){
+            var thisvideo = this.currSlide.content.find('video');
+            if(prevVideo){
+                prevVideo.pause();
+            }
+            if(thisvideo.length) {
+                prevVideo = thisvideo[0];
+                prevVideo.play();
+                thisvideo.on('click', function(){
+                    $(this)[0].load();
+                    $(this)[0].play();
+                });
+            } else {
+                prevVideo = null;
+            }
+        });
     });
 
     showLatestBlogTitles(numPosts);
