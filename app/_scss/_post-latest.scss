@@ -1,14 +1,6 @@
 .posts{
   overflow: auto;
 
-  h1{
-    display: block;
-    margin: 0;
-    padding: 0 0 60px 0;
-    text-align: center;
-    color: $base-font-color;
-  }
-
   .last{
     border: 1px solid $base-border-color;
     cursor: pointer;
@@ -23,7 +15,7 @@
 
       a{
         text-decoration: none!important;
-        color: $base-font-color; 
+        color: $base-font-color;
       }
 
       &:last-child{

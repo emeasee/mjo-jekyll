@@ -22,23 +22,32 @@ $(document).ready(function(){
     var prevVideo;
 
     /* Some functions */
-    function showLatestBlogTitles (num) {
+    function getData(post){
+        $.getJSON('/json/post_'+ post +'.json', function(d){
+            con = d;
+        });
+        return con;
+    }
+
+    function showLatestBlogTitles () {
         var i = 0, j = 0, el = $('section.posts .last'),con;
         //Change i for desired num of posts
-        function getData(post){
-            $.getJSON('/json/post_'+ post +'.json', function(d){
-                con = d;
-            });
-            return con;
-        }
         for (i; i < 3; i++){
-            j++;var p = num - j;var post,title,date,excerpt;
+            j++;var p = numPosts - j;var post,title,date,excerpt;
             post = $('<article>').attr('id',p);
             title = $('<a>').text(getData(p).title);
             date = $('<span>').attr('class','date').text(getData(p).date);
             excerpt = getData(p).excerpt;
             post.append(date,title,excerpt).appendTo(el);
             //console.log(getData(p));
+        }
+    }
+
+    function latestProjectPost(){
+        var els = $('section.work article'), data;
+
+        for (var i = 0; i < els.length; i++) {
+            //TODO: Write function to pull latest project specific post
         }
     }
 
@@ -135,6 +144,8 @@ $(document).ready(function(){
         $('.imgs a').fluidbox();
     }
 
+    jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0, 0.44999, 0, 1.03)';
+
     $('.royalSlider').each(function(i){
         sliders[i] = $(this).royalSlider({
             addActiveClass: true,
@@ -142,6 +153,8 @@ $(document).ready(function(){
             arrowsNavAutoHide:false,
             navigateByClick: false,
             sliderDrag: false,
+            easeInOut: 'easeOutBack',
+            easeOut: 'easeOutBack',
             controlNavigation: 'none',
             autoScaleSlider: true,
             autoScaleSliderWidth: 960,
@@ -182,7 +195,8 @@ $(document).ready(function(){
         });
     });
 
-    showLatestBlogTitles(numPosts);
+    //showLatestBlogTitles();
+    latestProjectPost();
 
     /*$('#index').on('click', function(event) {
         event.preventDefault();

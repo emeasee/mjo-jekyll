@@ -46,15 +46,16 @@
         }
 
         p{
-          color: #f9f9f9;
+          color: $base-body-color;
           font-size: 7em;
           line-height: normal;
           text-align: left;
+          font-weight:300;
           width: 300px;
           margin: 0 auto;
           transform-origin: center top;
           @include vertical-align;
-          
+
           span{
             font-size: .25em;
             line-height:normal;

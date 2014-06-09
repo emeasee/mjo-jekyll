@@ -15,20 +15,20 @@ $base-border-radius: em(3);
 // Colors
 ///////////////////////////////////////////////////////////////////////////////
 
-$blue: #0097FF;
+$blue: #303F6C;
 $yellow: #FFD600;
-$red: #ca3d3d;
+$red: #ea0000;
 $orange: #FF7101;
-$dark-gray: #333;
-$medium-gray: #444;
-$light-gray: #F9F9F9;
+$dark-gray: #34322e;
+$medium-gray: #f5eedd;
+$light-gray: #fefefd;
 
 // Body Color
 $base-body-color: $light-gray;
 
 //  Font Colors
 $base-font-color: $dark-gray;
-$base-accent-color: $red;
+$base-accent-color: $blue;
 
 //  Text Link Colors
 $base-link-color: $base-accent-color;

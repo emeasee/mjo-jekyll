@@ -92,7 +92,7 @@ var Background = function() {
 
     // setup
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0xf9f9f9, 1.0);
+    renderer.setClearColor(0xfefefd, 1.0);
     $(container)[0].appendChild(renderer.domElement);
     canvas = $(container + ' > canvas');
     ctx = (canvas[0].getContext) ? canvas[0].getContext('2d') : 'undefined';
@@ -149,7 +149,7 @@ var Background = function() {
     scene.add(ball);
     scene.add(ambient);
     scene.add( light );
-    scene.fog = new THREE.FogExp2( 0xff0000, 0.003);
+    scene.fog = new THREE.FogExp2( 0xff0000, 0.004);
 
     camera.position.y = 100;
     camera.position.z = 300;
