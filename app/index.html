@@ -188,8 +188,20 @@ title: M-JO.CO / A Digital Portfolio
                     </p>
                 </li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/lg/2.png" alt=""/></li>
-                <li class="slide"><video class="shadow" src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.mp4"></video></li>
-                <li class="slide"><video class="shadow" src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-situ-video.mp4"></video></li>
+                <li class="slide">
+                    <video class="shadow">
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.mp4" type='video/mp4' />
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.webm" type='video/webm' />
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.ogg" type='video/ogg' />
+                    </video>
+                </li>
+                <li class="slide">
+                    <video class="shadow">
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-situ-video.mp4" type='video/mp4' />
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-situ-video.webm" type='video/webm' />
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-situ-video.ogg" type='video/ogg' />
+                    </video>
+                </li>
                 {% assign post_count = '0' %}
                     {% for post in site.posts %}
                         {% if post.categories contains 'lg' %}
