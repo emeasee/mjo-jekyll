@@ -1,4 +1,4 @@
-/* jshint undef: false, unused: false */
+/* jshint undef: false, unused: false, newcap: false */
 
 $(document).ready(function(){
 
@@ -19,14 +19,43 @@ $(document).ready(function(){
     var $scrolledPast = false;
     var buttonChanged = false;
     var sliders = [];
+    var posts = [];
+    var postsJSON = {};
     var prevVideo;
+    var imgLoad = imagesLoaded( $body );
 
     /* Some functions */
+    function onAlways( instance ) {
+        if($cover.length && $html.hasClass('desktop')){
+            initCover();
+        } else {
+            initMobile();
+        }
+      changeBottomButton($('#scroll','nav.bottom'), 'Work', 'middle', 'one');
+    }
+
     function getData(post){
         $.getJSON('/json/post_'+ post +'.json', function(d){
             con = d;
         });
         return con;
+    }
+
+    function makePostNameArray(){
+        for (var i = numPosts; i > 0; i--) {
+            posts.push('post_'+ i + '.json');
+        }
+    }
+
+    function findInPosts(cat){
+        for (var key in postsJSON) {
+            if (postsJSON.hasOwnProperty(key)) {
+                var t = postsJSON[key];
+                if (t.project === cat){
+                    return t;
+                }
+            }
+        }
     }
 
     function showLatestBlogTitles () {
@@ -39,16 +68,35 @@ $(document).ready(function(){
             date = $('<span>').attr('class','date').text(getData(p).date);
             excerpt = getData(p).excerpt;
             post.append(date,title,excerpt).appendTo(el);
-            //console.log(getData(p));
         }
     }
 
     function latestProjectPost(){
         var els = $('section.work article'), data;
-
-        for (var i = 0; i < els.length; i++) {
-            //TODO: Write function to pull latest project specific post
-        }
+        makePostNameArray();
+        gets=$.map(
+            posts,
+            function(f, i){
+                return $.getJSON('/json/'+f, function(data) {
+                    var index = numPosts - i;
+                    data.postid = index;
+                    postsJSON[f] = data;
+                });
+            }
+        );
+        $.when.apply(null,gets).then(function(){
+            $.each(els, function(index){
+                var id = $(this).attr('id');
+                var post = findInPosts(id);
+                if (post){
+                    var latest = $(post.excerpt), tle = $('<b>').text(post.title), link = $('<a>').attr({ href:'#'+ post.postid, class: 'button'}).text('Read Post');
+                    latest.prepend('<span>Project Update</span>',tle).append(link).appendTo($(this).find('ul li.update'));
+                }
+            });
+            //console.log(postsJSON);
+        }).fail(function(){
+            console.log('Data load error');
+        });
     }
 
     function scrollToPlace($el){
@@ -83,7 +131,6 @@ $(document).ready(function(){
                   if($cover.length && $html.hasClass('desktop')){
                       initCover();
                       console.log('yes');
-
                   }
               }
           });
@@ -116,7 +163,7 @@ $(document).ready(function(){
 
     function initCover(){
         if(!coverShowing){
-            var beat = new Background();
+            Background();
             coverShowing = true;
         } else {
             return;
@@ -134,11 +181,8 @@ $(document).ready(function(){
 
 
 /************ Time for the show! ***********/
-    if($cover.length && $html.hasClass('desktop')){
-        initCover();
-    } else {
-        initMobile();
-    }
+
+    imgLoad.on( 'always', onAlways );
 
     if($('.imgs').length){
         $('.imgs a').fluidbox();
@@ -219,10 +263,11 @@ $(document).ready(function(){
         $(this).parent().removeClass('open');
     });
 
-    $('section.posts .last article').on('click', function(event){
+    $('section.work article ul li.update p a').on('click', function(event){
+        event.preventDefault();
         var $target = $(this);
-        var $id = $target.attr('id');
-        history.pushState( '', '', '#' + $id);
+        var $id = $target.attr('href');
+        history.pushState( '', '', $id);
         lockScrollDesktop();
         ArticleAnimator.load();
     });
