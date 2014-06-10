@@ -11,6 +11,7 @@ $(document).ready(function(){
     $window = $(window);
     $html = $(document.documentElement);
     $cover = $(document).find('#canvas');
+    $posts = $('section.work article');
     $browser_height = $(window).height();
     $scrolled = false;
 
@@ -19,8 +20,6 @@ $(document).ready(function(){
     var $scrolledPast = false;
     var buttonChanged = false;
     var sliders = [];
-    var posts = [];
-    var postsJSON = {};
     var prevVideo;
     var imgLoad = imagesLoaded( $body );
 
@@ -36,21 +35,10 @@ $(document).ready(function(){
         return con;
     }
 
-    function makePostNameArray(){
-        for (var i = numPosts; i > 0; i--) {
-            posts.push('post_'+ i + '.json');
-        }
-    }
-
-    function findInPosts(cat){
-        for (var key in postsJSON) {
-            if (postsJSON.hasOwnProperty(key)) {
-                var t = postsJSON[key];
-                if (t.project === cat){
-                    return t;
-                }
-            }
-        }
+    function linkToBlogOverlay(num){
+        var a = num;
+        var result = numPosts + a;
+        return result;
     }
 
     function showLatestBlogTitles () {
@@ -66,36 +54,11 @@ $(document).ready(function(){
         }
     }
 
-    function latestProjectPost(){
-        var els = $('section.work article'), data;
-        makePostNameArray();
-        gets=$.map(
-            posts,
-            function(f, i){
-                return $.getJSON('/json/'+f, function(data) {
-                    var index = numPosts - i;
-                    data.postid = index;
-                    postsJSON[f] = data;
-                });
-            }
-        );
-        $.when.apply(null,gets).then(function(){
-            $.each(els, function(index){
-                var id = $(this).attr('id');
-                var post = findInPosts(id);
-                if (post){
-                    var latest = $(post.excerpt), tle = $('<b>').text(post.title), link = $('<a>').attr({ href:'#'+ post.postid, class: 'button'}).text('Read Post');
-                    latest.prepend('<span>Project Update</span>',tle).append(link).appendTo($(this).find('ul li.update'));
-                }
-            });
-            //console.log(postsJSON);
-        }).fail(function(){
-            console.log('Data load error');
-        });
-    }
-
-    function scrollToPlace($el){
+    function scrollToPlace($el, $slide, $pos){
         $($window).unbind('scroll');
+        if ($slide){
+            $slide.royalSlider('goTo', $pos);
+        }
         $('html, body').animate({
             scrollTop: $('#' + $el).offset().top
         }, 200, function(){ $($window).scroll(scrollEvent);scrollEvent(); });
@@ -103,7 +66,7 @@ $(document).ready(function(){
 
     function lockScrollDesktop(){
         //if ($html.hasClass('desktop')){
-          $body.css({ overflow: 'hidden' }).find('.dark').fadeIn('fast');
+        $body.css({ overflow: 'hidden' }).find('.dark').fadeIn('fast');
         //}
     }
 
@@ -125,11 +88,9 @@ $(document).ready(function(){
               } else {
                   if($cover.length && $html.hasClass('desktop')){
                       initCover();
-                      console.log('yes');
                   }
               }
           });
-
     }
 
     function scrollEvent(){
@@ -156,6 +117,12 @@ $(document).ready(function(){
        }
     }
 
+    if (!Array.prototype.last){
+        Array.prototype.last = function(){
+            return this[this.length - 1];
+        };
+    }
+
     function initCover(){
         if(!coverShowing){
             Background();
@@ -177,7 +144,7 @@ $(document).ready(function(){
 
 /************ Time for the show! ***********/
     if($cover.length && $html.hasClass('desktop')){
-        initCover();
+        //initCover();
     } else {
         initMobile();
     }
@@ -239,8 +206,16 @@ $(document).ready(function(){
         });
     });
 
+    $($posts).each(function(){
+        var t = $(this).find('ul li.update a.button');
+        if (t.length !== 0){
+            var id = parseInt(t.attr('href'));
+            id = numPosts - id;
+            t.attr('href','#' + id);
+        }
+    });
+
     //showLatestBlogTitles();
-    latestProjectPost();
 
     /*$('#index').on('click', function(event) {
         event.preventDefault();
@@ -255,7 +230,12 @@ $(document).ready(function(){
 
     $('#about').on('click', function(event) {
         event.preventDefault();
-        $('section.about').addClass('open');
+        scrollToPlace('about-slide', sliders.last(), 0);
+    });
+
+    $('#contact').on('click', function(event) {
+        event.preventDefault();
+        scrollToPlace('about-slide',sliders.last(), 2);
     });
 
     $('.close,section').on('click', function(event) {

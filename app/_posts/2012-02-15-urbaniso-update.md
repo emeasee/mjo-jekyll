@@ -2,6 +2,7 @@
 title: 'UrbanISO update: presenting in Amsterdam!'
 author: Mac
 layout: post
+category: mrd
 date: 2012-02-15
 image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
 ---

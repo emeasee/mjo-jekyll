@@ -25,7 +25,7 @@ module Jekyll
     def generate(site)
 
       site.posts.each_with_index do |post, index|
-        jsonPost = render_json(site,post)
+        jsonPost = render_json(site, post, index + 1)
 
 
           filename = 'post_' + (index+1).to_s() + '.json'
@@ -37,7 +37,7 @@ module Jekyll
       end
     end
 
-    def render_json(site, post)
+    def render_json(site, post, index)
       post.render( {}, site.site_payload)
       output = post.to_liquid
       hash = {
@@ -46,7 +46,8 @@ module Jekyll
         "date" => date_to_long_string(output['date'])[0..-6],
         "image" => output['image'] || '',
         "project" => output['category'] || '',
-        "content"  => output['content']
+        "content"  => output['content'],
+        "postid" => index
       }
       return hash.to_json
     end

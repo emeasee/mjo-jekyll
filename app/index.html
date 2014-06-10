@@ -56,7 +56,17 @@ title: M-JO.CO / A Digital Portfolio
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/4.png" alt=""/></li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/5.png" alt=""/></li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/6.png" alt=""/></li>
-                    <li class="slide label update"></li>
+                    {% assign post_count = '0' %}
+                        {% for post in site.posts %}
+                            {% if post.categories contains 'fieldlogs' %}
+                                <li class="slide label update">
+                                    <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                </li>
+                                {% break %}
+                            {% endif %}
+                            {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                        {% endfor %}
+                    {% assign post_count = '0' %}
                 </ul>
         </article>
         <article id="ajoto" class="proj">
@@ -65,7 +75,7 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide label">
                     <p>
                         At AJOTO we create beautiful tools for everyday journeys, combining the precision of modern manufacturing with the soul of craft. By carefully utilising new technologies we simplify the complex, reduce waste and create lasting experiences which grow with our customers.<br><br>
-                        I am currently working with the AJOTO team on new digital experiences around their iconic brand.
+                        I am currently working with the AJOTO team, overseeing the creation on new digital experiences around their iconic brand and philosophy.
                     <a href="http://www.ajoto.com/" class="button">Visit website</a></p>
                 </li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/2.png" alt=""/></li>
@@ -73,7 +83,17 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/4.png" alt=""/></li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/5.png" alt=""/></li>
                 <li class="slide"><iframe src="//player.vimeo.com/video/68227510?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="365" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
-                <li class="slide label update"></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'ajoto' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
             </ul>
         </article>
         <article id="iso" class="proj">
@@ -90,7 +110,17 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/2.png" alt=""/></li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/3.png" alt=""/></li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/4.png" alt=""/></li>
-                <li class="slide label update"></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'iso' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
             </ul>
         </article>
         <article id="urbbi" class="proj">
@@ -108,7 +138,17 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><iframe class="shadow" src="//player.vimeo.com/video/34123472?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/urbbi/4.png" alt=""/></li>
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/urbbi/5.png" alt=""/></li>
-                <li class="slide label update"></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'urbbi' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
             </ul>
         </article>
         <article id="envelop" class="proj">
@@ -126,7 +166,17 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/envelop/4.png" alt=""/></li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/envelop/5.png" alt=""/></li>
                 <li class="slide"><iframe class="shadow" src="//player.vimeo.com/video/24654674?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="406" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
-                <li class="slide label update"></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'envelop' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
             </ul>
         </article>
         <article id="lg" class="proj">
@@ -140,7 +190,17 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/lg/2.png" alt=""/></li>
                 <li class="slide"><video class="shadow" src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.mp4"></video></li>
                 <li class="slide"><video class="shadow" src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-situ-video.mp4"></video></li>
-                <li class="slide label update"></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'lg' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
             </ul>
         </article>
         <article id="mrd" class="proj">
@@ -153,18 +213,29 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><iframe class="shadow" src="//player.vimeo.com/video/22597868?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/mrd/2.png" alt=""/></li>
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/mrd/3.png" alt=""/></li>
-                <li class="slide label update"></p>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'mrd' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
                 </li>
             </ul>
         </article>
     </section>
 
-    <section class="home bio">
-        <article id ="about" class="proj">
+    <section class="home bio" id="about-slide">
+        <article id="about" class="proj">
                 <ul class="royalSlider rsDefault visibleNearby rsHor">
-                    <li class="slide label">
-                        <p><span>Mac Marthinus Jacobus Oosthuizen</span>
-                            Interaction designer with an interest in the impact of digital services on physical products & human experiences.<br><br>Currently accepting work focused on interface design, human computer interaction and web front-end development.
+                    <li class="slide label update">
+                        <p class="large"><span>Bio</span>
+                            I am an Interaction designer with an interest in the impact of digital services on physical products & human experiences.<br><br>Currently I am accepting work focused on interface design, human computer interaction, animation and web front-end development.
+                            <br/><br/>
                             <a href="#">UX design and prototyping</a>
                             <a href="#">Wireframing to high fidelity mockups</a>
                             <a href="#">Creative direction</a>
@@ -174,23 +245,44 @@ title: M-JO.CO / A Digital Portfolio
                             <a href="#">Laser cutting, resin printing</a>
                         </p>
                     </li>
-                    <li class="slide label">
-                        <p><span>Experience</span>
-                            <a href="#">Trekea SAS, FR</a>
-                            <a href="#">AJOTO Ltd, UK</a>
-                            <a href="#">Cosm, UK</a>
-                            <a href="#">Participle Ltd, UK</a>
-                            <a href="#">forpeople Ltd, UK</a>
-                            <a href="#">Mattel, HK</a>
+                    <li class="slide label update">
+                        <p class="large"><span>Experience</span>
+                            <i class="float">
+                                <a href="#">Trekea SAS, FR</a>
+                                Product Designer<br><br>
+                                <a href="#">AJOTO Ltd, UK</a>
+                                Interaction Director<br><br>
+                                <a href="#">Cosm, UK</a>
+                                Freelance Designer<br><br>
+                                <a href="#">Participle Ltd, UK</a>
+                                Interaction Designer<br><br>
+                                <a href="#">forpeople Ltd, UK</a>
+                                Industrial Designer<br><br>
+                                <a href="#">Mattel, HK</a>
+                                Intern Toy Designer
+                            </i>
+                            <i class="float">
+                                Copenhagen Institute of Interaction Design, Copenhagen, DK<br><br>
+                                Design for Industry, Northumbria University, UK
+                            </i
                         </p>
                     </li>
-                    <li class="slide label">
-                        <p><span>Contact</span>
-                            <a href="#">m@m-jo.co</a>
-                            <a href="#">+33 (0) 6 51 34 45 77</a>
-                            <a href="">skype:macoosthuizen</a>
-                            <a href="http://fr.linkedin.com/in/mackost/">fr.linkedin.com/in/mackost</a>
-                            <a href="https://twitter.com/m_jo_co">@m_jo_co</a>
+                    <li class="slide label update">
+                        <p class="large"><span>Contact</span>
+
+                                Mac Marthinus<br> Jacobus<br> Oosthuizen<br><br>
+                                Please don't hesitate to ask for an extended portfolio in PDF format which can be made available on request.<br><br>
+                            <i class="float">
+                                <a href="#">m@m-jo.co</a>
+                                <a href="#">+33 (0) 6 51 34 45 77</a>
+                                <a href="">skype:macoosthuizen</a>
+                            </i>
+                            <i class="float">
+                                <a href="http://fr.linkedin.com/in/mackost/">LinkedIn</a>
+                                <a href="http://instagram.com/mjo_co">Instagram</a>
+                                <a href="http://github.com/emeasee">Github</a>
+                                <a href="https://twitter.com/m_jo_co">Twitter</a>
+                            </i>
                         </p>
                     </li>
                 </ul>

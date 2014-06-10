@@ -20,7 +20,7 @@ $yellow: #FFD600;
 $red: #ea0000;
 $orange: #FF7101;
 $dark-gray: #34322e;
-$medium-gray: #f5eedd;
+$medium-gray: #d3d3d3;
 $light-gray: #fefefd;
 
 // Body Color
@@ -35,4 +35,4 @@ $base-link-color: $base-accent-color;
 $hover-link-color: darken($base-accent-color, 15);
 
 // Border color
-$base-border-color: $light-gray;
+$base-border-color: $medium-gray;
