@@ -26,11 +26,6 @@ $(document).ready(function(){
 
     /* Some functions */
     function onAlways( instance ) {
-        if($cover.length && $html.hasClass('desktop')){
-            initCover();
-        } else {
-            initMobile();
-        }
       changeBottomButton($('#scroll','nav.bottom'), 'Work', 'middle', 'one');
     }
 
@@ -181,6 +176,11 @@ $(document).ready(function(){
 
 
 /************ Time for the show! ***********/
+    if($cover.length && $html.hasClass('desktop')){
+        initCover();
+    } else {
+        initMobile();
+    }
 
     imgLoad.on( 'always', onAlways );
 
