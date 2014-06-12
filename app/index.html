@@ -49,7 +49,7 @@ title: M-JO.CO / A Digital Portfolio
                             Fieldlogs is multi-device software eco-system enabling on-site work evidencing, real-time collaboration between field workers and colleagues and instructional guidance for
                             highly technical procedures or anything requiring a start-end flow. <br><br>I was responsible for the interface and UX from designing static mockups right through to working HTML/CSS/JS templates
                             and styleguides.
-                        <a href="http://www.fieldlogs.com/" class="button">Visit website</a></p>
+                        <a href="http://www.fieldlogs.com/" class="button" target="_blank">Visit website</a></p>
                     </li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/2.png" alt=""/></li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/3.png" alt=""/></li>
@@ -60,7 +60,7 @@ title: M-JO.CO / A Digital Portfolio
                         {% for post in site.posts %}
                             {% if post.categories contains 'fieldlogs' %}
                                 <li class="slide label update">
-                                    <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                    <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
                                 </li>
                                 {% break %}
                             {% endif %}
@@ -76,7 +76,7 @@ title: M-JO.CO / A Digital Portfolio
                     <p>
                         At AJOTO we create beautiful tools for everyday journeys, combining the precision of modern manufacturing with the soul of craft. By carefully utilising new technologies we simplify the complex, reduce waste and create lasting experiences which grow with our customers.<br><br>
                         I am currently working with the AJOTO team, overseeing the creation on new digital experiences around their iconic brand and philosophy.
-                    <a href="http://www.ajoto.com/" class="button">Visit website</a></p>
+                    <a href="http://www.ajoto.com/" target="_blank" class="button">Visit website</a></p>
                 </li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/2.png" alt=""/></li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/3.png" alt=""/></li>
@@ -87,7 +87,7 @@ title: M-JO.CO / A Digital Portfolio
                     {% for post in site.posts %}
                         {% if post.categories contains 'ajoto' %}
                             <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
                             </li>
                             {% break %}
                         {% endif %}
@@ -101,11 +101,11 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><h1><span>City Sensor ISO</span></h1><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/iso/1.png" alt=""/></li>
                 <li class="slide label">
                     <p>
-                    This project in collaboration with <a href="">Joshua Noble</a> was proposal for an ISO standard that applies to
+                    This project in collaboration with <a href="http://thefactoryfactory.com" target="_blank">Joshua Noble</a> was proposal for an ISO standard that applies to
                     the tagging, classifying and providing access to anonymous urban sensors. We intentionally took a 'top-down' approach
                     with interest in involving local government and city regulators. <br/><br/> We were happy to continue the project with Usman Haque
                     of Pachube/Cosm, researching new ways to access & express data in our urban landscapes
-                    <a href="http://www.cosm.com/" class="button">Visit website</a></p>
+                    <a href="http://www.cosm.com/" class="button" target="_blank">Visit website</a></p>
                 </li>
                 <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/iso/2.png" alt=""/></li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/3.png" alt=""/></li>
@@ -119,7 +119,7 @@ title: M-JO.CO / A Digital Portfolio
                     {% for post in site.posts %}
                         {% if post.categories contains 'iso' %}
                             <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
                             </li>
                             {% break %}
                         {% endif %}
@@ -151,7 +151,7 @@ title: M-JO.CO / A Digital Portfolio
                     {% for post in site.posts %}
                         {% if post.categories contains 'urbbi' %}
                             <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
                             </li>
                             {% break %}
                         {% endif %}
@@ -165,7 +165,8 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><h1><span>Flash Ticket</span></h1><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/cph/1.png" alt=""/></li>
                 <li class="slide label">
                     <p>
-
+                    CPH Cloud is a networked service platform that provides support and new opportunities to passengers, staff and retailers by connecting them together, prompting them with useful information at opportune moments throughout the airport (space & time) and providing a key platform for expansion of the travelling experience in the future.
+                    <br><br>One such expansion could be FlashTicket, a potential CPH Cloud platform service that allows passengers to credit a boarding pass with money and spend it at the airport, both on their journey and on future journeys. The service provides incentives in the form of rounding-up spare change and special offers and discounts from retailers.
                     </p>
                 </li>
                 <li class="slide"><iframe class='shadow' src="//player.vimeo.com/video/28406122?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
@@ -176,7 +177,7 @@ title: M-JO.CO / A Digital Portfolio
                     {% for post in site.posts %}
                         {% if post.categories contains 'envelop' %}
                             <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="post button" href={{post_count}}>Read post</a></p>
                             </li>
                             {% break %}
                         {% endif %}
@@ -194,7 +195,6 @@ title: M-JO.CO / A Digital Portfolio
                     <br><br>Envelop allows you to create personal letters by printing customised stationary, giving you control over elements of the layout such as line height
                     and images from your hard drive. Once you've created your layout its as simple as selecting the preferred postage and Envelop will print
                     the stamp right onto your letter!
-
                     </p>
                 </li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/envelop/2.png" alt=""/></li>
@@ -206,7 +206,7 @@ title: M-JO.CO / A Digital Portfolio
                     {% for post in site.posts %}
                         {% if post.categories contains 'envelop' %}
                             <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
                             </li>
                             {% break %}
                         {% endif %}
@@ -220,7 +220,7 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><h1><span>LG Led Lighting</span></h1><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/lg/1.png" alt=""/></li>
                 <li class="slide label">
                     <p>
-                    Working with the fine people at <a href="http://forpeople.co.uk/">forpeople</a> in London, I helped bring to life a new strategy for one of LG's next line of smart LED home-use bulbs. Working closely
+                    Working with the fine people at <a href="http://forpeople.co.uk/" target="_blank">forpeople</a> in London, I helped bring to life a new strategy for one of LG's next line of smart LED home-use bulbs. Working closely
                     with LG designers, engineers and researches as a team we helped guide the visual and experience design of the project. <br><br>I helped to conduct user research in South Korea
                     on the topic of home lighting and saw the project through to end, producing design sketches, concept models, lighting simulations and animations.
                     </p>
@@ -245,7 +245,7 @@ title: M-JO.CO / A Digital Portfolio
                     {% for post in site.posts %}
                         {% if post.categories contains 'lg' %}
                             <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
                             </li>
                             {% break %}
                         {% endif %}
@@ -272,7 +272,7 @@ title: M-JO.CO / A Digital Portfolio
                     {% for post in site.posts %}
                         {% if post.categories contains 'mrd' %}
                             <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
                             </li>
                             {% break %}
                         {% endif %}
@@ -303,22 +303,22 @@ title: M-JO.CO / A Digital Portfolio
                     <li class="slide label update">
                         <p class="large"><span>Experience</span>
                             <i class="float">
-                                <a href="#">Trekea SAS, FR</a>
+                                <a href="http://www.fieldlogs.com" target="_blank">Trekea SAS, FR</a>
                                 Product Designer<br><br>
-                                <a href="#">AJOTO Ltd, UK</a>
+                                <a href="http://ajoto.com" target="_blank">AJOTO Ltd, UK</a>
                                 Interaction Director<br><br>
-                                <a href="#">Cosm, UK</a>
+                                <a href="http://www.cosm.com" target="_blank">Cosm, UK</a>
                                 Freelance Designer<br><br>
-                                <a href="#">Participle Ltd, UK</a>
+                                <a href="http://www.participle.net/" target="_blank">Participle Ltd, UK</a>
                                 Interaction Designer<br><br>
-                                <a href="#">forpeople Ltd, UK</a>
+                                <a href="http://www.forpeople.co.uk" target="_blank">forpeople Ltd, UK</a>
                                 Industrial Designer<br><br>
-                                <a href="#">Mattel, HK</a>
+                                <a href="http://mattel.com" target="_blank">Mattel, HK</a>
                                 Intern Toy Designer
                             </i>
                             <i class="float">
-                                Copenhagen Institute of Interaction Design, Copenhagen, DK<br><br>
-                                Design for Industry, Northumbria University, UK
+                                Interaction Design Masters, Copenhagen Institute of Interaction Design, Copenhagen, DK<br><br>
+                                Design for Industry BA (Hons), Northumbria University, UK
                             </i
                         </p>
                     </li>
@@ -328,15 +328,15 @@ title: M-JO.CO / A Digital Portfolio
                                 Mac Marthinus<br> Jacobus<br> Oosthuizen<br><br>
                                 Please don't hesitate to ask for an extended portfolio in PDF format which can be made available on request.<br><br>
                             <i class="float">
-                                <a href="#">m@m-jo.co</a>
-                                <a href="#">+33 (0) 6 51 34 45 77</a>
-                                <a href="">skype:macoosthuizen</a>
+                                <a href="mailto:m@m-jo.co">m@m-jo.co</a>
+                                <a href="tel:0033651344577">+33 (0) 6 51 34 45 77</a>
+                                <a href="skype:macoosthuizen?chat">skype:macoosthuizen</a>
                             </i>
                             <i class="float">
-                                <a href="http://fr.linkedin.com/in/mackost/">LinkedIn</a>
-                                <a href="http://instagram.com/mjo_co">Instagram</a>
-                                <a href="http://github.com/emeasee">Github</a>
-                                <a href="https://twitter.com/m_jo_co">Twitter</a>
+                                <a href="http://fr.linkedin.com/in/mackost/" target="_blank">LinkedIn</a>
+                                <a href="http://instagram.com/mjo_co" target="_blank">Instagram</a>
+                                <a href="http://github.com/emeasee" target="_blank">Github</a>
+                                <a href="https://twitter.com/m_jo_co" target="_blank">Twitter</a>
                             </i>
                         </p>
                     </li>

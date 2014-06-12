@@ -100,7 +100,7 @@ article.page{
         height: 100%;
         text-align: center;
         opacity: 0;
-        border: 10px solid $light-gray;
+        border: 5px solid $light-gray;
         @include transition(all 0.6s ease);
 
         .fader{
@@ -150,7 +150,7 @@ article.page{
             border: 0px solid $light-gray;
             .fader{
                 border: 0;
-                background: rgba($base-accent-color, 0.3);
+                background: rgba($base-accent-color, 0.1);
             }
         }
       }

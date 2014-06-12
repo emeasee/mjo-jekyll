@@ -238,12 +238,7 @@ $(document).ready(function(){
         scrollToPlace('about-slide',sliders.last(), 2);
     });
 
-    $('.close,section').on('click', function(event) {
-        event.preventDefault();
-        $(this).parent().removeClass('open');
-    });
-
-    $('section.work article ul li.update p a').on('click', function(event){
+    $('section.work article ul li.update p a.post').on('click', function(event){
         event.preventDefault();
         var $target = $(this);
         var $id = $target.attr('href');
