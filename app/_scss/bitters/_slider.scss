@@ -314,7 +314,7 @@ a.rsLink {
     max-height: 800px;
 }
 
-/* Scaling transforms */
+/* Scaling transforms: OFF for now. Creates blurry text :(
 .visibleNearby .rsSlide img,  .visibleNearby .rsSlide .label{
   opacity: 0.35;
   -webkit-transition: all 0.2s ease-out;
@@ -334,7 +334,7 @@ a.rsLink {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
-}
+}*/
 
 /* Non-linear resizing on smaller screens */
 @media screen and (min-width: 0px) and (max-width: 900px) {
