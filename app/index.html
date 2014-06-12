@@ -98,7 +98,7 @@ title: M-JO.CO / A Digital Portfolio
         </article>
         <article id="iso" class="proj">
             <ul class="royalSlider rsDefault visibleNearby rsHor">
-                <li class="slide"><h1><span>Urban Sensor ISO</span></h1><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/iso/1.png" alt=""/></li>
+                <li class="slide"><h1><span>City Sensor ISO</span></h1><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/iso/1.png" alt=""/></li>
                 <li class="slide label">
                     <p>
                     This project in collaboration with <a href="">Joshua Noble</a> was proposal for an ISO standard that applies to
@@ -107,9 +107,14 @@ title: M-JO.CO / A Digital Portfolio
                     of Pachube/Cosm, researching new ways to access & express data in our urban landscapes
                     <a href="http://www.cosm.com/" class="button">Visit website</a></p>
                 </li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/2.png" alt=""/></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/iso/2.png" alt=""/></li>
                 <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/3.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/4.png" alt=""/></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/iso/4.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/5.png" alt=""/></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/iso/6.png" alt=""/></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/iso/7.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/8.png" alt=""/></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/iso/9.png" alt=""/></li>
                 {% assign post_count = '0' %}
                     {% for post in site.posts %}
                         {% if post.categories contains 'iso' %}
@@ -138,12 +143,38 @@ title: M-JO.CO / A Digital Portfolio
                 </li>
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/urbbi/2.png" alt=""/></li>
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/urbbi/3.png" alt=""/></li>
-                <li class="slide"><iframe class="shadow" src="//player.vimeo.com/video/34123472?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/urbbi/4.png" alt=""/></li>
+                <li class="slide"><iframe class="shadow" src="//player.vimeo.com/video/34123472?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/urbbi/5.png" alt=""/></li>
+                <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/urbbi/6.png" alt=""/></li>
                 {% assign post_count = '0' %}
                     {% for post in site.posts %}
                         {% if post.categories contains 'urbbi' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
+            </ul>
+        </article>
+        <article id="cph" class="proj">
+            <ul class="royalSlider rsDefault visibleNearby rsHor">
+                <li class="slide"><h1><span>Flash Ticket</span></h1><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/cph/1.png" alt=""/></li>
+                <li class="slide label">
+                    <p>
+
+                    </p>
+                </li>
+                <li class="slide"><iframe class='shadow' src="//player.vimeo.com/video/28406122?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/cph/2.png" alt=""/></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/cph/3.png" alt=""/></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/cph/4.png" alt=""/></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'envelop' %}
                             <li class="slide label update">
                                 <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button" href={{post_count}}>Read post</a></p>
                             </li>
@@ -194,19 +225,20 @@ title: M-JO.CO / A Digital Portfolio
                     on the topic of home lighting and saw the project through to end, producing design sketches, concept models, lighting simulations and animations.
                     </p>
                 </li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/lg/2.png" alt=""/></li>
-                <li class="slide">
-                    <video class="shadow">
-                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.mp4" type='video/mp4' />
-                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.webm" type='video/webm' />
-                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.ogg" type='video/ogg' />
-                    </video>
-                </li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/lg/2.png" alt=""/></li>
+                <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/lg/3.png" alt=""/></li>
                 <li class="slide">
                     <video class="shadow">
                         <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-situ-video.mp4" type='video/mp4' />
                         <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-situ-video.webm" type='video/webm' />
                         <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-situ-video.ogg" type='video/ogg' />
+                    </video>
+                </li>
+                <li class="slide">
+                    <video class="shadow">
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.mp4" type='video/mp4' />
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.webm" type='video/webm' />
+                        <source src="http://m-jo.s3.amazonaws.com/projects/lg/rhythm-video.ogg" type='video/ogg' />
                     </video>
                 </li>
                 {% assign post_count = '0' %}

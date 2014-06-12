@@ -23,14 +23,14 @@
           height: 100%;
 
           .royalSlider{
-            height: 600px;
+            height: 650px;
             width: 100%;
 
             .rsSlide{
                 overflow: visible;
               .slide{
                 margin: 0 auto;
-                max-width: 652px;
+                max-width: 650px;
                 text-align: center;
                 @include vertical-align;
                 video{
@@ -49,8 +49,8 @@
                   color: $base-font-color;
                   padding: 10px 0;
                   @include vertical-align;
-                  border: 4px solid $base-font-color;
-                  background-color: white;
+                  border: 1px solid $base-border-color;
+                  background-color: $base-body-color;
               }
 
               .shadow{
@@ -59,7 +59,7 @@
 
               .label{
                 height: 350px;
-                max-width: 600px;
+                max-width: 650px;
                 background: $base-body-color;
                 border: 1px solid $base-body-color;
                 color: $base-font-color;
@@ -130,7 +130,7 @@
               }
               @include media($large-screen){
                   .label{
-                      height: 600px;
+                      height: 650px;
                       p{
                           font-size: $base-font-size * 1.3;
                           padding: 0 $base-line-height * 2;
