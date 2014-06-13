@@ -1,5 +1,7 @@
 /* jshint undef: false, unused: false, newcap: false, latedef: nofunc */
 
+$(document).ready(function(){
+
     $.ajaxSetup({
            async: false
        });
@@ -144,8 +146,6 @@
             borderRadius: '50%'
         });
     }
-
-$(document).ready(function(){
 
 /************ Time for the show! ***********/
 
