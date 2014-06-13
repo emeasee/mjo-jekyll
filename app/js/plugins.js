@@ -58,7 +58,7 @@ ArticleAnimator.load = function(){
   this.makeSelections();
 
   $body.find('.blog').addClass('open').append( this.$current );
-  $body.find('.blog').append( this.$next );
+  $body.find('.blog').append( this.$next ).find('h3.logo').addClass('down');
 
   var self = this;
   this.createPost({ type: 'current' }, function(){

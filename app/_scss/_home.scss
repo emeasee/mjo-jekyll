@@ -10,7 +10,7 @@
 
 #middle{
     @include transition (padding-left .2s ease-in-out);
-    background: white;
+    background: $base-body-color;
     position: relative;
     width: 100%;
     z-index: 99;
@@ -60,7 +60,7 @@
               .label{
                 height: 350px;
                 max-width: 650px;
-                background: $base-body-color;
+                background: white;
                 border: 1px solid $base-body-color;
                 color: $base-font-color;
                 text-align: left;

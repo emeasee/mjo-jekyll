@@ -252,15 +252,16 @@ $(document).ready(function(){
     $('#blog').on('click', function(event) {
         event.preventDefault();
         lockScrollDesktop();
+
         ArticleAnimator.load();
     });
 
-    $('.dark').on('click', function(event) {
+    $('.dark, h3.logo').on('click', function(event) {
         event.preventDefault();
         $body.css({
             overflow: 'auto'
         });
-        $('div.blog').removeClass('open');
+        $('div.blog').removeClass('open').find('h3.logo').removeClass('down');
         $('div.dark').fadeOut('fast');
         $('.page.current, .page.next').remove();
         history.pushState( '', '', ' ');

@@ -1,13 +1,14 @@
 h3.logo{
-  border-bottom: 3px solid $base-accent-color;
-  color: $base-accent-color;
   display: block;
-  font-size: $base-font-size * 1.5;
   margin-left: $base-line-height;
   margin-top: $base-line-height - $base-line-height*2;
   position: absolute;
   top: 0;
   opacity: 0;
+  @include background(url("/img/blog_logo.png") center no-repeat);
+  width: 76px;
+  cursor: pointer;
+  height: 50px;
   transition: margin 350ms cubic-bezier(0, 0.44999, 0, 1.03);
 
   &.down{
@@ -16,11 +17,12 @@ h3.logo{
   }
 
   @include media($large-screen){
-    margin-left: $base-line-height * 4.2;
-    margin-top: $base-line-height - $base-line-height*2;
+    margin-left: $base-line-height * 1.2;
+    margin-top: $base-line-height - $base-line-height*1;
 
     &.down{
-      margin-top: $base-line-height * 3;
+      margin-top: $base-line-height * 2;
+      position:fixed;
     }
   }
 }
@@ -172,6 +174,7 @@ article.page{
 
       @include media($large-screen){
         padding: $base-line-height * 3;
+        padding-top: 0;
         margin-left: $base-line-height * 2;
         title{
             font-size: $base-font-size * 3;
