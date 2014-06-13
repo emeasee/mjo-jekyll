@@ -249,6 +249,7 @@ var Background = function() {
     ballMaterial.ambient.g = ballMaterial.color.g = config.color[1] / 255;
     ballMaterial.ambient.b = ballMaterial.color.b = config.color[2] / 255;
 
+    //FIXME: We need to rethink the camera behaviour since we have a bug where the ball does not show until you move your mouse.
     camera.position.x = mx * 300;
     camera.position.y = my * 200;
 

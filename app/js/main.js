@@ -1,6 +1,4 @@
-/* jshint undef: false, unused: false, newcap: false */
-
-$(document).ready(function(){
+/* jshint undef: false, unused: false, newcap: false, latedef: nofunc */
 
     $.ajaxSetup({
            async: false
@@ -15,7 +13,7 @@ $(document).ready(function(){
     $browser_height = $(window).height();
     $scrolled = false;
 
-    var coverShowing = false;
+    var coverShowing = true;
     var $scrollLimit = 600;
     var $scrolledPast = false;
     var buttonChanged = false;
@@ -24,8 +22,70 @@ $(document).ready(function(){
     var imgLoad = imagesLoaded( $body );
 
     /* Some functions */
+    function initCover(){
+        if(!coverShowing){
+            Background();
+            coverShowing = true;
+        } else {
+            return;
+        }
+    }
+
+    function scrollEvent(){
+        var $top = $($window).scrollTop();
+        var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
+        var t = $('#scroll','nav.bottom');
+        $scrolledPast = ($top > $scrollLimit ? true : false);
+
+        $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
+
+        if ( $top < $scrollLimit && t.hasClass('one') || $top > $scrollLimit && $top < 3000 && t.hasClass('two') || $top > 3000 && t.hasClass('three') ) return;
+
+        $($window).unbind('scroll');
+        t.stop(true,true);
+
+        if ( $top < $scrollLimit ){
+           changeBottomButton(t, 'Work', 'middle', 'one');
+       } else {
+           if ($top > 3000){
+               changeBottomButton(t, 'Top', 'slide', 'three');
+           } else {
+               changeBottomButton(t, 'Swipe to navigate projects >>>', 'slide', 'two');
+           }
+       }
+    }
+
+    function changeBottomButton(el, text, scrollPoint, c){
+        el.removeAttr('class')
+          .addClass('hide')
+          .unbind('click')
+          .on('click', function(){scrollToPlace(scrollPoint);})
+          .delay(500)
+          .queue(function(){
+              $(this).addClass(c).text(text).removeClass('hide').dequeue();
+              $($window).scroll(scrollEvent).dequeue();
+              if ($scrolledPast === true){
+                  if(coverShowing){
+                      $cover.removeClass('on').find('canvas').remove();
+                      Background.prototype.removeScene();
+                      coverShowing = false;
+                  }
+              } else {
+                  if($cover.length && $html.hasClass('desktop')){
+                      initCover();
+                  }
+              }
+          });
+    }
+
     function onAlways( instance ) {
-      changeBottomButton($('#scroll','nav.bottom'), 'Work', 'middle', 'one');
+        if($cover.length && $html.hasClass('desktop')){
+            coverShowing = false;
+            initCover();
+        } else {
+            initMobile();
+        }
+        changeBottomButton($('#scroll','nav.bottom'), 'Work', 'middle', 'one');
     }
 
     function getData(post){
@@ -70,66 +130,10 @@ $(document).ready(function(){
         //}
     }
 
-    function changeBottomButton(el, text, scrollPoint, c){
-        el.removeAttr('class')
-          .addClass('hide')
-          .unbind('click')
-          .on('click', function(){scrollToPlace(scrollPoint);})
-          .delay(500)
-          .queue(function(){
-              $(this).addClass(c).text(text).removeClass('hide').dequeue();
-              $($window).scroll(scrollEvent).dequeue();
-              if ($scrolledPast === true){
-                  if(coverShowing){
-                      $cover.find('canvas').remove();
-                      Background.prototype.removeScene();
-                      coverShowing = false;
-                  }
-              } else {
-                  if($cover.length && $html.hasClass('desktop')){
-                      initCover();
-                  }
-              }
-          });
-    }
-
-    function scrollEvent(){
-        var $top = $($window).scrollTop();
-        var $num = 1 - (($top - ($browser_height * 0.15)) / ($browser_height * 0.8));
-        var t = $('#scroll','nav.bottom');
-        $scrolledPast = ($top > $scrollLimit ? true : false);
-
-        $('#slide .scroll #canvas').css({'opacity': $num, 'transform': 'scale(' + $num + ')'});
-
-        if ( $top < $scrollLimit && t.hasClass('one') || $top > $scrollLimit && $top < 3000 && t.hasClass('two') || $top > 3000 && t.hasClass('three') ) return;
-
-        $($window).unbind('scroll');
-        t.stop(true,true);
-
-        if ( $top < $scrollLimit ){
-           changeBottomButton(t, 'Work', 'middle', 'one');
-       } else {
-           if ($top > 3000){
-               changeBottomButton(t, 'Top', 'slide', 'three');
-           } else {
-               changeBottomButton(t, 'Swipe to navigate projects >>>', 'slide', 'two');
-           }
-       }
-    }
-
     if (!Array.prototype.last){
         Array.prototype.last = function(){
             return this[this.length - 1];
         };
-    }
-
-    function initCover(){
-        if(!coverShowing){
-            Background();
-            coverShowing = true;
-        } else {
-            return;
-        }
     }
 
     function initMobile(){
@@ -141,13 +145,9 @@ $(document).ready(function(){
         });
     }
 
+$(document).ready(function(){
 
 /************ Time for the show! ***********/
-    if($cover.length && $html.hasClass('desktop')){
-        //initCover();
-    } else {
-        initMobile();
-    }
 
     imgLoad.on( 'always', onAlways );
 
