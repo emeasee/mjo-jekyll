@@ -59,7 +59,7 @@ var Background = function() {
     x: 0,
     y: 0
   };
-  var dDistance = 600,
+  var dDistance = 500,
 	    dRotX = 0,
 	    dRotY = 0;
   var cameraMode = true;
@@ -229,9 +229,9 @@ var Background = function() {
     var pam = Math.round(Math.random() * 1) - 1;
     if (!pam) pam += 1;
 
-    camera.dx = Math.random() * pam * 0.3;
-    camera.dy = Math.random() * pam * 0.3;
-    camera.dz = Math.random() * pam * 0.3;
+    camera.dx = Math.random() * pam * 0.2;
+    camera.dy = Math.random() * pam * 0.2;
+    camera.dz = Math.random() * pam * 0.2;
     cameraPos.x = Math.random() * range - range / 2;
     cameraPos.y = Math.random() * range - range / 2;
     cameraPos.z = Math.random() * range - range / 2;
