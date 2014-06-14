@@ -12,16 +12,24 @@ var Background = function() {
   var t = 0;
   var bt = 0;
   var lt = 0;
+  var cUpdateID;
+  var rotAry = [];
 
   var tx = 0;
   var ty = 0;
-  var mx = 0; // mouse x
-  var my = 0; // mouse y
+  var cameraPos = {
+    x: 0,
+    y: 0,
+    z: 0,
+    dx: 0,
+    dy: 0,
+    dz: 0
+  };
 
   var config = {
       color: [ 0, 128, 255 ],
-      speed1: 0.06,
-      level:  0.02,
+      speed1: 0.1,
+      level:  0.2,
       var1: 0.35,
       var2: 0.01,
       speed2: 0.02,
@@ -51,6 +59,9 @@ var Background = function() {
     x: 0,
     y: 0
   };
+  var dDistance = 600,
+	    dRotX = 0,
+	    dRotY = 0;
   var cameraMode = true;
   var debugMode = false;
   var defaultCamera = 'manual';
@@ -71,7 +82,7 @@ var Background = function() {
     $(container).css({visibility: 'hidden'});
 
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.5, 15000);
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
     //camera.up = { x:0, y:0, z:1 };
     camera.lookAt(scene.position);
 
@@ -80,12 +91,12 @@ var Background = function() {
     // WebGL
     if (window.WebGLRenderingContext && getBrowser() != 'safari') {
       renderer = new THREE.WebGLRenderer();
-      ballGeometry = new THREE.SphereGeometry(140, 20, 60);
+      ballGeometry = new THREE.SphereGeometry(200, 20, 60);
     }
     // CANVAS
     else {
       renderer = new THREE.CanvasRenderer();
-      ballGeometry = new THREE.SphereGeometry(140, 14, 7);
+      ballGeometry = new THREE.SphereGeometry(200, 14, 7);
 
       //if (isSmartDevice()) {}
     }
@@ -151,8 +162,6 @@ var Background = function() {
     scene.add( light );
     scene.fog = new THREE.FogExp2( 0xff0000, 0.004);
 
-    camera.position.y = 100;
-    camera.position.z = 300;
   }
 
   var setupKeydown = function() {
@@ -202,6 +211,7 @@ var Background = function() {
     // render
     cameraMode = defaultCamera;
     render();
+    cameraAutoUpdate();
 
     setTimeout( function(){
       $(container + ' > canvas').css({visibility: 'visible'});
@@ -213,21 +223,35 @@ var Background = function() {
   var mousemove = function(e) {
     tx = e.clientX / ww * 2 - 1;
     ty = e.clientY / wh * 2 - 1;
-};
+  };
+
+  var cameraAutoUpdate = function() {
+    var pam = Math.round(Math.random() * 1) - 1;
+    if (!pam) pam += 1;
+
+    camera.dx = Math.random() * pam * 0.3;
+    camera.dy = Math.random() * pam * 0.3;
+    camera.dz = Math.random() * pam * 0.3;
+    cameraPos.x = Math.random() * range - range / 2;
+    cameraPos.y = Math.random() * range - range / 2;
+    cameraPos.z = Math.random() * range - range / 2;
+
+    cUpdateID = setTimeout(function() {
+      cameraAutoUpdate();
+    }, 7000);
+  }
 
   var render = function() {
 
-    requestAnimationFrame(render);
-
-    mx += (tx - mx) * .05;
-    my += (ty - my) * .05;
+    mousePos.x += (tx - mousePos.x) * .05;
+    mousePos.y += (ty - mousePos.y) * .05;
 
     t += config.speed1;
     bt += config.speed2;
-    lt += 0.02;
+    lt += 0.1;
     var vertex;
     var scale;
-    var level = (config.level / mx) / 2;
+    var level = config.level;
     var multiplyRatio = config.multiplyRatio;
     var var1 = config.var1;
     var var2 = config.var2;
@@ -249,12 +273,33 @@ var Background = function() {
     ballMaterial.ambient.g = ballMaterial.color.g = config.color[1] / 255;
     ballMaterial.ambient.b = ballMaterial.color.b = config.color[2] / 255;
 
-    //FIXME: We need to rethink the camera behaviour since we have a bug where the ball does not show until you move your mouse.
-    camera.position.x = mx * 300;
-    camera.position.y = my * 200;
+    if (cameraMode == 'auto') {
+      cameraPos.x += camera.dx;
+      cameraPos.y += camera.dy;
+      cameraPos.z += camera.dz;
+      camera.position.x = cameraPos.x;
+      camera.position.y = cameraPos.y;
+      camera.position.z = cameraPos.z;
+    } else if (cameraMode == 'manual') {
+      // manual camera
+      rotX = mousePos.x * 180;
+      rotY = mousePos.y * 90;
+      dRotX += (rotX - dRotX) * 0.05;
+      dRotY += (rotY - dRotY) * 0.05;
 
-    camera.lookAt(ball.position);
+      // camera update
+      camera.position.x = dDistance * Math.sin(dRotX * Math.PI / 180);
+      camera.position.y = dDistance * Math.sin(dRotY * Math.PI / 180);
+      camera.position.z = dDistance * Math.cos(dRotX * Math.PI / 180);
+    }
+
+    camera.lookAt(scene.position);
+
+    //debug( camera.position.x+', '+camera.position.y+', '+camera.position.z );
+
     renderer.render(scene, camera);
+    requestAnimationFrame(render);
+
 };
   ///////////////////////////////////////
   // getter
