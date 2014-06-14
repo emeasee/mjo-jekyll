@@ -89,7 +89,7 @@
                 }
                 &.update{
                     span{
-                      border-bottom: 3px solid $base-font-color;
+                      border-bottom: 2px solid $base-font-color;
                       display: block;
                       font-size: $base-font-size * 1.5;
                       padding-bottom: $base-line-height * .3;
@@ -123,7 +123,7 @@
 
                       a{
                           display: block;
-                          font-weight: 700;
+                          font-weight: 400;
                       }
                   }
                 }
@@ -181,12 +181,12 @@ nav{
       width: 100%;
 
       span{
-        border-bottom: 3px solid $base-font-color;
+        border-bottom: 2px solid $base-font-color;
         color: $base-font-color;
         cursor: pointer;
         display: inline-block;
         font-size: $base-font-size * 1.1;
-        font-weight: 700;
+        font-weight: 400;
         margin: 0 $base-line-height / 3;
         padding-bottom: $base-line-height * .2;
         vertical-align: middle;
@@ -246,11 +246,11 @@ nav{
   }
 
   .close{
-    border-bottom: 3px solid $base-accent-color;
+    border-bottom: 2px solid $base-accent-color;
     color: $base-accent-color;
     cursor: pointer;
     font-size: $base-font-size * 1.1;
-    font-weight: 700;
+    font-weight: 400;
     margin: 0 $base-line-height / 3;
     padding-bottom: $base-line-height * .2;
   }
@@ -264,7 +264,7 @@ nav{
 
   article{
     span{
-      border-bottom: 3px solid #fff!important;
+      border-bottom: 2px solid #fff!important;
     }
     &.double{
         width: 90%;

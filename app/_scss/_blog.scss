@@ -21,7 +21,7 @@ h3.logo{
     margin-top: $base-line-height - $base-line-height*1;
 
     &.down{
-      margin-top: $base-line-height * 2;
+      margin-top: $base-line-height * 2.4;
       position:fixed;
     }
   }
@@ -132,6 +132,7 @@ article.page{
             h1{
               margin: 0;
               padding: $base-line-height/2 0;
+              font-weight: 300;
             }
 
             h2{
@@ -166,6 +167,12 @@ article.page{
 
       .title{
         font-size: $base-font-size * 2;
+        line-height: $base-font-size * 1.8;
+        font-weight: 400;
+        span{
+            border-bottom: 2px solid $base-font-color;
+            padding-bottom: $base-line-height * .1;
+        }
       }
 
       .text{

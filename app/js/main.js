@@ -123,7 +123,7 @@ $(document).ready(function(){
         }
         $('html, body').animate({
             scrollTop: $('#' + $el).offset().top
-        }, 200, function(){ $($window).scroll(scrollEvent);scrollEvent(); });
+        }, 400, function(){ $($window).scroll(scrollEvent);scrollEvent(); });
     }
 
     function lockScrollDesktop(){
