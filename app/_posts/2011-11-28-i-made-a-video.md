@@ -4,11 +4,13 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-28
-image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
+image: http://m-jo.s3.amazonaws.com/thesismaking/IMG_8068 1.jpg
 ---
 
-Here&#8217;s a short video I shot and edited in a day to describe the vision behind my design direction currently. 
+Here's a short video I shot and edited in a day to describe the vision behind my design direction currently. 
 
-Apologies for both the overly dramatic music and &#8216;did-it-while-cooking&#8217; AE motion tracking&#8230;
+Apologies for both the overly dramatic music and "did-it-while-cooking" AE motion tracking.
 
 Enjoy!
+
+<iframe src="//player.vimeo.com/video/32806771?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

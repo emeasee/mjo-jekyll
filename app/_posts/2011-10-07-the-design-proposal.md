@@ -4,21 +4,22 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-10-07
-image: http://m-jo.s3.amazonaws.com/ajoto/ajoto.jpg
+image: http://m-jo.s3.amazonaws.com/proposal-01.jpeg
 ---
 
-The latter part of this week was spent mostly pulling together my research, initial ideas and concepts from multiple brainstorming sessions and the final result is my design proposal below. It&#8217;s not deep by any means but I feel it is a good enough point to start exploring with prototypes proceeding week four (I&#8217;m currently finalising plans for prototyping in Paris!). 
+The latter part of this week was spent mostly pulling together my research, initial ideas and concepts from multiple brainstorming sessions and the final result is my design proposal below. It's not deep by any means but I feel it is a good enough point to start exploring with prototypes proceeding week four (I'm currently finalising plans for prototyping in Paris!). 
 
-My main focus for this project, as is explained below in the diagram, is to first create a service of convenience and then on the back of that foundation attempt to develop a project which starts to push towards the second circle to the left and ultimately answering the question mark in the middle. It&#8217;s funny to think of my project as a question mark after all these last few weeks research and investigation but I really believe that question mark has such great value and opportunity embedded in it.
+My main focus for this project, as is explained below in the diagram, is to first create a service of convenience and then on the back of that foundation attempt to develop a project which starts to push towards the second circle to the left and ultimately answering the question mark in the middle. It's funny to think of my project as a question mark after all these last few weeks research and investigation but I really believe that question mark has such great value and opportunity embedded in it.
 
-<img src="/attach/proposal-01.jpeg" alt="Proposal 01" title="proposal-01.jpg" border="0" width="600" height="423" /> 
-<span style='text-decoration:underline;'>So what, exactly, is my design challenge?<br /> </span>
+<img src="http://m-jo.s3.amazonaws.com/proposal-01.jpeg" alt="Proposal 01" title="proposal-01.jpg" /> 
+
+**So what, exactly, is my design challenge?**
 
 To create a product-service that helps busy, urban citizens who have the desire to eat healthily, get started with landless gardening in their own flats/apartments. This would exist within the context of, first, a convenient subscription service delivering fresh, still-growing herbs to the customers’ door. Then using this channel of communication between consumer and service I want to explore how, consequently, I can help consumers maintain a garden themselves by progressively connecting them to the right knowledge about how to care for it and eventually to other gardeners/customers for inspiration and support.
 
 My ultimate goal would be to provide a product/service intervention that would be progressive, convenient and modular and would exist as platform upon which customers can help and inform each other, co-create new products themselves and help to promote a sustainable way of living.
 
-<span style='text-decoration:underline;'>Why?<br /> </span>
+**Why?**
 
 1.  
 *The popularity of such services as Aarstiderne in Denmark and others worldwide have shown a opportunity to inspire people to eat healthily by providing a convenient service which takes a lot of the effort out of doing so. However, inspiring people to grow something themselves still remains an area of opportunity.*

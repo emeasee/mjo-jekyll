@@ -127,7 +127,7 @@ ArticleAnimator.contentizeElement = function($el, d){
   $el.find('h1.title span').html(d.title);
   $el.find('h2.description').html(d.excerpt);
   $el.find('.content .text').html(d.content);
-  //$el.find('h3.byline time').html(d.date);
+  $el.find('h6.time').html(d.date);
 };
 
 ArticleAnimator.animatePage = function(callback){

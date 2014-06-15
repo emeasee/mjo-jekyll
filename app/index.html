@@ -179,7 +179,7 @@ title: M-JO.CO / A Digital Portfolio
                 <li class="slide"><img class='shadow' src="http://m-jo.s3.amazonaws.com/projects/cph/5.png" alt=""/></li>
                 {% assign post_count = '0' %}
                     {% for post in site.posts %}
-                        {% if post.categories contains 'envelop' %}
+                        {% if post.categories contains 'cph' %}
                             <li class="slide label update">
                                 <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="post button" href={{post_count}}>Read post</a></p>
                             </li>
@@ -366,7 +366,7 @@ title: M-JO.CO / A Digital Portfolio
         </div>
         <div class='content'>
             <h1 class='title'><span></span></h1>
-                 <!--<h2 class='description'></h2>-->
+            <h6 class='time'></h6>
             <div class='text'></div>
         </div>
     </article>

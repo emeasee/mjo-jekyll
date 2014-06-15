@@ -252,7 +252,6 @@ $(document).ready(function(){
     $('#blog').on('click', function(event) {
         event.preventDefault();
         lockScrollDesktop();
-
         ArticleAnimator.load();
     });
 
