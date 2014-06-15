@@ -1,1 +1,1 @@
-var numPosts = 30;
+var numPosts = 27;
