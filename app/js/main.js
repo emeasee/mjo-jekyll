@@ -81,12 +81,6 @@ $(document).ready(function(){
     }
 
     function onAlways( instance ) {
-        if($cover.length && $html.hasClass('desktop')){
-            coverShowing = false;
-            initCover();
-        } else {
-            initMobile();
-        }
         changeBottomButton($('#scroll','nav.bottom'), 'Work', 'middle', 'one');
     }
 
@@ -150,6 +144,13 @@ $(document).ready(function(){
 /************ Time for the show! ***********/
 
     imgLoad.on( 'always', onAlways );
+
+    if($cover.length && $html.hasClass('desktop')){
+        coverShowing = false;
+        initCover();
+    } else {
+        initMobile();
+    }
 
     if($('.imgs').length){
         $('.imgs a').fluidbox();

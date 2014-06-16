@@ -27,11 +27,11 @@ var Background = function() {
   };
 
   var config = {
-      color: [ 0, 128, 255 ],
-      speed1: 0.1,
-      level:  0.2,
+      color: [ 80, 211, 152 ],
+      speed1: 0.001,
+      level:  0.75,
       var1: 0.35,
-      var2: 0.01,
+      var2: 0,
       speed2: 0.02,
       random: function(){
           config.color[0] = Math.random() * 255;
@@ -91,12 +91,12 @@ var Background = function() {
     // WebGL
     if (window.WebGLRenderingContext && getBrowser() != 'safari') {
       renderer = new THREE.WebGLRenderer();
-      ballGeometry = new THREE.SphereGeometry(200, 40, 40);
+      ballGeometry = new THREE.SphereGeometry(100, 40, 40);
     }
     // CANVAS
     else {
       renderer = new THREE.CanvasRenderer();
-      ballGeometry = new THREE.SphereGeometry(200, 14, 14);
+      ballGeometry = new THREE.SphereGeometry(100, 14, 14);
 
       //if (isSmartDevice()) {}
     }
@@ -131,7 +131,7 @@ var Background = function() {
 };
 
   var setupBeater = function() {
-    ballMaterial = new THREE.MeshPhongMaterial({ambient: 0xffffff, color: 0xffffff})
+    ballMaterial = new THREE.MeshPhongMaterial({ambient: 0xff0000, color: 0xff0000})
     ball = new THREE.Mesh(ballGeometry, ballMaterial);
 
     ball.castShadow = true;
@@ -145,7 +145,7 @@ var Background = function() {
         vertex.oz = vertex.z;
     }
 
-    var ambient = new THREE.AmbientLight(0xffffff);
+    var ambient = new THREE.AmbientLight(0x999999);
 
     light = new THREE.DirectionalLight( 0x999999 );
     light.castShadow = true;
@@ -160,7 +160,7 @@ var Background = function() {
     scene.add(ball);
     scene.add(ambient);
     scene.add( light );
-    scene.fog = new THREE.FogExp2( 0xff0000, 0.004);
+    scene.fog = new THREE.FogExp2( 0xff0000, 0.002);
 
   }
 
@@ -209,37 +209,22 @@ var Background = function() {
     $(window).bind('mousemove', mousemove);
 
     // render
+    camera.position.y = 100;
+    camera.position.z = 300;
     cameraMode = defaultCamera;
     render();
-    cameraAutoUpdate();
 
     setTimeout( function(){
       $(container + ' > canvas').css({visibility: 'visible'});
       $(container).css({visibility: 'visible', display: 'none'});
-      $(container).fadeIn(3000);
-    }, 2000 );
+      $(container).fadeIn(2000);
+  }, 1000 );
 };
 
   var mousemove = function(e) {
     tx = e.clientX / ww * 2 - 1;
     ty = e.clientY / wh * 2 - 1;
   };
-
-  var cameraAutoUpdate = function() {
-    var pam = Math.round(Math.random() * 1) - 1;
-    if (!pam) pam += 1;
-
-    camera.dx = Math.random() * pam * 0.2;
-    camera.dy = Math.random() * pam * 0.2;
-    camera.dz = Math.random() * pam * 0.2;
-    cameraPos.x = Math.random() * range - range / 2;
-    cameraPos.y = Math.random() * range - range / 2;
-    cameraPos.z = Math.random() * range - range / 2;
-
-    cUpdateID = setTimeout(function() {
-      cameraAutoUpdate();
-    }, 7000);
-  }
 
   var render = function() {
 
@@ -248,7 +233,7 @@ var Background = function() {
 
     t += config.speed1;
     bt += config.speed2;
-    lt += 0.1;
+    lt += 0.01;
     var vertex;
     var scale;
     var level = config.level;
@@ -273,25 +258,8 @@ var Background = function() {
     ballMaterial.ambient.g = ballMaterial.color.g = config.color[1] / 255;
     ballMaterial.ambient.b = ballMaterial.color.b = config.color[2] / 255;
 
-    if (cameraMode == 'auto') {
-      cameraPos.x += camera.dx;
-      cameraPos.y += camera.dy;
-      cameraPos.z += camera.dz;
-      camera.position.x = cameraPos.x;
-      camera.position.y = cameraPos.y;
-      camera.position.z = cameraPos.z;
-    } else if (cameraMode == 'manual') {
-      // manual camera
-      rotX = mousePos.x * 180;
-      rotY = mousePos.y * 90;
-      dRotX += (rotX - dRotX) * 0.05;
-      dRotY += (rotY - dRotY) * 0.05;
-
-      // camera update
-      camera.position.x = dDistance * Math.sin(dRotX * Math.PI / 180);
-      camera.position.y = dDistance * Math.sin(dRotY * Math.PI / 180);
-      camera.position.z = dDistance * Math.cos(dRotX * Math.PI / 180);
-    }
+    camera.position.x = mousePos.x * 100;
+    camera.position.y = mousePos.y * 200;
 
     camera.lookAt(scene.position);
 

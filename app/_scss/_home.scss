@@ -39,25 +39,31 @@
 
               h1{
                   position: absolute!important;
-                  width: 90%;
-                  margin-left: 5%;
+                  width: 100%;
                   z-index: 99;
                   text-align: center;
-                  font-size: 3em;
-                  font-weight: 400;
-                  color: $base-font-color;
+                  font-size: $base-font-size / 1.1;
+                  text-transform: uppercase;
+                  font-weight: 700;
+                  color: $base-accent-color;
                   padding: 10px 0;
-                  @include vertical-align;
-                  border: 2px solid $frame;
-                  background-color: $base-body-color;
+                  bottom: 90px;
+                  span{
+                      //background-color: $base-accent-color;
+                      padding: 3px;
+                  }
+                  @include media($large-screen){
+
+                  }
               }
 
               .label{
                 height: 350px;
                 //max-width: 400px;
                 max-height:535px;
-                background: white;
-                border: 2px solid $frame;
+                background: $frame;
+                //border: 2px solid $frame;
+                border-radius: 5px;
                 color: $base-font-color;
                 text-align: left;
 
@@ -77,6 +83,7 @@
                   a.button{
                     @extend %button;
                     display: block;
+                    color: white;
                     width: 80%;
                     margin-top: $base-line-height;
                     text-align: center;
@@ -84,11 +91,11 @@
                 }
                 &.update{
                     span{
-                      border-bottom: 2px solid $base-font-color;
+                      border-bottom: 10px solid $base-accent-color;
                       display: block;
                       font-size: $base-font-size * 1.5;
                       padding-bottom: $base-line-height * .3;
-                      width: 210px;
+                      width: 100px;
                     }
 
                     b{
@@ -107,7 +114,6 @@
 
                     p.large{
                       font-size: $base-font-size * 1.05;
-                      //line-height: normal;
                       overflow: auto;
 
                       .float{
@@ -118,7 +124,7 @@
 
                       a{
                           display: block;
-                          font-weight: 400;
+                          font-size: $base-font-size / 1.4;
                       }
                   }
                 }
@@ -177,18 +183,21 @@ nav{
       width: 100%;
 
       span{
-        border-bottom: 2px solid $base-font-color;
+        //border-bottom: 2px solid $base-font-color;
         color: $base-font-color;
         cursor: pointer;
         display: inline-block;
         font-size: $base-font-size * 1.1;
-        font-weight: 400;
+        font-weight: 600;
         margin: 0 $base-line-height / 3;
         padding-bottom: $base-line-height * .2;
         vertical-align: middle;
+        @include transition(color 0.1s linear, border-color 0.1s linear);
 
         &:hover{
           text-decoration: none;
+          color: $base-accent-color;
+          //border-color: $base-link-color;
         }
       }
     }

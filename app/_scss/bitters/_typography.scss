@@ -43,16 +43,19 @@ p {
 }
 
 a {
-  color: $base-link-color;
+  color: darken($base-link-color, 10%);
+  text-transform: uppercase;
   text-decoration: none;
+  font-size: $base-font-size / 1.5;
+  font-weight: 600;
   @include transition(color 0.1s linear);
 
   &:hover {
-    text-decoration: underline;
+    color: $base-font-color;
   }
 
   &:active, &:focus {
-    color: $hover-link-color;
+    color: $base-font-color;
     outline: none;
   }
 }

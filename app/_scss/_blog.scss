@@ -1,12 +1,12 @@
 h3.logo{
   display: block;
-  margin-left: $base-line-height;
+  margin-left: $base-line-height / 1.5;
   margin-top: $base-line-height - $base-line-height*2;
   position: absolute;
   top: 0;
   opacity: 0;
-  @include background(url("/img/blog_logo.png") center no-repeat);
-  width: 76px;
+  @include background(url("/img/close.png") center no-repeat);
+  width: 50px;
   cursor: pointer;
   height: 50px;
   transition: margin 350ms cubic-bezier(0, 0.44999, 0, 1.03);
@@ -17,11 +17,11 @@ h3.logo{
   }
 
   @include media($large-screen){
-    margin-left: $base-line-height * 1.2;
+    margin-left: $base-line-height / 2;
     margin-top: $base-line-height - $base-line-height*1;
 
     &.down{
-      margin-top: $base-line-height * 2.4;
+      margin-top: $base-line-height / 2;
       position:fixed;
     }
   }
@@ -184,8 +184,10 @@ article.page{
 
       .text{
           p{
+              margin-left: 2.5em;
               img{
                   float: left;
+                  clear: both;
                   width: 75%;
                   padding: 1em 1em 0 0;
                   margin-left: -10%;
@@ -198,12 +200,12 @@ article.page{
               }
               span{
                   display:block;
-                  width: 120%;
                   img{
                       width: 150%;
                       margin-left:0;
                       float: initial;
                       margin-left: -5%;
+                      max-width: 910px;
                   }
               }
           }
@@ -213,10 +215,27 @@ article.page{
                  clear: both;
               }
           }
+          em{
+            float: left;
+            width: 40%;
+            clear: both;
+            padding: $base-font-size;
+            margin-left: -$base-font-size*3;
+            font-size: $base-font-size * 1.4;
+            line-height: $base-line-height;
+            &:before{
+                content:"“";
+                font-size: $base-font-size * 2;
+            }
+            &:after{
+                content:"”";
+                font-size: $base-font-size * 2;
+            }
+          }
       }
 
       @include media($large-screen){
-        padding: $base-line-height * 5;
+        padding: $base-line-height * 2;
         padding-top: 0;
         margin-left: $base-line-height * 2;
         title{
