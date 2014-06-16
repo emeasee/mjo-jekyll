@@ -91,12 +91,12 @@ var Background = function() {
     // WebGL
     if (window.WebGLRenderingContext && getBrowser() != 'safari') {
       renderer = new THREE.WebGLRenderer();
-      ballGeometry = new THREE.SphereGeometry(200, 20, 60);
+      ballGeometry = new THREE.SphereGeometry(200, 40, 40);
     }
     // CANVAS
     else {
       renderer = new THREE.CanvasRenderer();
-      ballGeometry = new THREE.SphereGeometry(200, 14, 7);
+      ballGeometry = new THREE.SphereGeometry(200, 14, 14);
 
       //if (isSmartDevice()) {}
     }

@@ -70,65 +70,6 @@ title: M-JO.CO / A Digital Portfolio
                     {% assign post_count = '0' %}
                 </ul>
         </article>
-        <article id="ajoto" class="proj">
-            <ul class="royalSlider rsDefault visibleNearby rsHor">
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/1.png" alt=""/></li>
-                <li class="slide label">
-                    <p>
-                        At AJOTO we create beautiful tools for everyday journeys, combining the precision of modern manufacturing with the soul of craft. By carefully utilising new technologies we simplify the complex, reduce waste and create lasting experiences which grow with our customers.<br><br>
-                        I am currently working with the AJOTO team, overseeing the creation on new digital experiences around their iconic brand and philosophy.
-                    <a href="http://www.ajoto.com/" target="_blank" class="button">Visit website</a></p>
-                </li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/2.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/3.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/4.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/5.png" alt=""/></li>
-                <li class="slide"><iframe src="//player.vimeo.com/video/68227510?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="365" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
-                {% assign post_count = '0' %}
-                    {% for post in site.posts %}
-                        {% if post.categories contains 'ajoto' %}
-                            <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
-                            </li>
-                            {% break %}
-                        {% endif %}
-                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
-                    {% endfor %}
-                {% assign post_count = '0' %}
-            </ul>
-        </article>
-        <article id="iso" class="proj">
-            <ul class="royalSlider rsDefault visibleNearby rsHor">
-                <li class="slide"><h1><span>City Sensor ISO</span></h1><img  src="http://m-jo.s3.amazonaws.com/projects/iso/1.png" alt=""/></li>
-                <li class="slide label">
-                    <p>
-                    This project in collaboration with <a href="http://thefactoryfactory.com" target="_blank">Joshua Noble</a> was proposal for an ISO standard that applies to
-                    the tagging, classifying and providing access to anonymous urban sensors. We intentionally took a 'top-down' approach
-                    with interest in involving local government and city regulators. <br/><br/> We were happy to continue the project with Usman Haque
-                    of Pachube/Cosm, researching new ways to access & express data in our urban landscapes
-                    <a href="http://www.cosm.com/" class="button" target="_blank">Visit website</a></p>
-                </li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/2.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/3.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/4.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/5.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/6.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/7.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/8.png" alt=""/></li>
-                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/9.png" alt=""/></li>
-                {% assign post_count = '0' %}
-                    {% for post in site.posts %}
-                        {% if post.categories contains 'iso' %}
-                            <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
-                            </li>
-                            {% break %}
-                        {% endif %}
-                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
-                    {% endfor %}
-                {% assign post_count = '0' %}
-            </ul>
-        </article>
         <article id="urbbi" class="proj">
             <ul class="royalSlider rsDefault visibleNearby rsHor">
                 <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/urbbi/1.png" alt=""/></li>
@@ -190,6 +131,33 @@ title: M-JO.CO / A Digital Portfolio
                 {% assign post_count = '0' %}
             </ul>
         </article>
+        <article id="ajoto" class="proj">
+            <ul class="royalSlider rsDefault visibleNearby rsHor">
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/1.png" alt=""/></li>
+                <li class="slide label">
+                    <p>
+                        At AJOTO we create beautiful tools for everyday journeys, combining the precision of modern manufacturing with the soul of craft. By carefully utilising new technologies we simplify the complex, reduce waste and create lasting experiences which grow with our customers.<br><br>
+                        I am currently working with the AJOTO team, overseeing the creation on new digital experiences around their iconic brand and philosophy.
+                    <a href="http://www.ajoto.com/" target="_blank" class="button">Visit website</a></p>
+                </li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/2.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/3.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/4.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/ajoto/5.png" alt=""/></li>
+                <li class="slide"><iframe src="//player.vimeo.com/video/68227510?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="365" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'ajoto' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
+            </ul>
+        </article>
         <article id="envelop" class="proj">
             <ul class="royalSlider rsDefault visibleNearby rsHor">
                 <li class="slide"><img  src="http://m-jo.s3.amazonaws.com/projects/envelop/1.png" alt=""/></li>
@@ -217,6 +185,66 @@ title: M-JO.CO / A Digital Portfolio
                         {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
                     {% endfor %}
                 {% assign post_count = '0' %}
+            </ul>
+        </article>
+        <article id="iso" class="proj">
+            <ul class="royalSlider rsDefault visibleNearby rsHor">
+                <li class="slide"><h1><span>City Sensor ISO</span></h1><img  src="http://m-jo.s3.amazonaws.com/projects/iso/1.png" alt=""/></li>
+                <li class="slide label">
+                    <p>
+                    This project in collaboration with <a href="http://thefactoryfactory.com" target="_blank">Joshua Noble</a> was proposal for an ISO standard that applies to
+                    the tagging, classifying and providing access to anonymous urban sensors. We intentionally took a 'top-down' approach
+                    with interest in involving local government and city regulators. <br/><br/> We were happy to continue the project with Usman Haque
+                    of Pachube/Cosm, researching new ways to access & express data in our urban landscapes
+                    <a href="http://www.cosm.com/" class="button" target="_blank">Visit website</a></p>
+                </li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/2.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/3.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/4.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/5.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/6.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/7.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/8.png" alt=""/></li>
+                <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/iso/9.png" alt=""/></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'iso' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
+            </ul>
+        </article>
+        <article id="mrd" class="proj">
+            <ul class="royalSlider rsDefault visibleNearby rsHor">
+                <li class="slide"><h1><span>Mass Responsive Device</span></h1><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/mrd/1.png" alt=""/></li>
+                <li class="slide label">
+                    <p>
+                    The Mass Responsive Device is a generative experiment into the relationship that we have with the way in which we organise our data.
+                    Our relationship with our data and how we keep them organised on your digital storage devices reflects our personality in the same way having a clean or messy
+                    desk may reflect this also. <br><br>To highlight this intriguing parallel the Mass Responsive Device was developed to create a unique, one of kind graphic representation
+                    of any storage device plugged into it, producing a snapshot of it's contents all on one A4 page. The device reads raw data from text files, image files and even code and responds in a way that
+                    reflects the way you have organised the information in the storage device's file structure, the time of day used, and even the amount of times the experiment has been used.
+                    </p></li>
+                <li class="slide"><iframe class="shadow" src="//player.vimeo.com/video/22597868?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+                <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/mrd/2.png" alt=""/></li>
+                <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/mrd/3.png" alt=""/></li>
+                {% assign post_count = '0' %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains 'mrd' %}
+                            <li class="slide label update">
+                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
+                            </li>
+                            {% break %}
+                        {% endif %}
+                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                    {% endfor %}
+                {% assign post_count = '0' %}
+                </li>
             </ul>
         </article>
         <article id="lg" class="proj">
@@ -256,34 +284,6 @@ title: M-JO.CO / A Digital Portfolio
                         {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
                     {% endfor %}
                 {% assign post_count = '0' %}
-            </ul>
-        </article>
-        <article id="mrd" class="proj">
-            <ul class="royalSlider rsDefault visibleNearby rsHor">
-                <li class="slide"><h1><span>Mass Responsive Device</span></h1><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/mrd/1.png" alt=""/></li>
-                <li class="slide label">
-                    <p>
-                    The Mass Responsive Device is a generative experiment into the relationship that we have with the way in which we organise our data.
-                    Our relationship with our data and how we keep them organised on your digital storage devices reflects our personality in the same way having a clean or messy
-                    desk may reflect this also. <br><br>To highlight this intriguing parallel the Mass Responsive Device was developed to create a unique, one of kind graphic representation
-                    of any storage device plugged into it, producing a snapshot of it's contents all on one A4 page. The device reads raw data from text files, image files and even code and responds in a way that
-                    reflects the way you have organised the information in the storage device's file structure, the time of day used, and even the amount of times the experiment has been used.
-                    </p></li>
-                <li class="slide"><iframe class="shadow" src="//player.vimeo.com/video/22597868?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="650" height="366" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
-                <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/mrd/2.png" alt=""/></li>
-                <li class="slide"><img class="shadow" src="http://m-jo.s3.amazonaws.com/projects/mrd/3.png" alt=""/></li>
-                {% assign post_count = '0' %}
-                    {% for post in site.posts %}
-                        {% if post.categories contains 'mrd' %}
-                            <li class="slide label update">
-                                <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
-                            </li>
-                            {% break %}
-                        {% endif %}
-                        {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
-                    {% endfor %}
-                {% assign post_count = '0' %}
-                </li>
             </ul>
         </article>
     </section>
