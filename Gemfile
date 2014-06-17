@@ -1,7 +1,5 @@
-if RUBY_VERSION =~ /2.0/
-  Encoding.default_external = Encoding::UTF_8
-  Encoding.default_internal = Encoding::UTF_8
-end
+LANG="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
 
 source "http://rubygems.org"
 

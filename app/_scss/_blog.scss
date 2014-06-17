@@ -224,11 +224,11 @@ article.page{
             font-size: $base-font-size * 1.4;
             line-height: $base-line-height;
             &:before{
-                content:"“";
+                content:"\201C";
                 font-size: $base-font-size * 2;
             }
             &:after{
-                content:"”";
+                content:"\201D";
                 font-size: $base-font-size * 2;
             }
           }
