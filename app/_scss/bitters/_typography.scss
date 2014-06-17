@@ -43,7 +43,7 @@ p {
 }
 
 a {
-  color: darken($base-link-color, 10%);
+  color: darken($base-link-color, 3%);
   text-transform: uppercase;
   text-decoration: none;
   font-size: $base-font-size / 1.5;
@@ -93,9 +93,9 @@ del {
 
 blockquote {
   border-left: 2px solid $base-border-color;
+  font-style: italic;
   color: lighten($base-font-color, 15);
   margin: $base-line-height 0;
-  padding-left: $base-line-height / 2;
 }
 
 cite {

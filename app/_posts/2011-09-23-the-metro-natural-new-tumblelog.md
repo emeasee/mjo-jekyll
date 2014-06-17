@@ -12,6 +12,6 @@ For now it's simply, "Ongoing research into the meaning of nature in an increasi
 
 We'll see where it goes from there! Click the screengrab or over [here][1] if you prefer the classic way.
 
-[<img src="http://m-jo.s3.amazonaws.com/Screen shot 2011 10 16 at 02 22 45 1.png" alt="Screen shot 2011 10 16 at 02 22 45 1" title="Screen shot 2011-10-16 at 02.22.45 1.png" border="0" width="600" height="422" />][1]
+[<span>![metro](http://m-jo.s3.amazonaws.com/Screen shot 2011 10 16 at 02 22 45 1.png)</span>][1]
 
  [1]: http://metronature.tumblr.com/

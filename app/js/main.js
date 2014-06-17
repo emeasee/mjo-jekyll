@@ -227,6 +227,11 @@ $(document).ready(function(){
         lockScrollDesktop();
         ArticleAnimator.load();
         $body.find('.blog').addClass('open');
+        if(coverShowing){
+            $cover.removeClass('on').find('canvas').remove();
+            Background.prototype.removeScene();
+            coverShowing = false;
+        }
     }
 
     $('#about').on('click', function(event) {
@@ -246,6 +251,11 @@ $(document).ready(function(){
         history.pushState( '', '', $id);
         lockScrollDesktop();
         ArticleAnimator.load();
+        if(coverShowing){
+            $cover.removeClass('on').find('canvas').remove();
+            Background.prototype.removeScene();
+            coverShowing = false;
+        }
     });
 
     $($window).scroll(scrollEvent);
@@ -254,6 +264,11 @@ $(document).ready(function(){
         event.preventDefault();
         lockScrollDesktop();
         ArticleAnimator.load();
+        if(coverShowing){
+            $cover.removeClass('on').find('canvas').remove();
+            Background.prototype.removeScene();
+            coverShowing = false;
+        }
     });
 
     $('.dark, h3.logo').on('click', function(event) {
@@ -265,5 +280,8 @@ $(document).ready(function(){
         $('div.dark').fadeOut('fast');
         $('.page.current, .page.next').remove();
         history.pushState( '', '', ' ');
+        if($cover.length && $html.hasClass('desktop')){
+            initCover();
+        }
     });
 });
