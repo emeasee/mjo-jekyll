@@ -27,7 +27,7 @@ var Background = function() {
   };
 
   var config = {
-      color: [ 80, 211, 152 ],
+      color: [ 234, 0, 0 ],
       speed1: 0.001,
       level:  0.75,
       var1: 0.35,
@@ -145,7 +145,7 @@ var Background = function() {
         vertex.oz = vertex.z;
     }
 
-    var ambient = new THREE.AmbientLight(0x999999);
+    var ambient = new THREE.AmbientLight(0xAA0000);
 
     light = new THREE.DirectionalLight( 0x999999 );
     light.castShadow = true;
@@ -160,7 +160,7 @@ var Background = function() {
     scene.add(ball);
     scene.add(ambient);
     scene.add( light );
-    scene.fog = new THREE.FogExp2( 0xff0000, 0.002);
+    scene.fog = new THREE.FogExp2( 0xFFD600, 0.002);
 
   }
 

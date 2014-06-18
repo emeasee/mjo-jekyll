@@ -44,8 +44,9 @@ h3.logo{
   }
 
   @include media($large-screen){
-    width: 75%;
-    right: -75%;
+    width: 65%;
+    right: -65%;
+    min-width: 920px;
   }
 }
 
@@ -109,24 +110,20 @@ article.page{
           background: rgba($light-gray, 0.9);
           height: 100%;
           width: 100%;
-          //border: 3px solid #fff;
           @include transition(all 0.6s ease);
 
           .text{
             position: absolute;
             top: 50%; left: 50%;
             text-align: left;
-            width: 300px;
+            width: 80%;
             padding-left: 1.2em;
             @include transform( translateX(-50%) translateY(-50%) );
 
-            a, h1, h2{ color: $dark-gray; }
+            a, h1, h2{  }
 
             a{
-              color: $dark-gray;
-              border-bottom: 1px solid $dark-gray;
               text-decoration: none;
-              font-style: italic;
             }
 
             h1{
@@ -144,7 +141,6 @@ article.page{
               margin: 0 auto;
             }
             @include media($large-screen){
-                width: 80%;
                 padding-left: 3em;
             }
           }
@@ -172,43 +168,48 @@ article.page{
         padding-bottom: 20px;
 
         span{
-            border-bottom: 2px solid $base-font-color;
             padding-bottom: $base-line-height * .1;
         }
       }
 
       .time{
-          padding-bottom: 20px;
+          padding-bottom: $base-line-height;
+          margin-bottom: $base-line-height;
           font-weight:300;
+          border-bottom: 10px solid $base-accent-color;
+          display: inline-block;
       }
 
       .text{
           p{
-              margin-left: 2.5em;
+              margin: $base-font-size * 2 $base-font-size * 2;
               img{
                   float: left;
                   clear: both;
                   width: 75%;
-                  padding: 1em 1em 0 0;
-                  margin-left: -10%;
+                  padding: 0 $base-font-size 0 0;
+                  margin-left: -$base-font-size * 4;
                   margin-bottom: 1em;
               }
+
               i{
                 font-size: $base-font-size / 1.4;
-                border-bottom: 1px solid $medium-gray;
                 color: $medium-gray;
+                padding-top: $base-font-size;
               }
+
               span{
                   display:block;
                   img{
-                      width: 150%;
+                      width: 120%;
                       margin-left:0;
                       float: initial;
-                      margin-left: -5%;
-                      max-width: 910px;
+                      margin-left: -$base-font-size * 2;
+                      max-width: 755px;
                   }
               }
           }
+
           blockquote{
               clear: both;
               p{
@@ -217,7 +218,7 @@ article.page{
           }
           em{
             float: left;
-            width: 40%;
+            width: 60%;
             clear: both;
             padding: $base-font-size;
             margin-left: -$base-font-size*3;
@@ -225,10 +226,6 @@ article.page{
             line-height: $base-line-height;
             &:before{
                 content:"\201C";
-                font-size: $base-font-size * 2;
-            }
-            &:after{
-                content:"\201D";
                 font-size: $base-font-size * 2;
             }
           }

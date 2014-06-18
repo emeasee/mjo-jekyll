@@ -50,7 +50,7 @@
           font-size: 7em;
           line-height: normal;
           text-align: left;
-          font-weight:300;
+          font-weight:400;
           width: 300px;
           margin: 0 auto;
           transform-origin: center top;
@@ -60,6 +60,7 @@
             font-size: .25em;
             line-height:normal;
             display: block;
+            margin-left: $base-font-size / 3;
           }
         }
     }
