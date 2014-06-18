@@ -29,8 +29,8 @@ At the system point of view of CPH Cloud, the main user is actually the airport 
 
 <img src="http://m-jo.s3.amazonaws.com/business_A3-01.jpeg" alt="Business A3 01" /> 
 
-In the case of our example platform service application, FlashTicket, the target user group are casual to relatively frequent leisure travelers. FlashTicket can of course be useful in many special cases from depositing money on a boarding pass for unaccompanied minors to business travelers collecting leftover change on their online FlashTicket account. The final breakdown below is a look at how more specialist passengers could benefit from CPHCloud and FlashTicket.
+In the case of our example platform service application, FlashTicket, the target user group are casual to relatively frequent leisure travelers. FlashTicket can of course be useful in many special cases from depositing money on a boarding pass for unaccompanied minors to business travelers collecting leftover change on their online FlashTicket account. The final breakdown below is a look at how more specialist passengers could benefit from CPHCloud and FlashTicket. 
 
-<img src="http://m-jo.s3.amazonaws.com/use-cases-01.jpeg" alt="Use cases 01" /> 
+<span>![use-cases](http://m-jo.s3.amazonaws.com/use-cases-01.jpeg)</span>
 
 Look out for the final video coming soon, just putting the finishing touches. Hopefully looking to describe the service from a more passenger focused view point.

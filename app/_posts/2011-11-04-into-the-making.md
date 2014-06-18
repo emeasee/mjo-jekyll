@@ -9,14 +9,14 @@ image: http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7806 1.jpg
 
 Quick update with some images of how the first prototypes are progressing. 
 
-<img src="http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7799 1.jpg" alt="" title="process_map-01"/>
+<span>![making1](http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7799 1.jpg)</span>
 
-<img src="http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7801 1.jpg" alt="" title="process_map-01"/>
+<span>![making2](http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7801 1.jpg)</span>
 
-<img src="http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7803 1.jpg" alt="" title="process_map-01"/>
+<span>![making3](http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7803 1.jpg)</span>
 
-<img src="http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7806 1.jpg" alt="" title="process_map-01"/>
+<span>![making4](http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7806 1.jpg)</span>
 
-<img src="http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7818 1.jpg" alt="" title="process_map-01"/>
+<span>![making5](http://m-jo.s3.amazonaws.com/thesismaking1/IMG_7818 1.jpg)</span>
 
 Next week: modularity & Arduino. Looking forward!

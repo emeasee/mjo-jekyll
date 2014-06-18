@@ -14,7 +14,7 @@ Currently the class at CIID is engaged in brainstorming and idea generation for 
 From our session earlier:  
 > An inspirational shadowing exercise conducted with a budget traveller early in our process showed that for almost 50% of the time you are doing nothing in an airport; you are waiting. We expanded this to investigate passenger mindset and communication of information in order to better understand the reasons for and opportunities in waiting.
 
-<img src="http://m-jo.s3.amazonaws.com/IMG_8564.jpeg" alt="IMG 8564" title="IMG_8564.jpg" border="0" width="600" height="450" />
+<img src="http://m-jo.s3.amazonaws.com/IMG_8564.jpeg" alt="IMG 8564" title="IMG_8564.jpg" />
 
 Some great ideas have come out and we've already started identifying a few of them that could be prototyped. Here's my colleague on what we're working around now: 
  
