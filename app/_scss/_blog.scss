@@ -29,7 +29,7 @@ h3.logo{
 
 .blog{
   -webkit-overflow-scrolling: touch;
-  background: $light-gray;
+  background: $frame;
   color: $dark-gray;
   height: 100%;
   overflow-y: scroll;
@@ -46,7 +46,7 @@ h3.logo{
   @include media($large-screen){
     width: 65%;
     right: -65%;
-    min-width: 920px;
+    //min-width: 920px;
   }
 }
 
@@ -182,14 +182,18 @@ article.page{
 
       .text{
           p{
-              margin: $base-font-size * 2 $base-font-size * 2;
+              margin: $base-font-size/2;
               img{
                   float: left;
                   clear: both;
-                  width: 75%;
-                  padding: 0 $base-font-size 0 0;
-                  margin-left: -$base-font-size * 4;
+                  width: 100%;
+                  padding: $base-font-size;
                   margin-bottom: 1em;
+                  @include media($large-screen){
+                      width: 75%;
+                      margin-left: -$base-font-size * 4;
+                      padding: 0 $base-font-size 0 0;
+                  }
               }
 
               i{
@@ -201,12 +205,18 @@ article.page{
               span{
                   display:block;
                   img{
-                      width: 120%;
+                      width: 100%;
                       margin-left:0;
                       float: initial;
-                      margin-left: -$base-font-size * 2;
                       max-width: 755px;
+                      @include media($large-screen){
+                          width:120%;
+                          margin-left: -$base-font-size * 2;
+                      }
                   }
+              }
+              @include media($large-screen){
+                margin: $base-font-size * 2 $base-font-size * 2;
               }
           }
 
@@ -218,15 +228,18 @@ article.page{
           }
           em{
             float: left;
-            width: 60%;
+            width: 100%;
             clear: both;
             padding: $base-font-size;
-            margin-left: -$base-font-size*3;
             font-size: $base-font-size * 1.4;
             line-height: $base-line-height;
             &:before{
                 content:"\201C";
                 font-size: $base-font-size * 2;
+            }
+            @include media($large-screen){
+                width: 60%;
+                margin-left: -$base-font-size*3;
             }
           }
       }

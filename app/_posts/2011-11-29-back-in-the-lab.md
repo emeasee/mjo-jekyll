@@ -4,7 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-29
-image: http://m-jo.s3.amazonaws.com/thesismaking4/IMG_8220 1.jpg
+image: http://m-jo.s3.amazonaws.com/thesismaking4/IMG_8220%201.jpg
 ---
 
 An update from the shop floor. I'm heavily back into making the final prototype in preparation for testing over the weekend so this will just be a quick one. Note the action shot!

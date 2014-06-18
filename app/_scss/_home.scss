@@ -34,6 +34,7 @@
                 @include vertical-align;
                 video{
                     cursor: url('/img/refresh.png'), auto;
+                    width: 100%;
                 }
               }
 
@@ -47,13 +48,13 @@
                   font-weight: 700;
                   color: $medium-gray;
                   padding: 10px 0;
-                  bottom: 90px;
+                  bottom: 12%;
                   span{
                       //background-color: $base-accent-color;
                       padding: 3px;
                   }
                   @include media($large-screen){
-
+                    bottom: 14%;
                   }
               }
 
@@ -69,8 +70,8 @@
 
                 p{
                   @include vertical-align;
-                  font-size: $base-font-size / 1.5;
-                  //line-height: normal;
+                  font-size: $base-font-size / 1.2;
+                  line-height:normal;
                   font-weight: 400;
                   padding: 0 $base-line-height;
 
@@ -113,7 +114,6 @@
                     }
 
                     p.large{
-                      font-size: $base-font-size * 1.05;
                       overflow: auto;
 
                       .float{
@@ -136,12 +136,16 @@
                       p{
                           font-size: $base-font-size;
                           padding: 0 $base-line-height * 2;
+                          line-height: inherit;
                           span{
 
                           }
                           a.button{
                               width: 40%;
                           }
+                      }
+                      p.large{
+                         font-size: $base-font-size * 1.05;
                       }
                   }
               }

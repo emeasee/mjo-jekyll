@@ -47,7 +47,7 @@
 
         p{
           color: $base-body-color;
-          font-size: 7em;
+          font-size: 5.8em;
           line-height: normal;
           text-align: left;
           font-weight:400;
@@ -61,6 +61,9 @@
             line-height:normal;
             display: block;
             margin-left: $base-font-size / 3;
+          }
+          @include media($large-screen){
+            font-size: 7em;
           }
         }
     }

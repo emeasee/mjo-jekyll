@@ -4,7 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-28
-image: http://m-jo.s3.amazonaws.com/thesismaking/IMG_8068 1.jpg
+image: http://m-jo.s3.amazonaws.com/IMG_8177.jpeg
 ---
 
 Here's a short video I shot and edited in a day to describe the vision behind my design direction currently. 

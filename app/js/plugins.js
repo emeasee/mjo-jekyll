@@ -126,7 +126,7 @@ ArticleAnimator.contentizeElement = function($el, d){
   $el.find('.big-image').css({ backgroundImage: 'url(' + d.image + ')' });
   $el.find('h1.title span').html(d.title);
   $el.find('h2.description').html(d.excerpt);
-  $el.find('.content .text').html(d.content);
+  $el.find('.content .text').html(d.content).fitVids();
   $el.find('h6.time').html(d.date);
 };
 

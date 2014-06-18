@@ -4,7 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-09-28
-image: http://m-jo.s3.amazonaws.com/allotments/IMG_6442 1.jpg
+image: http://m-jo.s3.amazonaws.com/allotments/IMG_6442%201.jpg
 ---
 
 Today I took a trip to the coast or Copenhagen (Amager Strand) to have a look around the allotments there. I had been tipped off about it by some friends at [CIID][1] and thought it a good opportunity to kick off some immersion and see if I could make some contacts for any future co-design/user validation.

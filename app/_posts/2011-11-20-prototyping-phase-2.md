@@ -4,7 +4,7 @@ author: Mac
 layout: post
 category: urbbi
 date: 2011-11-20
-image: http://m-jo.s3.amazonaws.com/thesismaking2/IMG_8175 1.jpg
+image: http://m-jo.s3.amazonaws.com/thesismaking2/IMG_8175%201.jpg
 ---
 
 The weekends efforts. I'm definitely focusing in on something more and more as I busy myself in the design phase. It's one of my favourite times of a project when working through a problem with your hands and sketching you can really start to tighten up was has been a lot of open ended questions up until now. Most are just experiments and a way for me to think. More coming soon!

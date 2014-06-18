@@ -134,9 +134,9 @@ $(document).ready(function(){
 
     function initMobile(){
         $body.find('#slide .scroll p').css({
-            background: '#333',
-            textAlign: 'center',
-            height: '300px',
+            background: '#ea0000',
+            height: '250px',
+            width: '250px',
             borderRadius: '50%'
         });
     }
@@ -152,9 +152,11 @@ $(document).ready(function(){
         initMobile();
     }
 
-    if($('.imgs').length){
+    /*if($('.imgs').length){
         $('.imgs a').fluidbox();
-    }
+    }*/
+
+    $('li.slide').fitVids();
 
     jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0, 0.44999, 0, 1.03)';
 
@@ -182,7 +184,7 @@ $(document).ready(function(){
               centerArea: 0.5,
               center: true,
               breakpoint: 650,
-              breakpointCenterArea: 0.8,
+              breakpointCenterArea: 0.85,
               navigateByCenterClick: true
             }
         });
