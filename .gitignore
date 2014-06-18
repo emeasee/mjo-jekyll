@@ -37,5 +37,4 @@ app/_bower_components
 dist
 node_modules
 .tmp
-app/_drafts
 vendor
