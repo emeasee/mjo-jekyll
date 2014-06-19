@@ -47,7 +47,7 @@ $(document).ready(function(){
         t.stop(true,true);
 
         if ( $top < $scrollLimit ){
-           changeBottomButton(t, 'Work', 'middle', 'one');
+           changeBottomButton(t, 'Scroll down', 'middle', 'one');
        } else {
            if ($top > 3000){
                changeBottomButton(t, 'Top', 'slide', 'three');
@@ -81,7 +81,7 @@ $(document).ready(function(){
     }
 
     function onAlways( instance ) {
-        changeBottomButton($('#scroll','nav.bottom'), 'Work', 'middle', 'one');
+        changeBottomButton($('#scroll','nav.bottom'), 'Scroll down', 'middle', 'one');
     }
 
     function getData(post){

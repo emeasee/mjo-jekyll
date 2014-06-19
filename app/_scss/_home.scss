@@ -50,7 +50,7 @@
                   padding: 10px 0;
                   bottom: 12%;
                   span{
-                      //background-color: $base-accent-color;
+                      background-color: $frame;
                       padding: 3px;
                   }
                   @include media($large-screen){
@@ -219,6 +219,11 @@ nav{
 
         &.hide{
             margin-bottom: -90px;
+        }
+
+        &.one{
+            @include background(url("../img/arrow_d.png") 50% 20px no-repeat);
+            padding-bottom: 30px;
         }
 
         &.two{
