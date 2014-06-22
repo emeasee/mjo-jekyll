@@ -96,6 +96,8 @@ article.page{
       height:300px;
       font-size: 80%;
       opacity: 1;
+      background-size: 100%;
+      background-position: center center;
       @include transition(all 0.25s ease-in-out);
       .inner{
         position: relative;
@@ -103,11 +105,10 @@ article.page{
         height: 100%;
         text-align: center;
         opacity: 0;
-        border: 5px solid $light-gray;
         @include transition(all 0.6s ease);
 
         .fader{
-          background: rgba($light-gray, 0.9);
+          background: rgba($frame, 1);
           height: 100%;
           width: 100%;
           @include transition(all 0.6s ease);
@@ -115,21 +116,25 @@ article.page{
           .text{
             position: absolute;
             top: 50%; left: 50%;
-            text-align: left;
             width: 80%;
-            padding-left: 1.2em;
+            margin-left: 1.2em;
             @include transform( translateX(-50%) translateY(-50%) );
 
             a, h1, h2{  }
 
             a{
               text-decoration: none;
+              margin-bottom: $base-line-height / 2;
+              display: block;
+              font-size: $base-font-size;
             }
 
             h1{
               margin: 0;
-              padding: $base-line-height/2 0;
+              padding: $base-line-height / 1.4;
               font-weight: 300;
+              border: 7px solid $base-font-color;
+
             }
 
             h2{
@@ -140,18 +145,17 @@ article.page{
               font-size: $base-font-size / 1.2;
               margin: 0 auto;
             }
-            @include media($large-screen){
-                padding-left: 3em;
-            }
           }
         }
-        &:hover{
-            border: 0px solid $light-gray;
+      }
+      &:hover{
+          background-size: 102%;
+          .inner{
             .fader{
                 border: 0;
-                background: rgba($light-gray, 0.5);
+                background: rgba($frame, 0.5);
             }
-        }
+          }
       }
     }
 
@@ -166,6 +170,7 @@ article.page{
         line-height: $base-font-size * 1.8;
         font-weight: 400;
         padding-bottom: 20px;
+        @include background(url("/img/logo_small.png") left 30px no-repeat);
 
         span{
             padding-bottom: $base-line-height * .1;
@@ -182,7 +187,13 @@ article.page{
 
       .text{
           p{
-              margin: $base-font-size/2;
+              margin: $base-font-size / 2;
+              font-family: $serif;
+              font-weight: 500;
+              line-height: $base-line-height;
+              a{
+                  font-family:$base-font-family;
+              }
               img{
                   float: left;
                   clear: both;
