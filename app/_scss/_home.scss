@@ -222,7 +222,7 @@ nav{
         }
 
         &.one{
-            @include background(url("../img/arrow_d.png") 50% 20px no-repeat);
+            @include background(url(/img/arrow_d.png) 50% 25px no-repeat);
             padding-bottom: 50px;
         }
 
