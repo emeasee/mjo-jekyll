@@ -10,7 +10,7 @@
 
 #middle{
     @include transition (padding-left .2s ease-in-out);
-    background: $base-body-color;
+    background: $base-background-color;
     position: relative;
     width: 100%;
     z-index: 99;
