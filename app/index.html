@@ -55,12 +55,59 @@ title: M-JO.CO / A Digital Portfolio
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/2.png" alt=""/></li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/3.png" alt=""/></li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/4.png" alt=""/></li>
+                    <li class="slide phone">
+                        <video class="shadow">
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/blog-tray.mp4" type='video/mp4' />
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/blog-tray.webm" type='video/webm' />
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/blog-tray.ogg" type='video/ogg' />
+                        </video>
+                    </li>
+                    <li class="slide phone">
+                        <video class="shadow">
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/validate.mp4" type='video/mp4' />
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/validate.webm" type='video/webm' />
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/validate.ogg" type='video/ogg' />
+                        </video>
+                    </li>
+                    <li class="slide phone">
+                        <video class="shadow">
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/job-view.mp4" type='video/mp4' />
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/job-view.webm" type='video/webm' />
+                            <source src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/job-view.ogg" type='video/ogg' />
+                        </video>
+                    </li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/5.png" alt=""/></li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/6.png" alt=""/></li>
                     <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/fieldlogs/7.png" alt=""/></li>
                     {% assign post_count = '0' %}
                         {% for post in site.posts %}
                             {% if post.categories contains 'fieldlogs' %}
+                                <li class="slide label update">
+                                    <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
+                                </li>
+                                {% break %}
+                            {% endif %}
+                            {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
+                        {% endfor %}
+                    {% assign post_count = '0' %}
+                </ul>
+        </article>
+        <article id="livetrekker" class="proj">
+                <ul class="royalSlider rsDefault visibleNearby rsHor">
+                    <li class="slide"><h1><span>Web - Mobile - UX</span></h1><img  src="http://m-jo.s3.amazonaws.com/projects/livetrekker/1.png" alt=""/></li>
+                    <li class="slide label">
+                        <p>
+                            Livetrekker is.
+                        <a href="http://www.livetrekker.com/" class="button" target="_blank">Visit website</a></p>
+                    </li>
+                    <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/livetrekker/2.png" alt=""/></li>
+                    <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/livetrekker/3.png" alt=""/></li>
+                    <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/livetrekker/4.png" alt=""/></li>
+                    <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/livetrekker/5.png" alt=""/></li>
+                    <li class="slide"><img src="http://m-jo.s3.amazonaws.com/projects/livetrekker/6.png" alt=""/></li>
+                    {% assign post_count = '0' %}
+                        {% for post in site.posts %}
+                            {% if post.categories contains 'livetrekker' %}
                                 <li class="slide label update">
                                     <p><span>Latest update</span><b>{{ post.title }}</b>{{ post.content | strip_html | truncatewords: 50 }}<a class="button post" href={{post_count}}>Read post</a></p>
                                 </li>

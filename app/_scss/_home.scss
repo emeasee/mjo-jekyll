@@ -38,6 +38,16 @@
                 }
               }
 
+              .phone{
+                height: 620px;
+                width: 100%;
+                @include background(url(/img/iphone_frame.png) 50% no-repeat);
+                video{
+                    @include vertical-align;
+                    max-width: 274px;
+                }
+              }
+
               h1{
                   position: absolute!important;
                   width: 100%;
