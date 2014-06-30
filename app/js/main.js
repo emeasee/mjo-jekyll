@@ -162,7 +162,7 @@ $(document).ready(function(){
         $('.imgs a').fluidbox();
     }*/
 
-    $('li.slide').fitVids();
+    //$('li.slide').fitVids();
 
     jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0, 0.44999, 0, 1.03)';
 
