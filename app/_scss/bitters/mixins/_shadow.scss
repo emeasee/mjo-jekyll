@@ -1,8 +1,0 @@
-@mixin shadow($color){
-  border-top-color: lighten($color, 10%);
-  border-right-color: $color;
-  border-bottom-color: $color;
-  border-left-color: lighten($color, 10%);
-  //border: 3px solid;
-  box-shadow: 3px 3px 1px lighten($color, 5%);
-}
