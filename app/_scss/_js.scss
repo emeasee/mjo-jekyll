@@ -39,13 +39,12 @@
         -webkit-transform: translate3d(0,-50%,0);
         transform: translate3d(0,-50%,0);
 
-        &.image{
-          width: 100%;
+        &.logo{
+          width: 90%;
+          left: 5%;
           height: 100%;
-          left: 0;
           img{
             @include vertical-align;
-
           }
         }
       }
@@ -60,15 +59,19 @@
         top: 100%;
         width: 100%;
         text-align: center;
-        color: $base-font-color;
+        color: $light-gray;
         -webkit-animation: slideUpFade 0.4s 0.1s;
+
+        &.logo{
+          display: none;  
+        }
       }
     }
   }
 
   .slide{
     h2 {
-      color: #fff;
+      color: $light-gray;
       position: absolute;
       -webkit-transition: opacity 0.3s;
       transition: opacity 0.3s;
