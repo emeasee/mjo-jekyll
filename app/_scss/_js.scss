@@ -42,10 +42,8 @@
         &.logo{
           width: 90%;
           left: 5%;
-          height: 100%;
-          img{
-            @include vertical-align;
-          }
+          top:50%;
+          font-size: 30em;
         }
       }
     }
@@ -63,7 +61,10 @@
         -webkit-animation: slideUpFade 0.4s 0.1s;
 
         &.logo{
-          display: none;  
+          top: 0;
+          font-size: 8em;
+          line-height:0.01em;
+          -webkit-animation: none;
         }
       }
     }

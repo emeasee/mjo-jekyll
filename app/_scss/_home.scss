@@ -26,6 +26,12 @@
       font-weight: 400;
     }
   }
+
+  &:first-child{
+    button.content-switch::before {
+      content: 'ABOUT';
+    }
+  }
 }
 
 .img-dragger {
