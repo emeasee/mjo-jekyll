@@ -42,7 +42,7 @@
     display: inline-block;
     position: relative;
     height: 100%;
-    background: $light-gray;
+    background: $dark-gray;
     font-size: 16px;
     white-space: normal;
     cursor: -webkit-grab;
@@ -73,6 +73,7 @@
     &.current{
       h2{
         //color: #fff;
+        opacity: 1;
         -webkit-animation-delay: 0s;
         animation-delay: 0s;
         -webkit-transition: color 0.3s, opacity 0.3s;
